@@ -1,0 +1,1 @@
+web: gunicorn caldwell_cosmetics.wsgi
