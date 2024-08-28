@@ -26,25 +26,23 @@ Brief description of the whole website
 ## User Stories
 | id  |  Content | Label |
 | ------ | ------ | ------ |
-|  [1]() | As a user, I can navigate through the website easily so that I can get more information about the treatments, products used and bookings. | Must Have |
-|  [2]() | As a user, I can get information regarding the treatment details so that I can spend less time having to search for the suitable information. | Must Have |
-|  [3]() | As a user, I can obtain treatment booking information so that I can easily book treatments. | Must Have |
-|  [4]() | As a user, I can find the business' social media accounts so that I can keep up-to-date with the latest treatments, products and deals offered. | Should Have |
-|  [5]() | As a user, I can see other people's bookings anonymously so that I can review remaining availability and book in my treatments accordingly.| Could Have |
-
-
-| [6]() | As a user, I can book an appointment so that I can attend and receive my treatment/products. | Must Have |
-| [7]() | As a user, I can register or log in so that I can manage my bookings. | Must Have |
-| [8]() | As a user, I can book treatments for others so that I can bring more people to the business. | Must Have |
-| [9]() | As a user, I can see if I am logged in so that I can easily log out or log in. | Must Have |
-| [10]() | As a user, I can obtain email confirmation of my ticket bookings so that I know I have successfully booked the treatments. | Could Have |
-| [11]() | As a user, I can select my preferred practitioner when booking treatments and review their remaining availability so I can book my treatments. | Must Have |
-| [12]() | As a user, I can easily use the navbar to navigate the website so that I can find all relevant content. | Must Have |
-| [13]() | As a user, I can edit and/or delete appointments I have booked when logged in so that I can make any necessary changes. | Must Have |
-| [14]() | As a user, I can edit my user details when logged in so that I can ensure that my details are up-to-date. | Must Have |
-| [15]() | As a user, I can easily reach the home page in case I get an error so that I am not stuck on an error page and have to select the back button. | Must Have |
-| [16]() | As an admin, I can log in so that I can access the website's backend. | Must Have |
-| [17]() | As an admin, I can delete appointments booked by users so that I can alter bookings and amend errors when required. | Must Have |
+|  [1](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/1) | As a user, I can navigate through the website easily so that I can get more information about the treatments, products used and bookings. | Must Have |
+|  [2](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/2) | As a user, I can get information regarding the treatment details so that I can spend less time having to search for the suitable information. | Must Have |
+|  [3](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/3) | As a user, I can obtain treatment booking information so that I can easily book treatments. | Must Have |
+|  [4](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/4) | As a user, I can find the business' social media accounts so that I can keep up-to-date with the latest treatments, products and deals offered. | Should Have |
+|  [5](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/5) | As a user, I can see other people's bookings anonymously so that I can review remaining availability and book in my treatments accordingly.| Could Have |
+| [6](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/6) | As a user, I can book an appointment so that I can attend and receive my treatment/products. | Must Have |
+| [7](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/7) | As a user, I can register or log in so that I can manage my bookings. | Must Have |
+| [8](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/8) | As a user, I can book treatments for others so that I can bring more people to the business. | Must Have |
+| [9](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/9) | As a user, I can see if I am logged in so that I can easily log out or log in. | Must Have |
+| [10](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/10) | As a user, I can obtain email confirmation of my ticket bookings so that I know I have successfully booked the treatments. | Could Have |
+| [11](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/11) | As a user, I can select my preferred practitioner when booking treatments and review their remaining availability so I can book my treatments. | Must Have |
+| [12](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/12) | As a user, I can easily use the navbar to navigate the website so that I can find all relevant content. | Must Have |
+| [13](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/13) | As a user, I can edit and/or delete appointments I have booked when logged in so that I can make any necessary changes. | Must Have |
+| [14](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/14) | As a user, I can edit my user details when logged in so that I can ensure that my details are up-to-date. | Must Have |
+| [15](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/15) | As a user, I can easily reach the home page in case I get an error so that I am not stuck on an error page and have to select the back button. | Must Have |
+| [16](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/16) | As an admin, I can log in so that I can access the website's backend. | Must Have |
+| [17](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/17) | As an admin, I can delete appointments booked by users so that I can alter bookings and amend errors when required. | Must Have |
 
 ## Educational Disclaimer
 
