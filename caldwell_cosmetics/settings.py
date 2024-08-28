@@ -38,7 +38,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 
-ALLOWED_HOSTS = ['caldwell-cosmetics-full-stack-ecf887f27496.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['caldwell-cosmetics-full-stack-ecf887f27496.herokuapp.com', 'localhost', '*']
 
 # Application definition
 
