@@ -32,6 +32,20 @@ Brief description of the whole website
 |  [4]() | As a user, I can find the business' social media accounts so that I can keep up-to-date with the latest treatments, products and deals offered. | Should Have |
 |  [5]() | As a user, I can see other people's bookings anonymously so that I can review remaining availability and book in my treatments accordingly.| Could Have |
 
+
+| [6]() | As a user, I can book an appointment so that I can attend and receive my treatment/products. | Must Have |
+| [7]() | As a user, I can register or log in so that I can manage my bookings. | Must Have |
+| [8]() | As a user, I can book treatments for others so that I can bring more people to the business. | Must Have |
+| [9]() | As a user, I can see if I am logged in so that I can easily log out or log in. | Must Have |
+| [10]() | As a user, I can obtain email confirmation of my ticket bookings so that I know I have successfully booked the treatments. | Could Have |
+| [11]() | As a user, I can select my preferred practitioner when booking treatments and review their remaining availability so I can book my treatments. | Must Have |
+| [12]() | As a user, I can easily use the navbar to navigate the website so that I can find all relevant content. | Must Have |
+| [13]() | As a user, I can edit and/or delete appointments I have booked when logged in so that I can make any necessary changes. | Must Have |
+| [14]() | As a user, I can edit my user details when logged in so that I can ensure that my details are up-to-date. | Must Have |
+| [15]() | As a user, I can easily reach the home page in case I get an error so that I am not stuck on an error page and have to select the back button. | Must Have |
+| [16]() | As an admin, I can log in so that I can access the website's backend. | Must Have |
+| [17]() | As an admin, I can delete appointments booked by users so that I can alter bookings and amend errors when required. | Must Have |
+
 ## Educational Disclaimer
 
 This project has been created as a part of my personal learning journey in Full-Stack development. It is intended for educational purposes only and should not be considered a fully functional or production-ready application. The project may contain bugs, security vulnerabilities, or incomplete features, as it is designed to demonstrate concepts and practices learned during my studies.
