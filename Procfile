@@ -1,1 +1,1 @@
-web: gunicorn caldwell_cosmetics.wsgi
+web: gunicorn caldwell_cosmetics.wsgi --log-file -
