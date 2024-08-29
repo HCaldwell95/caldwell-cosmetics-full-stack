@@ -1,0 +1,106 @@
+/* Colour References
+
+    Background colours:
+
+    Body background: rgb(255, 251, 249); Off-White
+    Body background: rgb(253 247 245); Cream
+    Hero image tint overlay: rgba(95, 95, 95, 0.4);
+    Accent (peach): ##eed6c2;
+
+    ----------------------
+
+    Font Colours:
+    Dark Brown: color: #302321; (also used for social media links)
+
+    Button Colours:
+    Subscribe border: solid #9e754e;
+    Subscribe background-color: #c09061;
+
+
+
+
+
+
+*/
+
+/* Wildcard selector to override default styles added by the browser */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------------------General styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color:rgb(253 247 245);
+    font-size: 14px;
+}
+
+/* Heading styles */
+h2, h3, h4, h5, h6 {
+    color: black;
+    text-transform: uppercase;
+}
+
+.small-hr {
+    border: 1px solid rgba(0, 0, 0, 0.5); /* Add transparency to the border color */
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Style to hide unwanted headings */
+.hidden-heading {
+    display: none;
+}
+
+.hidden-cover-text {
+    display: none;
+}
+
+/* -----------------------------------Navigation bar styles */
+
+/* Styles for the navbar container */
+.navbar-container {
+    background-color: transparent;
+    padding: 0.5em 0em;
+    box-sizing: border-box;
+    z-index: 1000;
+    position: absolute;
+    height: auto;
+    width: 100%;
+}
+
+/* Style for the logo link in navbar */
+.logo-link>img {
+    max-width: 80px;
+    max-height: 40px;
+}
+
+/* Styles for the navbar button icon to override Bootstrap */
+.navbar-toggler {
+    background-color: #eed6c280;
+}
+
+/* Styles for the navbar dropdown items */
+#navbarNav>ul {
+    display: flex;
+    text-align: right;
+}
+
+#navbarNav>ul a {
+    color: #eed6c2;
+    text-transform: uppercase;
+}
+
+.active {
+    color: #e09e67!important;
+    text-decoration: underline;
+    font-size: 18px;
+}
+
+.sign-up a {
+    color: #fff;
+}
