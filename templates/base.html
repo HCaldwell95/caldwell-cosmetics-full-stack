@@ -26,7 +26,6 @@
 </head>
 
 <body>
-    <header>
         <nav class="navbar navbar-light navbar-expand-sm navbar-container">
             <div class="container-fluid">
                 <a href="/" class="navbar-brand mr-auto logo-link"><img src="{% static 'images/mini-logo.png' %}" alt="Logo"></a>
@@ -46,7 +45,10 @@
                 </div>
             </div>
         </nav>
-    </header>
+        
+    <!-- Hero Section Block -->
+     {% block hero %}
+     {% endblock %}
 
     <main role="main" class="container">
         {% block content %}

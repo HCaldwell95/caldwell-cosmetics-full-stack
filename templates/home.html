@@ -2,8 +2,7 @@
 {% load static %}
 {% block title %}Home | Caldwell Cosmetics{% endblock %}
 
-{% block content %}
-
+    {% block hero %}
     <!-- Hero image section -->
     <section class="hero" id="home-hero">
         <div class="container-fluid p-0 position-relative">
@@ -29,7 +28,9 @@
     <div id="scroll-container">
         <div id="scroll-text">IPL Hair Reduction | Skin Rejuvenation | Platelet Rich Plasma (PRP) | Facials | Hair Rejuvenation | illumiFacial® | Acne Treatments | Facial Veins or Pigment Removal | Consultations | </div>
     </div>
+    {% endblock %}
 
+    {% block content %}
     <main class="container laptop-width">
 
     <!-- About Us Content -->
