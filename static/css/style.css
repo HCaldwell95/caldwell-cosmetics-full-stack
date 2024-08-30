@@ -60,6 +60,11 @@ h2, h3, h4, h5, h6 {
     display: none;
 }
 
+/* Style to remove underline from hyperlinks */
+a {
+    text-decoration: none;
+}
+
 /* -----------------------------------Navigation bar styles */
 
 /* Styles for the navbar container */
@@ -251,4 +256,34 @@ main {
     text-align: center;
     font-size: 100%;
     letter-spacing: 0.7mm;
+}
+
+/* ------------------------------------------Treatments */
+
+#about-treatments img {
+    border-radius: 25px;
+}
+
+.treatment-item {
+    margin-bottom: 10px;
+}
+
+.treatment-item h4 {
+    margin-bottom: 0px;
+}
+
+.bottom-overlay {
+    position: relative;
+    margin-top: -52px;
+    text-align: center;
+    background-color:#313131ea; /* Background color with opacity */
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding-bottom: 10px; /* Adjust padding as needed */
+}
+
+.bottom-overlay > h6 {
+    color: #fff;
+    vertical-align: middle;
+    padding-top: 15px;
 }
