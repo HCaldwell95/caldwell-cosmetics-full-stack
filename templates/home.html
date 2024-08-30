@@ -1,49 +1,68 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}Home | Caldwell Cosmetics{% endblock %}
 
 {% block content %}
-    <h1>Welcome to Caldwell Cosmetics</h1>
-    <p>Explore our range of aesthetics treatments.</p>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ENjdO4Dr2bkBIFxQpeo5G6BHTVVZq7CIgTFvy1pP2PEnF0p1FQmBGCm91r1l69Pc" crossorigin="anonymous">
 
     <!-- Hero image section -->
-    <section class="hero">
-        <div>
-            <!-- Hero content goes here -->
+    <section class="hero" id="home-hero">
+        <div class="container-fluid p-0 position-relative">
+            <img src="{% static 'images/home-hero.jpg' %}" class="img-fluid" alt="Image showing x">
+            <!-- Transparent tinting -->
+            <div class="color-overlay"></div>
+                <div class="position-absolute top-50 start-50 translate-middle text-center text-white hero-text-md">
+                    <h2 id="home-cover-heading">Caldwell Cosmetics</h2>
+                    <h3 id="est-tag">Est.2024</h3>
+                    <div class="text-center cover-text">
+                        <p>
+                            Where natural beauty meets personalised care. 
+                            <span class="d-none d-md-block d-lg-block cover-text-md">Join us in celebrating the beauty of simplicity, promoting wellness, and 
+                            discovering the best version of yourself.</span>
+                        </p>
+                    </div>
+                </div>
         </div>
     </section>
 
     <!-- Scrolling Text Bar -->
+
     <div id="scroll-container">
-        <!-- Scrolling text content goes here -->
+        <div id="scroll-text">IPL Hair Reduction | Skin Rejuvenation | Platelet Rich Plasma (PRP) | Facials | Hair Rejuvenation | illumiFacial® | Acne Treatments | Facial Veins or Pigment Removal | Consultations | </div>
     </div>
 
-    <main>
-        <!-- About Us Content -->
-        <section class="about">
-            <h2>About</h2>
-            <div>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed ante a tellus tincidunt egestas ut eget nisi. Suspendisse porta auctor erat, id eleifend leo mollis eu. 
-                    Phasellus luctus magna quis hendrerit tempor. Duis non sapien id tortor lobortis tempus at ut ante. Donec non ullamcorper lorem, non gravida ante. Morbi magna sapien, 
-                    cursus sit amet mauris in, efficitur placerat diam. Aliquam tincidunt, lacus sed bibendum tincidunt, odio enim ultricies nisi, nec bibendum erat lacus non felis. Nam ut 
-                    purus sed risus mollis aliquet at sed lorem. Pellentesque placerat tellus sed purus semper, rutrum congue orci elementum. Cras rutrum tempor ex, in mollis justo commodo ac. 
-                    In gravida elementum mauris, ac pharetra risus pretium et. Duis imperdiet non dui sit amet tempor.
+    <main class="container laptop-width">
 
-                    Donec tristique lorem vel dui fermentum interdum. Pellentesque rutrum leo hendrerit eleifend hendrerit. Suspendisse finibus rhoncus urna, quis eleifend nisl. Vivamus rhoncus rutrum 
-                    tempus. Vestibulum accumsan nibh eget metus congue, eget elementum massa consectetur. Sed non elit volutpat, maximus purus a, posuere mauris. Sed sollicitudin, purus ut tempus fermentum, 
-                    ligula metus finibus massa, et laoreet enim ligula ut eros. Morbi condimentum nibh cursus pulvinar sollicitudin. Nullam magna ante, cursus sed metus ac, imperdiet varius odio. Sed sed rhoncus tellus. 
-                    Sed pretium euismod sem interdum tincidunt. Praesent sagittis lacus egestas erat dignissim scelerisque.
-
-                    Donec leo lectus, dictum a est eget, semper laoreet neque. Nam sodales semper euismod. Donec blandit lacus eu felis venenatis tempus. Ut dapibus mi quam, vel congue ante finibus vel. Class aptent taciti 
-                    sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum ac ante urna. Duis eget risus molestie, malesuada nisl id, blandit erat.
-
-                    Praesent ut leo consequat, pulvinar metus sed, vehicula sem. Ut ultricies arcu sed velit dictum porta. Maecenas dignissim neque sed dignissim varius. Morbi eget metus eget ligula commodo laoreet sed sed dui. 
-                    Maecenas venenatis, turpis ut semper suscipit, sapien lacus feugiat dui, dictum gravida neque quam eget lacus. Ut eu orci sed nisl sodales commodo vitae non lacus. Proin velit sapien, dictum at sagittis mattis, 
-                    aliquam porttitor tellus. Duis ut mi tincidunt, ultrices erat eget, pellentesque quam. Vivamus rhoncus urna vel rhoncus mattis.
-                </p>
+    <!-- About Us Content -->
+    <section class="about">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="text-uppercase">About Us</h2>
+                <hr>
             </div>
-        </section>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <p>
+                    Caldwell Cosmetics offers carefully curated treatments to enhance inner beauty and promote a positive mindset. 
+                    Led by <a href="#" target="_blank">Rabia</a>, a Nurse with over six years experience working within the NHS, our mission is to redefine beauty through holistic well-being, accentuating individual uniqueness. 
+                    <br>
+                    <br>
+                    Specializing in skin treatments tailored to your radiance, we provide a serene environment adorned in calming hues, inviting you on a transformative journey 
+                    of self-love and confidence. 
+                    <br>
+                    <br>
+                    At Caldwell Cosmetics, we blend expertise with personalized care to nurture both external beauty and overall well-being, celebrating simplicity and helping you discover your best self. 
+                    <br>
+                    <br>
+                    As we continue to grow, we are excited to announce that we will be expanding our range of treatments to offer you even more options for enhancing your natural beauty and well-being. 
+                    Our future plans include introducing a variety of new treatments designed to address different aspects of skincare, wellness, and self-care.
+                </p>
+                <hr class="small-hr">
+            </div>
+        </div>
+    </section>
 
         <!-- Maps section -->
         <section id="maps">
@@ -66,6 +85,9 @@
             </div>
         </section>
     </main>
+
+    <!-- Bootstrap JS Bundle (with Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-QA1FoRZ1fGEiKXT0fBXAtHyn6v4Z5v0DA8ACJlE5gk48zAxVsltFU05KzR1XWZa8" crossorigin="anonymous"></script>
 
     <footer>
         <!-- Footer content goes here -->

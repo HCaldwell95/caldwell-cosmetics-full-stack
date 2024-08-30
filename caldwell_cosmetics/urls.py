@@ -16,10 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from treatment_details import views
+from home import views
 
 urlpatterns = [
-    path('', include('treatment_details.urls')),
+    path('', include('home.urls')),
     path ('', views.home, name='home'), # Root URL to home view
     path('admin/', admin.site.urls), # Admin panel URL
 ]
