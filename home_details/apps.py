@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class TreatmentDetailsConfig(AppConfig):
+class THomeDetailsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'treatment_details'
+    name = 'home_details'
