@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from decouple import config
 import os
 import sys
 import dj_database_url
@@ -148,12 +149,12 @@ django_heroku.settings(locals())
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-EMAIL_HOST_USER = 'a2f7ee15d94dec'
-EMAIL_HOST_PASSWORD = '9366b8dc23a411'
-EMAIL_PORT = 2525
-DEFAULT_FROM_EMAIL = 'caldwellcosmetics@hotmail.com'
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
 
 if 'test' in sys.argv:
     DATABASES = {

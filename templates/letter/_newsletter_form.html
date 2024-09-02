@@ -22,28 +22,10 @@
                         <input type="email" class="form-control bsb-form-control-3xl" id="email-newsletter-component" name="email" value="" placeholder="Email Address" aria-label="email-newsletter-component" aria-describedby="email-newsletter-help" required>
                         <button type="submit" id="subscribe-btn" class="btn btn-primary bsb-btn-3xl">Subscribe</button>
                     </div>
-
-
-                    {% if form.errors %}
-                        {% for field in form %}
-                            {% for error in field.errors %}
-
-                                <div class="p-6 bg-red-200 text-red-800 rounded-x1">
-                                    <p>{{ error|escape }}</p>
-                                </div>
-                            {% endfor %}
-                        {% endfor %}
-
-                        {% for error in form.non_field_errors %}
-                                <div class="p-6 bg-red-200 text-red-800 rounded-x1">
-                                    <p>{{ error|escape }}</p>
-                                </div>"
-                        {% endfor %}
-                    {% endif %}
-
                 </form>
             </div>
         </div>
     </div>
 </section>
+
 {% endblock %}

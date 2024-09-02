@@ -57,11 +57,19 @@ def subscribe_to_newsletter(request):
                 fail_silently=False
             )
 
-            # Respond to AJAX request if form is not valid
+            # Respond to AJAX request
             return JsonResponse({'success': True})
+
         else:
-            # Respond with form errors if form is not valid
-            return JsonResponse({'success': False, 'errors': form.errors})
+            # Extract and flatten form errors for AJAX response
+            errors = {}
+            for field, field_errors in form.errors.items():
+                errors[field] = list(field_errors)
+            for non_field_error in form.non_field_errors():
+                errors['non_field'] = list(non_field_error)
+
+            return JsonResponse({'success': False, 'errors': errors})
 
     # Respond with an error if the request method is not POST
     return JsonResponse({'success': False, 'error': 'Invalid request'})
+

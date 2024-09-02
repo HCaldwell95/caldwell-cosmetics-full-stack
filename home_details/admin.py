@@ -11,7 +11,6 @@ class EmailTemplateAdminForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'message': RichTextFormField(),
-
         }
 
 class EmailTemplateAdmin(admin.ModelAdmin):
