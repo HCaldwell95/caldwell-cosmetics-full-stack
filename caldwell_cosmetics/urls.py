@@ -19,6 +19,7 @@ from django.urls import path, include
 from home_details import views
 
 urlpatterns = [
-    path('', include('home_details.urls')), # Include URLs from home_details app
-    path('admin/', admin.site.urls), # Admin panel URL
+    path('', include('home_details.urls')),  # This includes home_details.urls
+    path('subscribe/', views.subscribe_to_newsletter, name='subscribe_to_newsletter'),
+    path('admin/', admin.site.urls),  # Admin panel URL
 ]

@@ -1,3 +1,41 @@
+/* ------------------------------ Handles the form submission via AJAX and displays a popup */
+
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('newsletter-form');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const formData = new FormData(form);
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', form.action, true);
+        xhr.setRequestHeader('X-CSRFToken', document.querySelector('[name=csrfmiddlewaretoken]').value);
+
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                const response = JSON.parse(xhr.responseText);
+                if (response.success) {
+                    document.getElementById('subscription-success').style.display = 'block';
+                    form.reset();
+                } else {
+                    document.getElementById('subscription-error').style.display = 'block';
+                }
+            }
+        };
+
+        xhr.onerror = function() {
+            document.getElementById('subscription-error').style.display = 'block';
+        };
+
+        xhr.send(formData);
+    });
+});
+
+
+
+
+
+
+
 /* ---------------------------------- Footer link modal to external page */
 
 document.addEventListener('DOMContentLoaded', function() {

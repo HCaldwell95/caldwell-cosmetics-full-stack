@@ -1,12 +1,11 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Caldwell Cosmetics. A natural aesthetics clinic, specialising in skin and hair enhancement and rejuvenation. Based in Abergele, North Wales. Restore the beauty from within.">
     <meta name="keywords" content="caldwell cosmetics aesthetics, caldwell cosmetics, aesthetic clinic, skin treatments, beauty, wales, natural, healthy, skin">
-
-    {% load static %}
 
     <!-- Browser title and favicon -->
     <title>{% block title %}Caldwell Cosmetics{% endblock %}</title>
@@ -58,6 +57,7 @@
 
     <footer class="footer-main">
         <div id="footer-background-image">
+
             <!-- Back to top button -->
             <div class="back-to-top">
                 <a href="#" aria-label="Back to the top!" title="Back To Top!">
@@ -65,28 +65,9 @@
                 </a>
             </div>
 
+            <!-- Subscription Form -->
             <section class="py-3 py-md-5 py-xl-10 subscribe-newsletter">
-                <div class="container">
-                <div class="row justify-content-md-center">
-                    <div class="col-12 col-md-9 col-lg-8 col-xl-7 col-xxl-6">
-                    <h2 class="display-4 mb-4 mb-md-5 mb-xxl-6 text-center">Sign up to our newsletter and never miss a thing.</h2>
-                    </div>
-                </div>
-                <div class="row justify-content-md-center">
-                    <div class="col-12 col-md-10 col-lg-9 col-xl-8 col-xxl-7">
-                    <form class="row gy-3 gy-lg-0 gx-lg-2 justify-content-center">
-                        <div class="col-12 col-lg-8">
-                        <label for="email-newsletter-component" class="visually-hidden">Email Address</label>
-                        <input type="email" class="form-control bsb-form-control-3xl" id="email-newsletter-component" value="" placeholder="Email Address" aria-label="email-newsletter-component" aria-describedby="email-newsletter-help" required>
-                        <div id="email-newsletter-help" class="form-text text-start text-lg-start">We'll never share your email with anyone else.</div>
-                        </div>
-                        <div class="col-12 col-lg-3 text-center text-lg-start">
-                        <button type="submit" id="subscribe-btn" class="btn btn-primary bsb-btn-3xl">Subscribe</button>
-                        </div>
-                    </form>
-                    </div>
-                </div>
-                </div>
+            {% include 'letter/_newsletter_form.html' %}
             </section>
 
             <section id="socials" class="container">

@@ -1,0 +1,513 @@
+/* Colour References
+
+    Background colours:
+
+    Body background: rgb(255, 251, 249); Off-White
+    Body background: rgb(253 247 245); Cream
+    Hero image tint overlay: rgba(95, 95, 95, 0.4);
+    Accent (peach): ##eed6c2;
+
+    ----------------------
+
+    Font Colours:
+    Dark Brown: color: #302321; (also used for social media links)
+
+    Button Colours:
+    Subscribe border: solid #9e754e;
+    Subscribe background-color: #c09061;
+
+
+
+
+
+
+*/
+
+/* Wildcard selector to override default styles added by the browser */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------------------General styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color:rgb(253 247 245);
+    font-size: 14px;
+}
+
+/* Heading styles */
+h2, h3, h4, h5, h6 {
+    color: black;
+    text-transform: uppercase;
+}
+
+.small-hr {
+    border: 1px solid rgba(0, 0, 0, 0.5); /* Add transparency to the border color */
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Style to hide unwanted headings */
+.hidden-heading {
+    display: none;
+}
+
+.hidden-cover-text {
+    display: none;
+}
+
+/* Style to remove underline from hyperlinks */
+a {
+    text-decoration: none;
+}
+
+/* -----------------------------------Navigation bar styles */
+
+/* Styles for the navbar container */
+.navbar-container {
+    background-color: transparent;
+    padding-top: 0!important;
+    box-sizing: border-box;
+    z-index: 1000;
+    position: absolute;
+    height: auto;
+    width: 100%;
+}
+
+/* Style for the logo link in navbar */
+.logo-link>img {
+    max-width: 80px;
+    max-height: 40px;
+}
+
+/* Styles for the navbar button icon to override Bootstrap */
+.navbar-toggler {
+    background-color: #eed6c280;
+}
+
+/* Styles for the navbar dropdown items */
+#navbarNav>ul {
+    display: flex;
+    text-align: right;
+}
+
+#navbarNav>ul a {
+    color: #eed6c2;
+    text-transform: uppercase;
+    padding-right: 0.3em;
+}
+
+.active {
+    color: #e09e67!important;
+    text-decoration: underline;
+    font-size: 18px;
+}
+
+.sign-up a {
+    color: #fff;
+}
+
+/* ------------------------------------------------Hero section */
+.hero {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.color-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(95, 95, 95, 0.4);
+}
+
+
+/* Colour overlay to dim the background image */
+.color-overlay::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(95, 95, 95, 0.4);
+    margin: 0;
+    display: block;
+    height: auto;
+    width: 100%;
+}
+
+.cover-text {
+    letter-spacing: 0.4mm;
+    text-transform: uppercase;
+    color:#e9e9e9;
+}
+
+#est-tag {
+    font-size: 70%;
+    color: azure;
+    padding-bottom: 2em;
+}
+
+#home-cover-heading, #treatments-cover-heading, #bookings-cover-heading, #contact-cover-heading {
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+    font-size: 2.1em;
+    font-weight: 400;
+    letter-spacing: 2mm;
+    color: #bebebe;
+    text-shadow:5px 7px 0 #313131;
+}
+
+/* -----------------------------------------------Scrolling text styles */
+
+/* Styles for the scroll container */ 
+#scroll-container {
+    border-bottom: 3px groove #ecd2be9a;
+    width:100%;
+    padding: 5px 10px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#scroll-text {
+  /* Set the initial position of the text for the animation */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  
+  /* Set the animation properties */
+  -moz-animation: my-animation 27s linear infinite;
+  -webkit-animation: my-animation 27s linear infinite;
+  animation: my-animation 27s linear infinite;
+}
+
+/* Define the animation keyframes for Firefox */
+@-moz-keyframes my-animation {
+  from { -moz-transform: translateX(100%); }
+  to { -moz-transform: translateX(-100%); }
+}
+
+/* Define the animation keyframes for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(100%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+/* Animation keyframes */
+@-moz-keyframes my-animation {
+    from { -moz-transform: translateX(200%); }
+    to { -moz-transform: translateX(-200%); }
+  }
+  
+  @-webkit-keyframes my-animation {
+    from { -webkit-transform: translateX(200%); }
+    to { -webkit-transform: translateX(-200%); }
+  }
+  
+  @keyframes my-animation {
+    0% {
+      -moz-transform: translateX(200%);
+      -webkit-transform: translateX(200%);
+      transform: translateX(200%);
+    }
+  
+    50% { 
+      -moz-transform: translateX(-200%);
+      -webkit-transform: translateX(-200%);
+      transform: translateX(-200%);
+    }
+  
+    100% {
+      -moz-transform: translateX(200%);
+      -webkit-transform: translateX(200%);
+      transform: translateX(200%);
+    }
+  }
+
+/* Style to push main content to fill page */
+main {
+    flex: 1 0 auto;
+}
+
+/* ------------------------------------------Home page content */
+
+/* ------------------------------------------About */
+
+.about {
+    padding: 2em 0;
+    text-align: center;
+    margin: 0 2.5%;
+}
+
+.about>div>div>h2 {
+    font-size: 90%;
+    padding-bottom: 0.5em;
+    letter-spacing: 0.7mm;
+}
+
+.page-divider {
+    border: 2px solid black;
+    margin: 0px 12rem;
+}
+
+/* ------------------------------------------Google Maps */
+
+#maps {
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+#maps h2 {
+    text-align: center;
+    font-size: 100%;
+    letter-spacing: 0.7mm;
+}
+
+/* ------------------------------------------Treatments */
+
+.treatments h2.text-uppercase {
+    font-size: 90%!important;
+    padding-bottom: 0.5em!important;
+    letter-spacing: 0.7mm!important;
+    text-align: center;
+}
+
+#about-treatments img {
+    border-radius: 25px;
+}
+
+.treatment-item {
+    margin-bottom: 10px;
+}
+
+.treatment-item h4 {
+    margin-bottom: 0px;
+}
+
+.bottom-overlay {
+    position: relative;
+    margin-top: -52px;
+    text-align: center;
+    background-color:#313131ea; /* Background color with opacity */
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding-bottom: 10px; /* Adjust padding as needed */
+}
+
+.bottom-overlay > h6 {
+    color: #fff;
+    vertical-align: middle;
+    padding-top: 15px;
+}
+
+/* ---------------------------------------------Footer Content */
+
+.footer-main {
+    background-color:#eed6c2;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    position: relative;
+    margin-top: 10px;
+    border-top: 2px ridge black;
+}
+
+.footer-main h6 {
+    font-size: 8px;
+    font-weight: 700;
+}
+
+/* Background image for the footer */
+
+#footer-background-image {
+    position: relative; /* Required to position the pseudo-element */
+    z-index: 1;
+}
+
+#footer-background-image::before {
+    content: "";
+    position: absolute;
+    background-image:url("../images/footer-overlay.e65c642ee128.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/* Style for back-to-top class */
+.back-to-top {
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+    /* Stick to the bottom of the viewport */
+    padding-top: 2px;
+    margin-bottom: 0;
+    font-size: 120%;  
+}
+
+.back-to-top a {
+    color: #302321; 
+}
+
+.back-to-top a:hover {
+    color:rgb(221, 189, 102);
+}
+
+/* Styles for the subscribe to newsletter section */
+
+.subscribe-newsletter h2 {
+    font-size: 14px;
+}
+
+#email-newsletter-help {
+    padding-left: 5px;
+}
+
+/* -------------------------------------Social media links */
+
+.social-networks {
+    padding-top: 10px;
+    margin: 5px 4%;
+}
+
+.social-networks>ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: none;
+    padding-left: 0px;
+    padding-right: 0px!important;
+}
+
+.social-networks li {
+    text-align: center;
+}
+
+.social-networks a {
+    font-size: 32px;
+    color: #302321;
+}
+
+/* Footer address styles */
+
+#footer-box {
+    padding-top: 0.5%;
+    padding-bottom: 1%;
+}
+
+#footer-address {
+    color: #302321;
+    letter-spacing: .5mm;
+    font-size: 80%;
+}
+
+#footer-address p {
+    margin: 0.1rem;
+    font-size: 8px;
+}
+
+#footer-directions {
+    color: #302321;
+    font-size: 32px;
+    padding-top: 30px;
+}
+
+#footer-directions a>i {
+    color: #302321;
+    font-size: 30px;
+}
+
+#footer-directions p {
+    text-align: center;
+}
+
+.footer-contact p {
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+#footer-contact-links {
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.footer-contact a {
+    font-size: 8px;
+    margin-bottom: 2px;
+}
+
+.small-print {
+    font-size: 60%;
+    color: #302321;
+    padding-bottom: 10px;
+}
+
+/* ------------------------Modal Container */
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#accept {
+    background-color: #4CAF50; 
+    color: white;
+}
+
+#decline {
+    background-color: #f44336; 
+    color: white;
+}

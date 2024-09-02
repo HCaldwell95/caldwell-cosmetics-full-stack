@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import sys
 import dj_database_url
 import environ
 import django_heroku
@@ -37,7 +38,11 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['caldwell-cosmetics-full-stack-ecf887f27496.herokuapp.com', 'localhost', '*']
+ALLOWED_HOSTS = [
+    'caldwell-cosmetics-full-stack-ecf887f27496.herokuapp.com', 
+    'localhost', 
+    '*'
+]
 
 # Application definition
 
@@ -48,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor',
     'home_details',
     'treatment_details',
 
@@ -88,6 +94,12 @@ WSGI_APPLICATION = 'caldwell_cosmetics.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.gitpod.io",
+    "https://*herokuapp.com",
+    "https://*.codeinstitute-ide.net"
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -135,3 +147,18 @@ django_heroku.settings(locals())
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = 'a2f7ee15d94dec'
+EMAIL_HOST_PASSWORD = '9366b8dc23a411'
+EMAIL_PORT = 2525
+DEFAULT_FROM_EMAIL = 'caldwellcosmetics@hotmail.com'
+
+if 'test' in sys.argv:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': ':memory:',
+        }
+    }

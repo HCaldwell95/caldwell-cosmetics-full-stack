@@ -44,8 +44,41 @@ Brief description of the whole website
 | [16](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/16) | As an admin, I can log in so that I can access the website's backend. | Must Have |
 | [17](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/17) | As an admin, I can delete appointments booked by users so that I can alter bookings and amend errors when required. | Must Have |
 
+
+
+## References
+
+https://www.youtube.com/watch?v=LL6qXu8FmVo - Subscription Newsletter Feature
+
 ## Educational Disclaimer
 
 This project has been created as a part of my personal learning journey in Full-Stack development. It is intended for educational purposes only and should not be considered a fully functional or production-ready application. The project may contain bugs, security vulnerabilities, or incomplete features, as it is designed to demonstrate concepts and practices learned during my studies.
 
 By using this project, you acknowledge that it is a work in progress and should not be used in a live environment without further review and testing. I do not assume any responsibility for any issues, damages, or losses that may arise from its use.
+
+
+## Personal Notes
+
+Subscription Newsletter Functions:
+
+    home_details Function:
+
+    Purpose: Renders the home page template.
+    Arguments: Takes an HTTP request object.
+    Returns: An HTTP response that renders the home.html template.
+    subscribe_to_newsletter Function:
+
+    Purpose: Handles the subscription process for the newsletter.
+
+    Arguments: Takes an HTTP request object.
+
+    Returns: A JSON response indicating whether the subscription was successful or if there were errors.
+
+    Steps:
+    Check Request Method: Ensures the request method is POST.
+    Form Handling: Creates a form instance with POST data and checks its validity.
+    Save Subscriber: If valid, saves the subscriber to the database.
+    Prepare Email: Constructs the email content using a template and context.
+    Send Email: Sends an email to the subscriber using Django's send_mail function.
+    Respond to AJAX: Sends a JSON response indicating success or failure.
+    Invalid Request Handling: If the request is not POST, responds with an error message.
