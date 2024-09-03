@@ -298,6 +298,48 @@ Basic wireframes are provided below. Please note that these may differ slightly 
 
 # Bugs
 ## Resolved
+
+### Bug Report(Resolved): Unresponsive Modal with Backdrop Issue
+
+#### Description
+
+When implementing the Subscription Newsletter Model, the goal was to display error messages within a pop-up modal. Although the errors were successfully arranged to appear within the modal, the modal itself was unresponsive to user interactions. This issue prevented users from interacting with or closing the modal.
+
+#### Symptoms
+
+- The modal pop-up appeared as expected but was unresponsive.
+- A grey overlay was present behind the modal, which was not intended.
+- Despite confirming that the JavaScript (JS) was loaded correctly via `console.log` messages, the modal functionality was impaired.
+
+#### Diagnosis
+
+Upon investigating, it was found that the grey overlay (backdrop) was causing the issue. The backdrop was likely interfering with the modal's responsiveness, as it should not have been present in this context.
+
+#### Solution
+
+The issue was resolved by removing the backdrop. This was achieved by adding the `data-bs-backdrop="false"` attribute to the modal `<div>`. This adjustment removed the unwanted grey overlay and restored the modal's responsiveness.
+
+#### Example of Fixed Modal HTML
+
+```html
+<div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true" data-bs-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="errorModalLabel">Subscription Error</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal-body-content">
+                <!-- Error messages will be inserted here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
 ## Unresolved
 
 # Deployment
