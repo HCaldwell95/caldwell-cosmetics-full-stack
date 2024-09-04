@@ -16,9 +16,9 @@
                 </div>
                 {% endfor %}
 
-                <form class="row gy-3 gy-lg-0 gx-lg-2 justify-content-center" id="newsletter-form" method="POST" action="{% url 'subscribe_to_newsletter' %}">
+                <form class="row gy-3 gy-lg-0 gx-lg-2 justify-content-center" id="newsletter-subscription-form" method="POST" action="{% url 'subscribe_to_newsletter' %}">
                     {% csrf_token %}
-                    <div class="col-12 col-lg-3 text-center text-lg-start">
+                    <div class="col-12 d-flex flex-column flex-md-row flex-lg-row align-items-center">
                         <input type="email" class="form-control bsb-form-control-3xl" id="email-newsletter-component" name="email" value="" placeholder="Email Address" aria-label="email-newsletter-component" aria-describedby="email-newsletter-help" required>
                         <button type="submit" id="subscribe-btn" class="btn btn-primary bsb-btn-3xl">Subscribe</button>
                     </div>

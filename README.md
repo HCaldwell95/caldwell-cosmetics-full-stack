@@ -308,7 +308,7 @@ When implementing the Subscription Newsletter Model, the goal was to display err
 #### Symptoms
 
 - The modal pop-up appeared as expected but was unresponsive.
-- A grey overlay was present behind the modal, which was not intended.
+- A grey overlay was present behind the modal and also over the modal dialogue pop up, which was not intended.
 - Despite confirming that the JavaScript (JS) was loaded correctly via `console.log` messages, the modal functionality was impaired.
 
 #### Diagnosis

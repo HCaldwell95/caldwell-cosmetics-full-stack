@@ -520,3 +520,384 @@ button {
     background-color: #f44336; 
     color: white;
 }
+
+
+/* ---------------------------------------------Media queries */
+
+/* Unique to tablets to ensure grey background doesn't transfer with the rest of the accumilitive styles */
+@media (min-width: 768px) and (max-width: 1199.98px){
+    .md-lg-treatments {
+        background-color: rgba(95, 95, 95, 0.1);
+        border-radius: 10px;
+        padding: 30px;
+    }
+}
+
+/* -------------------------------------Medium devices such as tablets in landscape mode or small laptops (768px and up) */
+@media screen and (min-width: 768px) {
+
+    /* -----------------------------------Navigation bar styles */
+
+    .logo-link>img {
+        max-height: 75px;
+        max-width: 75px;
+        padding-top: 5px;
+    }
+
+    .active {
+        background-color: rgba(95, 95, 95, 0.4);
+        border-radius: 5px;
+    }
+
+    #navbarNav>ul a {
+        font-size: large;
+    }
+
+    /* ------------------------------------------Hero image content */
+
+    .hero > div {
+        max-height: 28.125rem;
+    }
+
+    .hero > div > img {
+        max-height: 28.125rem;
+        width: 100%;
+    }
+
+    #home-cover-heading {
+        font-size: 3em;
+        letter-spacing: 5mm;
+        padding-top: 30px;
+        text-shadow:8px 10px 0 #313131;
+    }
+
+    .cover-text {
+        padding-top: 20px;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.5mm;
+    }
+
+    .cover-text-md {
+        letter-spacing: 0.4mm;
+        padding-top: 10px;
+        text-transform: capitalize;
+        font-style:italic;
+        font-weight: 300;
+        color:#e9e9e9;
+        margin: 0px -50px;
+    }
+
+    /* -----------------------------------------------Scrolling text styles */
+
+    #scroll-text {
+        font-size: 16px;
+        /* Set the animation properties */
+        -moz-animation: my-animation 40s linear infinite;
+        -webkit-animation: my-animation 40s linear infinite;
+        animation: my-animation 40s linear infinite;
+
+      }
+
+    /* ------------------------------------------About */
+
+    .about>div>div>h2 {
+        font-size: 18px;
+    }
+
+
+    .about>div>div>p {
+        font-size: 16px;
+    }
+
+    /* ---------------------------------------Google Maps */    
+
+    #maps h2 {
+        text-align: center;
+        font-size: 100%;
+        letter-spacing: 0.7mm;
+    }
+
+    /* ------------------------------------------Treatments */
+
+    .treatment-item {
+        vertical-align: middle;
+        margin-bottom: 20px;
+    }
+
+    .treatment-item img {
+        border-radius: 15px;
+        margin-right: 0!important;
+        padding-right: 0!important;
+    }
+
+    .treatment-item small {
+        font-size: 16px;
+    }
+
+
+
+    .md-treatments img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* ---------------------------------------Footer styles */
+
+    .back-to-top {
+        padding-bottom: 10px;
+        font-size: 32px;
+    }
+
+    /* -------------------------------Subscribe row */
+    
+    .subscribe-newsletter {
+        padding-top: 5px!important;
+        padding-bottom: 5px!important;
+        width: 100%;
+        align-items: center;
+    }
+
+    .subscribe-newsletter h2 {
+        font-size: 18px;
+    }
+
+    .subscribe-newsletter h2 {
+        margin-bottom: 8px!important;
+    }
+
+    .subscribe-newsletter h2 {
+        padding-right: 45px;
+    }
+
+    #email-newsletter-help {
+        font-size: 16px;
+        padding-left: 6px;
+    }
+
+    #newsletter-sign-up {
+        margin-bottom: 40px;
+    }
+
+    /* -------------------------------Social media links */
+
+    .social-networks {
+        font-size: 16px;
+    }
+
+    /* -------------------------------Address column */
+
+    #footer-address h6 {
+        margin-bottom: 0.2rem;
+        font-size: 1rem;
+    }
+    
+    #footer-address p {
+        margin: 0.1rem;
+        font-size: 1rem;
+    }
+
+    /* -------------------------------Directions column */
+    
+    #footer-directions a>i {
+        color: #302321;
+        font-size: 40px;
+    }
+
+
+    /* -------------------------------Contact column */
+
+    .footer-contact p {
+        font-size: 20px;
+        margin-bottom: 2px;
+    }
+    
+    #footer-contact-links {
+        padding: 0;
+    }
+    
+    .footer-contact a {
+        font-size: 16px;
+        margin-bottom: 2px;
+    }
+}
+
+/* -------------------------------------Large devices such as laptops and small desktops (1024px and up) */
+@media screen and (min-width: 1024px) {
+
+    body {
+        align-items: center;
+    }
+
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .logo-link>img {
+        max-height: 75px;
+        max-width: 75px;
+    }
+
+    .hero > div {
+        max-height: 35rem;
+    }
+
+    .hero > div > img {
+        max-height: 35rem;
+        width: 100%;
+    }
+
+    #home-cover-heading {
+        font-size: 4em; 
+        letter-spacing: 10mm;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    #est-tag {
+        color: transparent;
+    }
+
+    .cover-text {
+        margin: 0px -50px;
+        padding-bottom: 100px;
+    }
+
+    #scroll-text {
+        font-size: 20px;
+        font-weight: 600;
+        /* Set the animation properties */
+        -moz-animation: my-animation 50s linear infinite;
+        -webkit-animation: my-animation 50s linear infinite;
+        animation: my-animation 50s linear infinite;
+    }
+
+    .about>div>div>h2 {
+        font-size: 22px;
+    }
+
+
+    .about>div>div>p {
+        font-size: 28px;
+    }
+
+
+    .gmap_canvas iframe {
+        width: 100%;
+        height: 500px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+
+    .treatment-item {
+        margin-bottom: 40px;
+    }
+
+    .treatment-item>div>div>div>p {
+        font-size: 16px;
+    }
+
+    .back-to-top {
+        font-size: 46px;
+    }
+
+    .subscribe-newsletter {
+        padding-top: 5px!important;
+        padding-bottom: 5px!important;
+        width: 100%;
+    }
+
+    .subscribe-newsletter h2 {
+        font-size: 20px;
+    }
+
+    .subscribe-newsletter h2 {
+        margin-bottom: 8px!important;
+    }
+
+    #email-newsletter-help {
+        font-size: 16px;
+        padding-left: 6px;
+    }
+
+    /* ---------------------------------------Footer styles */
+}
+
+/* -------------------------------------Larger devices such as large desktops (1280px and up) */
+@media screen and (min-width: 1280px) {
+
+    .logo-link>img {
+        max-height: 110px;
+        max-width: 110px;
+    }
+
+    .hero > div {
+        min-height: 40rem;
+        max-height: 50rem
+    }
+
+    .hero > div > img {
+        min-height: 40rem;
+        max-height: 50rem;
+        width: 100%;
+    }
+
+    #home-cover-heading {
+        font-size: 5em;
+        letter-spacing: 10mm;
+        padding-top: 20px;
+        padding-bottom: 50px;
+        text-shadow:12px 14px 0 #313131;
+    }
+
+    #est-tag {
+        color: transparent;
+    }
+
+    .cover-text {
+        margin: 0px -50px;
+        padding-bottom: 150px;
+        font-size: 26px;
+    }
+
+    #scroll-text {
+
+        /* Set the animation properties */
+        -moz-animation: my-animation 55s linear infinite;
+        -webkit-animation: my-animation 55s linear infinite;
+        animation: my-animation 55s linear infinite;
+    }
+
+    .about {
+        font-size: 24px;
+    }
+
+    .about div > div > h2 {
+        font-size: 32px;
+    }
+
+    #maps h2 {
+        font-size: 32px;
+    }
+
+    .gmap_canvas iframe {
+        width: 100%;
+        height: 700px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+
+    .treatment-item {
+        margin-bottom: 80px;
+    }
+
+    .treatment-item > div > div p {
+        font-size: 20px;
+      }
+
+
+    /* ---------------------------------------Footer styles */
+
+}
