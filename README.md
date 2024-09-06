@@ -224,7 +224,6 @@ Basic wireframes are provided below. Please note that these may differ slightly 
 * [Treatments](image.jpg "Treatments") – The Treatments Page is very similar to the Home Page as I wanted to maintain consistency throughout the website, with each page acting as a different comprehensive source of information.
 * [Meet The Team](image.jpg "Meet The Team") – The Meet The Team Page follows the same rulings and stylings as the Home Page and Treatments Page, showing only detailed information on the practitioners at Caldwell Cosmetics.
 * [My Bookings](image.jpg "My Bookings") – The Bookings Page follows the trend, displaying only the information and fields required to create, edit and delete bookings.
-\
 
 
 
@@ -272,6 +271,19 @@ Basic wireframes are provided below. Please note that these may differ slightly 
 ## Code Validation
 ### W3C HTML Validator
 #### First Attempt of Home Page
+
+IMAGE SHOWING VALIDATOR ISSUE 8
+
+The primary issue that arose in the first attempt was the inclusion of an anchor tag inside a button tag. This was rectified by replacing the anchor tags with some simple JavaScript to handle the button's action, as demonstrated by the code snippet below.
+
+```
+<div class="d-none d-md-block sign-up">
+    <button type="button" class="btn btn-dark" onclick="location.href='/login'">
+        Sign In / Sign Up
+    </button>
+</div>
+```
+
 #### Final Attempt of Home Page
 #### Only Attempt of the Django Templates
 #### First Attempt of Bookings Page

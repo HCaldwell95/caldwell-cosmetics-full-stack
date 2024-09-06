@@ -1,6 +1,8 @@
-<!DOCTYPE html>
 {% load static %}
+
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +13,7 @@
     <title>{% block title %}Caldwell Cosmetics{% endblock %}</title>
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="64x64" href="{% static 'favicon/favicon.ico' %}">
+    <link rel="icon" type="image/x-icon" sizes="64x64" href="{% static 'favicon/favicon.ico' %}">
     
     <!-- Bootstrap CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
@@ -25,31 +27,31 @@
 </head>
 
 <body>
-        <nav class="navbar navbar-light navbar-expand-sm navbar-container">
-            <div class="container-fluid">
-                <a href="/" class="navbar-brand mr-auto logo-link"><img src="{% static 'images/mini-logo.png' %}" alt="Logo"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="{% url 'home_details' %}">Home</a></li>
-                        <!-- Add other nav items here -->
-                    </ul>
-                </div>
-                <div class="d-none d-md-block sign-up">
-                    <button type="button" class="btn btn-dark">
-                        <a href="/login" class="text-white text-decoration-none">Sign In / Sign Up</a>
-                    </button>
-                </div>
+    <nav class="navbar navbar-light navbar-expand-sm navbar-container">
+        <div class="container-fluid">
+            <a href="/" class="navbar-brand mr-auto logo-link"><img src="{% static 'images/mini-logo.png' %}" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="{% url 'home_details' %}">Home</a></li>
+                    <!-- Add other nav items here -->
+                </ul>
             </div>
-        </nav>
+            <div class="d-none d-md-block sign-up">
+                <button type="button" class="btn btn-dark" onclick="location.href='/login'">
+                    Sign In / Sign Up
+                </button>
+            </div>
+        </div>
+    </nav>
         
     <!-- Hero Section Block -->
      {% block hero %}
      {% endblock %}
 
-    <main role="main" class="container">
+    <main class="container">
         {% block content %}
         <!-- Page content goes here -->
         {% endblock %}
@@ -67,6 +69,7 @@
 
             <!-- Subscription Form -->
             <section class="py-3 py-md-5 py-xl-10 subscribe-newsletter">
+                <h2 class="hidden-heading">Subscription Newsletter</h2>
             {% include 'letter/_newsletter_form.html' %}
             </section>
 
@@ -89,53 +92,54 @@
                         </li>
                     </ul>
                 </div>
-            
-
-                <div id="footer-box" class="container">
-                    <h2 class="hidden-heading">Footer</h2>
-                    <div class="row align-items-center">
-                        <div id="footer-address" class="col-5">
-                            <h6>Address</h6>
-                            <p>Caldwell Cosmetics</p>
-                            <p>Abergele</p>
-                            <p>LL22 7AG</p>
-                            <p>Wales</p>
-                        </div>
-
-                        <div id="footer-directions" class="col-2 align-items-center">
-                            <p>
-                                <a href="https://www.google.com/maps/place/Caldwell+Cosmetics/@53.2844531,-3.5827278,19.25z/data=!4m6!3m5!1s0x486527aea5d34a3b:0xe971a1dfa0e61a2c!8m2!3d53.2844829!4d-3.5825193!16s%2Fg%2F11ldxxlkc9?hl=en-GB&entry=ttu" 
-                                target="_blank" rel="noopener" aria-label="View on Google Maps"><i class="fa-solid fa-location-crosshairs"></i></i></a>
-                            </p>
-                        </div>
-
-                        <div class="col-3 text-end footer-contact">
-                            <p>
-                                <i class="fa-solid fa-phone"></i>
-                            </p>
-                            
-                            <p>
-                                <i class="fa-solid fa-envelope"></i>
-                            </p>
-                            <p>
-                                <i class="fa-regular fa-calendar-days"></i>
-                            </p>
-                        </div>
-
-                        <div id="footer-contact-links" class="col-2 text-start footer-contact">
-                            <p>
-                                <a href="tel:07399098081">07399 098081</a>
-                            </p>
-                            
-                            <p>
-                                <a href="mailto:caldwellcosmetics@hotmail.com">Email now!</a>
-                            </p>
-                            <p>
-                                <a href="https://portal.aestheticnursesoftware.com/book-online/8300" id="external-link" target="_blank">Book now!</a>
-                            </p>
-                        </div>
-                    </div>
             </section>
+            
+            
+            <div id="footer-box" class="container">
+                <h2 class="hidden-heading">Footer</h2>
+                <div class="row align-items-center">
+                    <div id="footer-address" class="col-5">
+                        <h6>Address</h6>
+                        <p>Caldwell Cosmetics</p>
+                        <p>Abergele</p>
+                        <p>LL22 7AG</p>
+                        <p>Wales</p>
+                    </div>
+
+                    <div id="footer-directions" class="col-2 align-items-center">
+                        <p>
+                            <a href="https://www.google.com/maps/place/Caldwell+Cosmetics/@53.2844531,-3.5827278,19.25z/data=!4m6!3m5!1s0x486527aea5d34a3b:0xe971a1dfa0e61a2c!8m2!3d53.2844829!4d-3.5825193!16s%2Fg%2F11ldxxlkc9?hl=en-GB&entry=ttu" 
+                            target="_blank" rel="noopener" aria-label="View on Google Maps"><i class="fa-solid fa-location-crosshairs"></i></a>
+                        </p>
+                    </div>
+
+                    <div class="col-3 text-end footer-contact">
+                        <p>
+                            <i class="fa-solid fa-phone"></i>
+                        </p>
+                        
+                        <p>
+                            <i class="fa-solid fa-envelope"></i>
+                        </p>
+                        <p>
+                            <i class="fa-regular fa-calendar-days"></i>
+                        </p>
+                    </div>
+
+                    <div id="footer-contact-links" class="col-2 text-start footer-contact">
+                        <p>
+                            <a href="tel:07399098081">07399 098081</a>
+                        </p>
+                        
+                        <p>
+                            <a href="mailto:caldwellcosmetics@hotmail.com">Email now!</a>
+                        </p>
+                        <p>
+                            <a href="https://portal.aestheticnursesoftware.com/book-online/8300" id="external-link" target="_blank">Book now!</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
