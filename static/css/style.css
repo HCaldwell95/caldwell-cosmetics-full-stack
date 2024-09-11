@@ -543,19 +543,21 @@ button {
     /* -----------------------------------Navigation bar styles */
 
     .logo-link>img {
-        max-height: 75px;
-        max-width: 75px;
+        max-height: 110px;
+        max-width: 110px;
         padding-top: 5px;
     }
 
     .active {
-        background-color: rgba(95, 95, 95, 0.4);
-        border-radius: 5px;
+        background-color: rgba(95, 95, 95, 0.2);
+        border-radius: 10px;
     }
 
     #navbarNav>ul a {
         font-size: large;
     }
+
+}
 
     /* ------------------------------------------Hero image content */
 
@@ -566,6 +568,7 @@ button {
     .hero > div > img {
         max-height: 28.125rem;
         width: 100%;
+        object-fit: fill;
     }
 
     #home-cover-heading {
@@ -573,6 +576,12 @@ button {
         letter-spacing: 5mm;
         padding-top: 30px;
         text-shadow:8px 10px 0 #313131;
+    }
+
+    #est-tag {
+        font-size: 100%;
+        padding-bottom: 0.5em;
+        letter-spacing: 0.9mm;
     }
 
     .cover-text {
@@ -606,12 +615,12 @@ button {
     /* ------------------------------------------About */
 
     .about>div>div>h2 {
-        font-size: 18px;
+        font-size: 20px;
     }
 
 
     .about>div>div>p {
-        font-size: 16px;
+        font-size: 18px;
     }
 
     /* ---------------------------------------Google Maps */    
@@ -623,6 +632,13 @@ button {
     }
 
     /* ------------------------------------------Treatments */
+
+    .treatments h2.text-uppercase {
+        font-size: 120% !important;
+        padding-bottom: 1em !important;
+        letter-spacing: 0.9mm !important;
+        text-align: center;
+    }
 
     .treatment-item {
         vertical-align: middle;
@@ -643,6 +659,13 @@ button {
         width: 100%;
         height: auto;
         display: block;
+    }
+
+    /* ---------------------------------------Map styles */
+
+    #maps h2 {
+        font-size: 120%;
+        letter-spacing: 0.9mm;
     }
 
     /* ---------------------------------------Footer styles */
@@ -719,7 +742,6 @@ button {
         font-size: 16px;
         margin-bottom: 2px;
     }
-}
 
 /* -------------------------------------Large devices such as laptops and small desktops (1024px and up) */
 @media screen and (min-width: 1024px) {
@@ -733,10 +755,18 @@ button {
         padding-right: 0;
     }
 
-    .logo-link>img {
-        max-height: 75px;
-        max-width: 75px;
+    /* ------------------- Navbar Styles */
+
+    #navbarNav>ul a {
+        font-size: 30px;
     }
+
+    .custom-btn {
+        padding: 0.475 1.3rem !important;
+        font-size: 30px !important;
+    }
+
+    /* ------------------- Hero image content */
 
     .hero > div {
         max-height: 35rem;
@@ -829,23 +859,25 @@ button {
 @media screen and (min-width: 1280px) {
 
     .logo-link>img {
-        max-height: 110px;
-        max-width: 110px;
+        max-height: 210px;
+        max-width: 210px;
     }
 
+
+    /* ---------------- Hero Styles */
     .hero > div {
         min-height: 40rem;
-        max-height: 50rem
+        max-height: 55rem
     }
 
     .hero > div > img {
         min-height: 40rem;
-        max-height: 50rem;
+        max-height: 55rem;
         width: 100%;
     }
 
     #home-cover-heading {
-        font-size: 5em;
+        font-size: 6.5em;
         letter-spacing: 10mm;
         padding-top: 20px;
         padding-bottom: 50px;
@@ -859,7 +891,7 @@ button {
     .cover-text {
         margin: 0px -50px;
         padding-bottom: 150px;
-        font-size: 26px;
+        font-size: 30px;
     }
 
     #scroll-text {
@@ -868,18 +900,45 @@ button {
         -moz-animation: my-animation 55s linear infinite;
         -webkit-animation: my-animation 55s linear infinite;
         animation: my-animation 55s linear infinite;
+        font-size: 30px;
     }
 
+    /* --------------------About Styles */
     .about {
-        font-size: 24px;
+        font-size: 36px;
     }
 
     .about div > div > h2 {
-        font-size: 32px;
+        font-size: 40px;
     }
 
+    /* --------------------- Treatment Styles */
+
+    .treatments h2.text-uppercase {
+        font-size: 40px!important;
+        padding-bottom: 60px !important;
+    }
+
+    h4 {
+        font-size: 2.5rem;
+    }
+
+    .treatment-item small {
+        font-size: 26px;
+    }
+
+    .treatment-item {
+        margin-bottom: 80px;
+    }
+
+    .treatment-item > div > div p {
+        font-size: 30px;
+    }
+
+
+    /* ------------------ Map Styles */
     #maps h2 {
-        font-size: 32px;
+        font-size: 40px;
     }
 
     .gmap_canvas iframe {
@@ -888,14 +947,6 @@ button {
         margin: 0 auto;
         padding-bottom: 30px;
     }
-
-    .treatment-item {
-        margin-bottom: 80px;
-    }
-
-    .treatment-item > div > div p {
-        font-size: 20px;
-      }
 
 
     /* ---------------------------------------Footer styles */
