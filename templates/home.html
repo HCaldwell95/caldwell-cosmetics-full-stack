@@ -33,220 +33,213 @@
     {% block content %}
     <main class="container">
 
-    <!-- About Us Content -->
-     
-    <section class="about">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="text-uppercase">About Us</h2>
-                <hr>
+        <!-- About Us Content -->
+        
+        <section class="about">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-uppercase">About Us</h2>
+                    <hr>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <p>
-                    Caldwell Cosmetics offers carefully curated treatments to enhance inner beauty and promote a positive mindset. 
-                    Led by <a href="#" target="_blank">Rabia</a>, a Nurse with over six years experience working within the NHS, our mission is to redefine beauty through holistic well-being, accentuating individual uniqueness. 
-                    <br>
-                    <br>
-                    Specializing in skin treatments tailored to your radiance, we provide a serene environment adorned in calming hues, inviting you on a transformative journey 
-                    of self-love and confidence. 
-                    <br>
-                    <br>
-                    At Caldwell Cosmetics, we blend expertise with personalized care to nurture both external beauty and overall well-being, celebrating simplicity and helping you discover your best self. 
-                    <br>
-                    <br>
-                    As we continue to grow, we are excited to announce that we will be expanding our range of treatments to offer you even more options for enhancing your natural beauty and well-being. 
-                    Our future plans include introducing a variety of new treatments designed to address different aspects of skincare, wellness, and self-care.
-                </p>
-                <hr class="small-hr">
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Caldwell Cosmetics offers carefully curated treatments to enhance inner beauty and promote a positive mindset. 
+                        Led by <a href="#" target="_blank">Rabia</a>, a Nurse with over six years experience working within the NHS, our mission is to redefine beauty through holistic well-being, accentuating individual uniqueness. 
+                        <br>
+                        <br>
+                        Specializing in skin treatments tailored to your radiance, we provide a serene environment adorned in calming hues, inviting you on a transformative journey 
+                        of self-love and confidence. 
+                        <br>
+                        <br>
+                        At Caldwell Cosmetics, we blend expertise with personalized care to nurture both external beauty and overall well-being, celebrating simplicity and helping you discover your best self. 
+                        <br>
+                        <br>
+                        As we continue to grow, we are excited to announce that we will be expanding our range of treatments to offer you even more options for enhancing your natural beauty and well-being. 
+                        Our future plans include introducing a variety of new treatments designed to address different aspects of skincare, wellness, and self-care.
+                    </p>
+                    <hr class="small-hr">
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="container treatments">
-        <div class="row">
-            <h2 class="text-uppercase">Our Treatments</h2> 
-        </div>
-        <div id="about-treatments">
-            <div class="sm-treatments md-lg-treatments">
+        <section class="container treatments">
+            <div class="row">
+                <h2 class="text-uppercase">Our Treatments</h2> 
+            </div>
+            <div id="about-treatments">
+                <div class="sm-treatments md-lg-treatments">
 
-                <!------------ illumiFacial Treatment ------------->
-                <div class="row">
-                    <!-- Small Screen Content -->
-                    <div class="col-12 d-block d-md-none d-lg-none">
-                        <div class="col-md-3 treatment-item position-relative">
-                            <a href="#" class="stretched-link">
+                    <!------------ illumiFacial Treatment ------------->
+                    <div class="row">
+                        <!-- Small Screen Content -->
+                        <div class="col-12 d-block d-md-none d-lg-none">
+                            <div class="col-md-3 treatment-item position-relative">
+                                <a href="#" class="stretched-link">
+                                    <img src="{% static 'images/skin-rejuvenation.jpg' %}" alt="illumiFacial Treatment Image" class="img-fluid">
+                                    <div class="bottom-overlay">
+                                        <h6>illumiFacial®</h6>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Medium and Large Screen Content -->
+                        <div class="col-md-12 d-none d-md-block d-lg-flex treatment-item md-treatments">
+                            <div class="row d-flex flex-column flex-md-row align-items-center">
+                                <!-- Image Column -->
+                                <div class="col-md-6 col-lg-6">
                                 <img src="{% static 'images/skin-rejuvenation.jpg' %}" alt="illumiFacial Treatment Image" class="img-fluid">
-                                <div class="bottom-overlay">
-                                    <h6>illumiFacial®</h6>
                                 </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Medium and Large Screen Content -->
-                    <div class="col-md-12 d-none d-md-block d-lg-flex treatment-item md-treatments">
-                        <div class="row d-flex flex-column flex-md-row align-items-center">
-                            <!-- Image Column -->
-                            <div class="col-md-6 col-lg-6">
-                            <img src="{% static 'images/skin-rejuvenation.jpg' %}" alt="illumiFacial Treatment Image" class="img-fluid">
-                            </div>
-                        
-                            <!-- Text Column -->
-                            <div class="col-md-6 col-lg-6">
-                                <h4 class="font-weight-bold">illumiFacial®</h4>
-                                <small class="text-muted">Discover the Secret to Radiant Skin</small>
-                                <p>
-                                    This advanced treatment combines cutting-edge light therapy with a specially formulated serum to target and reduce the appearance 
-                                    of pigmentation, redness, and signs of aging. Ideal for all skin types, illumiFacial® helps to refine pores, improve skin texture, 
-                                    and enhance overall radiance. <br><a href="#">Learn more</a>
-                                </p>
+                            
+                                <!-- Text Column -->
+                                <div class="col-md-6 col-lg-6">
+                                    <h4 class="font-weight-bold">illumiFacial®</h4>
+                                    <small class="text-muted">Discover the Secret to Radiant Skin</small>
+                                    <p>
+                                        This advanced treatment combines cutting-edge light therapy with a specially formulated serum to target and reduce the appearance 
+                                        of pigmentation, redness, and signs of aging. Ideal for all skin types, illumiFacial® helps to refine pores, improve skin texture, 
+                                        and enhance overall radiance. <br><a href="#">Learn more</a>
+                                    </p>
+                                </div>
                             </div>
                         </div>
+                        <hr>
                     </div>
-                    <hr>
-                </div>
 
-                <!------------ IPL Hair Removal Treatment ------------->
-                <div class="row">
-                    <!-- Small Screen Content -->
-                    <div class="col-12 d-block d-md-none d-lg-none">
-                        <div class="col-md-3 treatment-item position-relative">
-                            <a href="#" class="stretched-link">
+                    <!------------ IPL Hair Removal Treatment ------------->
+                    <div class="row">
+                        <!-- Small Screen Content -->
+                        <div class="col-12 d-block d-md-none d-lg-none">
+                            <div class="col-md-3 treatment-item position-relative">
+                                <a href="#" class="stretched-link">
+                                    <img src="{% static 'images/lynton-hair-removal-shin.jpg' %}" alt="Laser Hair Removal Image" class="img-fluid">
+                                    <div class="bottom-overlay">
+                                        <h6>IPL Hair Removal</h6>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Medium and Large Screen Content -->
+                        <div class="col-md-12 d-none d-md-block d-lg-flex treatment-item md-treatments">
+                            <div class="row d-flex flex-column flex-md-row align-items-center">
+                                <!-- Image Column -->
+                                <div class="col-md-6 col-lg-6">
                                 <img src="{% static 'images/lynton-hair-removal-shin.jpg' %}" alt="Laser Hair Removal Image" class="img-fluid">
-                                <div class="bottom-overlay">
-                                    <h6>IPL Hair Removal</h6>
                                 </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Medium and Large Screen Content -->
-                    <div class="col-md-12 d-none d-md-block d-lg-flex treatment-item md-treatments">
-                        <div class="row d-flex flex-column flex-md-row align-items-center">
-                            <!-- Image Column -->
-                            <div class="col-md-6 col-lg-6">
-                            <img src="{% static 'images/lynton-hair-removal-shin.jpg' %}" alt="Laser Hair Removal Image" class="img-fluid">
-                            </div>
-                        
-                            <!-- Text Column -->
-                            <div class="col-md-6 col-lg-6">
-                                <h4 class="font-weight-bold">IPL Hair Removal</h4>
-                                <small class="text-muted">Achieve Silky Smooth Skin</small>
-                                <p>
-                                    Using Intense Pulsed Light (IPL) technology, this non-invasive procedure targets hair follicles, reducing hair growth and providing 
-                                    long-lasting results. Perfect for all areas of the body, IPL is effective on a variety of skin tones and hair types. 
-                                    Enjoy the freedom of reduced hair growth and the convenience of fewer shaving and waxing sessions. <br><a href="#">Learn more</a>
-                                </p>
+                            
+                                <!-- Text Column -->
+                                <div class="col-md-6 col-lg-6">
+                                    <h4 class="font-weight-bold">IPL Hair Removal</h4>
+                                    <small class="text-muted">Achieve Silky Smooth Skin</small>
+                                    <p>
+                                        Using Intense Pulsed Light (IPL) technology, this non-invasive procedure targets hair follicles, reducing hair growth and providing 
+                                        long-lasting results. Perfect for all areas of the body, IPL is effective on a variety of skin tones and hair types. 
+                                        Enjoy the freedom of reduced hair growth and the convenience of fewer shaving and waxing sessions. <br><a href="#">Learn more</a>
+                                    </p>
+                                </div>
                             </div>
                         </div>
+                        <hr>
                     </div>
-                    <hr>
-                </div>
 
-                <!------------ PRP Treatment ------------->
-                <div class="row">
-                    <!-- Small Screen Content -->
-                    <div class="col-12 d-block d-md-none d-lg-none">
-                        <div class="col-md-3 treatment-item position-relative">
-                            <a href="#" class="stretched-link">
+                    <!------------ PRP Treatment ------------->
+                    <div class="row">
+                        <!-- Small Screen Content -->
+                        <div class="col-12 d-block d-md-none d-lg-none">
+                            <div class="col-md-3 treatment-item position-relative">
+                                <a href="#" class="stretched-link">
+                                    <img src="{% static 'images/prp-treatment.jpg' %}" alt="Platelet Rich Plasma Treatment Image" class="img-fluid">
+                                    <div class="bottom-overlay">
+                                        <h6>Platelet Rich Plasma (PRP)</h6>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Medium and Large Screen Content -->
+                        <div class="col-md-12 d-none d-md-block d-lg-flex treatment-item md-treatments">
+                            <div class="row d-flex flex-column flex-md-row align-items-center">
+                                <!-- Image Column -->
+                                <div class="col-md-6 col-lg-6">
                                 <img src="{% static 'images/prp-treatment.jpg' %}" alt="Platelet Rich Plasma Treatment Image" class="img-fluid">
-                                <div class="bottom-overlay">
-                                    <h6>Platelet Rich Plasma (PRP)</h6>
                                 </div>
-                            </a>
+                            
+                                <!-- Text Column -->
+                                <div class="col-md-6 col-lg-6">
+                                    <h4 class="font-weight-bold">Platelet Rich Plasma (PRP)</h4>
+                                    <small class="text-muted">Revitalise Your Skin With PRP</small>
+                                    <p>
+                                        Unlock the rejuvenating power of your own blood with Platelet Rich Plasma (PRP) Treatments. This innovative therapy harnesses 
+                                        the growth factors in your blood to stimulate collagen production and enhance skin healing. PRP Treatments are ideal for improving 
+                                        skin texture, reducing fine lines and wrinkles, and promoting a youthful, radiant complexion. <a href="#">Learn more</a>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
+                        <hr>
                     </div>
 
-                    <!-- Medium and Large Screen Content -->
-                    <div class="col-md-12 d-none d-md-block d-lg-flex treatment-item md-treatments">
-                        <div class="row d-flex flex-column flex-md-row align-items-center">
-                            <!-- Image Column -->
-                            <div class="col-md-6 col-lg-6">
-                            <img src="{% static 'images/prp-treatment.jpg' %}" alt="Platelet Rich Plasma Treatment Image" class="img-fluid">
+                    <!------------ Anti Wrinkle Treatment ------------->
+                    <div class="row">
+                        <!-- Small Screen Content -->
+                        <div class="col-12 d-block d-md-none d-lg-none">
+                            <div class="col-md-3 treatment-item position-relative">
+                                <a href="#" class="stretched-link">
+                                    <img src="{% static 'images/botox-treatment.jpg' %}" alt="Platelet Rich Plasma Treatment Image" class="img-fluid">
+                                    <div class="bottom-overlay">
+                                        <h6>Anti Wrinkle Treatments</h6>
+                                    </div>
+                                </a>
                             </div>
-                        
-                            <!-- Text Column -->
-                            <div class="col-md-6 col-lg-6">
-                                <h4 class="font-weight-bold">Platelet Rich Plasma (PRP)</h4>
-                                <small class="text-muted">Revitalise Your Skin With PRP</small>
-                                <p>
-                                    Unlock the rejuvenating power of your own blood with Platelet Rich Plasma (PRP) Treatments. This innovative therapy harnesses 
-                                    the growth factors in your blood to stimulate collagen production and enhance skin healing. PRP Treatments are ideal for improving 
-                                    skin texture, reducing fine lines and wrinkles, and promoting a youthful, radiant complexion. <a href="#">Learn more</a>
-                                </p>
+                        </div>
+
+                        <!-- Medium and Large Screen Content -->
+                        <div class="col-md-12 d-none d-md-block d-lg-flex treatment-item md-treatments">
+                            <div class="row d-flex flex-column flex-md-row align-items-center">
+                                <!-- Image Column -->
+                                <div class="col-md-6 col-lg-6">
+                                <img src="{% static 'images/botox-treatment.jpg' %}" alt="Platelet Rich Plasma Treatment Image" class="img-fluid">
+                                </div>
+                            
+                                <!-- Text Column -->
+                                <div class="col-md-6 col-lg-6">
+                                    <h4 class="font-weight-bold">Anti Wrinkle Treatments</h4>
+                                    <small class="text-muted">A Naturally Refreshed Look with Expert Precision</small>
+                                    <p>
+                                        Designed to enhance your natural beauty with a subtle, refreshed look. Unlike traditional methods, our approach focuses 
+                                        on gentle application, allowing for smoother skin while preserving your natural expressions so you can enjoy the benefits of reduced fine 
+                                        lines and wrinkles without the “frozen” look. Our expert practitioners ensure that results are tailored to your unique features, providing 
+                                        a rejuvenated look that feels effortless and natural.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Maps section -->
+        
+        <section id="maps" class="container">
+            <h2 class="hidden-heading">Maps</h2>
+            <div class="row">
+                <div class="col-12">
+                    <br>
+                    <h2>Find Us</h2>
                     <hr>
                 </div>
-
-                <!------------ Anti Wrinkle Treatment ------------->
-                <div class="row">
-                    <!-- Small Screen Content -->
-                    <div class="col-12 d-block d-md-none d-lg-none">
-                        <div class="col-md-3 treatment-item position-relative">
-                            <a href="#" class="stretched-link">
-                                <img src="{% static 'images/botox-treatment.jpg' %}" alt="Platelet Rich Plasma Treatment Image" class="img-fluid">
-                                <div class="bottom-overlay">
-                                    <h6>Anti Wrinkle Treatments</h6>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Medium and Large Screen Content -->
-                    <div class="col-md-12 d-none d-md-block d-lg-flex treatment-item md-treatments">
-                        <div class="row d-flex flex-column flex-md-row align-items-center">
-                            <!-- Image Column -->
-                            <div class="col-md-6 col-lg-6">
-                            <img src="{% static 'images/botox-treatment.jpg' %}" alt="Platelet Rich Plasma Treatment Image" class="img-fluid">
-                            </div>
-                        
-                            <!-- Text Column -->
-                            <div class="col-md-6 col-lg-6">
-                                <h4 class="font-weight-bold">Anti Wrinkle Treatments</h4>
-                                <small class="text-muted">A Naturally Refreshed Look with Expert Precision</small>
-                                <p>
-                                    Designed to enhance your natural beauty with a subtle, refreshed look. Unlike traditional methods, our approach focuses 
-                                    on gentle application, allowing for smoother skin while preserving your natural expressions so you can enjoy the benefits of reduced fine 
-                                    lines and wrinkles without the “frozen” look. Our expert practitioners ensure that results are tailored to your unique features, providing 
-                                    a rejuvenated look that feels effortless and natural.
-                                </p>
-                            </div>
+                <div class="col-12">
+                    <div class="mapouter">
+                        <div class="gmap_canvas">
+                            <iframe width="100%" height="300" id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.282025244525!2d-3.585094223272199!3d53.28448287227133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486527aea5d34a3b%3A0xe971a1dfa0e61a2c!2sCaldwell%20Cosmetics!5e0!3m2!1sen!2suk!4v1725047808673!5m2!1sen!2suk"
+                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Maps section -->
-    
-    <section id="maps" class="container">
-        <h2 class="hidden-heading">Maps</h2>
-        <div class="row">
-            <div class="col-12">
-                <h2>Find Us</h2>
-                <hr>
-            </div>
-            <div class="col-12">
-                <div class="mapouter">
-                    <div class="gmap_canvas">
-                        <iframe width="100%" height="300" id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2385.282025244525!2d-3.585094223272199!3d53.28448287227133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x486527aea5d34a3b%3A0xe971a1dfa0e61a2c!2sCaldwell%20Cosmetics!5e0!3m2!1sen!2suk!4v1725047808673!5m2!1sen!2suk"
-                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <!-- Quotes Content -->
-        <section id="quotes">
-            <h2>Reviews</h2>
-            <div>
-                <!-- Review content goes here -->
             </div>
         </section>
     </main>

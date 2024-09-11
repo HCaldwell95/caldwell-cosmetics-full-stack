@@ -172,7 +172,7 @@ Having a well-organized project structure facilitates a logical development proc
 
 ### Project Applications
 
-The project consists of three applications:
+The project consists of four applications:
 
 * home_details: Provides an overview of Caldwell Cosmetics, including sections such as "About Us" and "Find Us." It provides brief descriptions of all treatments and guides users to various parts of the website and social media links.
 * treatment_details: Delivers in-depth information about treatments and products, including aftercare instructions and details on who would likely benefit from each treatment.
@@ -271,6 +271,10 @@ Basic wireframes are provided below. Please note that these may differ slightly 
 ## Code Validation
 ### W3C HTML Validator
 #### First Attempt of Home Page
+
+IMAGE SHOWING VALIDATOR ISSUES 1-7
+
+Note: A recurring issue during the validation was the "{% static %}" tags as the HTML validator would not process these in the way that Django would. I have filtered out these error messages to ensure that the HTML itself was valid.
 
 IMAGE SHOWING VALIDATOR ISSUE 8
 

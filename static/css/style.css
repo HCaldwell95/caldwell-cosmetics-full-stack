@@ -377,7 +377,7 @@ main {
 /* -------------------------------------Social media links */
 
 .social-networks {
-    padding-top: 10px;
+    padding: 10px 0px 20px;
     margin: 5px 4%;
 }
 
@@ -395,7 +395,7 @@ main {
 }
 
 .social-networks a {
-    font-size: 32px;
+    font-size: 3em;
     color: #302321;
 }
 
@@ -409,12 +409,16 @@ main {
 #footer-address {
     color: #302321;
     letter-spacing: .5mm;
-    font-size: 80%;
+    padding-left: 2%;
 }
 
 #footer-address p {
     margin: 0.1rem;
-    font-size: 8px;
+    font-size: 80%;
+}
+
+#footer-address h6 {
+    margin-left: 0.1rem;
 }
 
 #footer-directions {
@@ -818,11 +822,7 @@ button {
 
     /* ---------------------------------------Footer styles */
 
-    #footer-box {
-        margin-left: 30px;
-        margin-right: 30px;
-        width: 100%;
-    }
+
 }
 
 /* -------------------------------------Larger devices such as large desktops (1280px and up) */
@@ -900,11 +900,7 @@ button {
 
     /* ---------------------------------------Footer styles */
 
-    #footer-box {
-        margin-left: 30px;
-        margin-right: 30px;
-        width: 100%;
-    }
+
 
 
 }
