@@ -881,12 +881,12 @@ Breakpoints:
 
     #footer-address h6 {
         margin-bottom: 0.2rem;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     
     #footer-address p {
         margin: 0.04rem;
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     /* Directions */
@@ -903,7 +903,7 @@ Breakpoints:
     /* Contact */
 
     .footer-contact p {
-        font-size: 2rem;
+        font-size: 1.8rem;
         margin-bottom: 2px;
     }
     
@@ -914,7 +914,7 @@ Breakpoints:
     }
     
     .footer-contact a {
-        font-size: 1.9rem;
+        font-size: 1.5rem;
         margin-bottom: 2px;
         margin-left: 10px;
     }
@@ -1049,14 +1049,15 @@ Breakpoints:
 
     /* ---------------- Hero Styles */
     .hero > div {
-        min-height: 40rem;
-        max-height: 55rem
+        min-height: 55rem;
+        max-height: 86rem
     }
 
     .hero > div > img {
-        min-height: 40rem;
-        max-height: 55rem;
+        min-height: 55rem;
+        max-height: 86rem;
         width: 100%;
+        object-fit: cover;
     }
 
     #home-cover-heading {
@@ -1129,5 +1130,13 @@ Breakpoints:
         height: 700px;
         margin: 0 auto;
         padding-bottom: 30px;
+    }
+
+    /* ------------------- Footer */
+
+    /* Address */
+
+    #footer-address {
+        padding-left: 6%;
     }
 }
