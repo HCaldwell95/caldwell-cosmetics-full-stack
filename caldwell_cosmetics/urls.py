@@ -22,5 +22,5 @@ urlpatterns = [
     path('', include('home_details.urls')),  # This includes home_details.urls
     path('subscribe/', views.subscribe_to_newsletter, name='subscribe_to_newsletter'),
     path('admin/', admin.site.urls),  # Admin panel URL
-    path('treatment/', include('treatment_details.urls')),
+    path('treatments/', include('treatment_details.urls')),
 ]

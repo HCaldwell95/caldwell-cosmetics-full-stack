@@ -1,4 +1,13 @@
 from django.shortcuts import render
 
-def treatment_view(request):
-    return render(request, 'treatment_details/treatment_details.html')
+def treatment_details(request):
+    """
+    Renders the treatments page.
+
+    Args:
+        request: The HTTP request object.
+
+    Returns:
+        HttpResponse: Rendered home page template.
+    """
+    return render(request, 'treatments.html')

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home | Caldwell Cosmetics{% endblock %}
+
+    {% block hero %}
+    <!-- Hero image section -->
+    <section class="hero" id="home-hero">
+        <div class="container-fluid p-0 position-relative">
+            <img src="{% static 'images/home-hero.jpg' %}" class="img-fluid" alt="Image showing x">
+            <!-- Transparent tinting -->
+            <div class="color-overlay"></div>
+                <div class="position-absolute top-50 start-50 translate-middle text-center text-white hero-text-md">
+                    <h2 id="home-cover-heading">Caldwell Cosmetics</h2>
+                    <h3 id="est-tag">Est.2024</h3>
+                    <div class="text-center cover-text">
+                        <p>
+                            Where natural beauty meets personalised care. 
+                            <span class="d-none d-md-block d-lg-block cover-text-md">Join us in celebrating the beauty of simplicity, promoting wellness, and 
+                            discovering the best version of yourself.</span>
+                        </p>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <!-- Scrolling Text Bar -->
+
+    <div id="scroll-container">
+        <div id="scroll-text">IPL Hair Reduction | Skin Rejuvenation | Platelet Rich Plasma (PRP) | Anti Wrinkle Injections | Hair Rejuvenation | illumiFacial® | Acne Treatments | Facial Veins or Pigment Removal | Consultations | </div>
+    </div>
+    {% endblock %}
+
+    {% block content %}
+    <main class="container">
+
+    </main>
+
+{% endblock %}
