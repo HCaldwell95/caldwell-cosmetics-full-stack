@@ -566,7 +566,7 @@ Breakpoints:
 /* Unique to tablets to ensure grey background doesn't transfer with the rest of the accumilitive styles */
 @media (min-width: 768px) and (max-width: 1199.98px){
     .md-lg-treatments {
-        background-color: rgba(95, 95, 95, 0.1);
+        background-color: rgb(182 182 182 / 10%);
         border-radius: 10px;
         padding: 30px;
     }
@@ -609,6 +609,7 @@ Breakpoints:
         letter-spacing: 5mm;
         padding-top: 30px;
         text-shadow:8px 10px 0 #313131;
+        font-weight: 600;
     }
 
     #est-tag {
