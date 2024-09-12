@@ -6,17 +6,15 @@
     <!-- Hero image section -->
     <section class="hero" id="home-hero">
         <div class="container-fluid p-0 position-relative">
-            <img src="{% static 'images/home-hero.jpg' %}" class="img-fluid" alt="Image showing x">
+            <img src="{% static 'images/treatments-hero.jpg' %}" class="img-fluid" alt="Image showing x">
             <!-- Transparent tinting -->
             <div class="color-overlay"></div>
                 <div class="position-absolute top-50 start-50 translate-middle text-center text-white hero-text-md">
-                    <h2 id="home-cover-heading">Caldwell Cosmetics</h2>
-                    <h3 id="est-tag">Est.2024</h3>
+                    <h2 id="treatments-cover-heading">Treatments</h2>
                     <div class="text-center cover-text">
                         <p>
                             Where natural beauty meets personalised care. 
-                            <span class="d-none d-md-block d-lg-block cover-text-md">Join us in celebrating the beauty of simplicity, promoting wellness, and 
-                            discovering the best version of yourself.</span>
+                            <span class="d-none d-md-block d-lg-block cover-text-md">Explore our range of expert services, designed to enhance your natural beauty and nurture your well-being.</span>
                         </p>
                     </div>
                 </div>
@@ -35,53 +33,54 @@
         <section>
             <header>
                 <div>
-                    <h1>Our Treatments</h1>
+                    <h2 class="text-center italiana-bold">Our Treatments</h1>
                 </div>
             </header>
-            <div class="treatments-list">
-                <a href="" class="treatment-card" data-slide-index>
-                    <div class="treatment-card-wrapper" style="background-image: url()">
-                        <div class="treatment-card-title">
-                            <header class="treatment-card-header">
-                                <h2 class="treatment-card-heading">illumiFacial®</h2>
-                                <div class="treatment-card-btn-wrapper">
-                                    <span class="treatment-card-btn"></span>
+            <div class="container treatments">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 mb-4">
+                        <div class="treatments__card-wrapper" style="background-image: url({% static 'images/home-hero.jpg' %});"></div>
+                            <a href="" class="treatments__card">
+                                <div class="treatments__card-body d-flex flex-column justify-content-end">
+                                    <h2 class="treatments__card-heading">illumiFacial®</h2>
+                                    <div class="treatments__card-wrapper--button">
+                                        <span class="treatments__card-btn"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                <a href="" class="treatments-card" data-slide-index></a>
+                    <div class="treatments-card-wrapper" style="background-image: url()">
+                        <div class="treatments-card-title">
+                            <header class="treatments-card-header">
+                                <h2 class="treatments-card-heading">IPL Hair Removal</h2>
+                                <div class="treatments-card-btn-wrapper">
+                                    <span class="treatments-card-btn"></span>
                                 </div>
                             </header>
                         </div>
                     </div>
                 </a>
-                <a href="" class="treatment-card" data-slide-index></a>
-                    <div class="treatment-card-wrapper" style="background-image: url()">
-                        <div class="treatment-card-title">
-                            <header class="treatment-card-header">
-                                <h2 class="treatment-card-heading">IPL Hair Removal</h2>
-                                <div class="treatment-card-btn-wrapper">
-                                    <span class="treatment-card-btn"></span>
+                <a href="" class="treatments-card" data-slide-index></a>
+                    <div class="treatments-card-wrapper" style="background-image: url()">
+                        <div class="treatments-card-title">
+                            <header class="treatments-card-header">
+                                <h2 class="treatments-card-heading">Platelet Rich Plasma (PRP)</h2>
+                                <div class="treatments-card-btn-wrapper">
+                                    <span class="treatments-card-btn"></span>
                                 </div>
                             </header>
                         </div>
                     </div>
                 </a>
-                <a href="" class="treatment-card" data-slide-index></a>
-                    <div class="treatment-card-wrapper" style="background-image: url()">
-                        <div class="treatment-card-title">
-                            <header class="treatment-card-header">
-                                <h2 class="treatment-card-heading">Platelet Rich Plasma (PRP)</h2>
-                                <div class="treatment-card-btn-wrapper">
-                                    <span class="treatment-card-btn"></span>
-                                </div>
-                            </header>
-                        </div>
-                    </div>
-                </a>
-                <a href="" class="treatment-card" data-slide-index></a>
-                    <div class="treatment-card-wrapper" style="background-image: url()">
-                        <div class="treatment-card-title">
-                            <header class="treatment-card-header">
-                                <h2 class="treatment-card-heading">Anti-Wrinkle Treatments</h2>
-                                <div class="treatment-card-btn-wrapper">
-                                    <span class="treatment-card-btn"></span>
+                <a href="" class="treatments-card" data-slide-index></a>
+                    <div class="treatments-card-wrapper" style="background-image: url()">
+                        <div class="treatments-card-title">
+                            <header class="treatments-card-header">
+                                <h2 class="treatments-card-heading">Anti-Wrinkle treatments</h2>
+                                <div class="treatments-card-btn-wrapper">
+                                    <span class="treatments-card-btn"></span>
                                 </div>
                             </header>
                         </div>
