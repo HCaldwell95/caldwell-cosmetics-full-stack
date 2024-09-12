@@ -111,7 +111,7 @@ a {
     color: #fff;
 }
 
-/* ------------------------------------------------Hero section */
+/* ------------------------------------------------Hero image content */
 .hero {
     width: 100%;
     height: 100%;
@@ -143,6 +143,16 @@ a {
     width: 100%;
 }
 
+#home-cover-heading, #treatments-cover-heading, #bookings-cover-heading, #contact-cover-heading {
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+    font-size: 2.1em;
+    font-weight: 400;
+    letter-spacing: 2mm;
+    color: #bebebe;
+    text-shadow:5px 7px 0 #313131;
+}
+
 .cover-text {
     letter-spacing: 0.4mm;
     text-transform: uppercase;
@@ -153,16 +163,6 @@ a {
     font-size: 70%;
     color: azure;
     padding-bottom: 2em;
-}
-
-#home-cover-heading, #treatments-cover-heading, #bookings-cover-heading, #contact-cover-heading {
-    margin-top: 0.5em;
-    padding-top: 0.5em;
-    font-size: 2.1em;
-    font-weight: 400;
-    letter-spacing: 2mm;
-    color: #bebebe;
-    text-shadow:5px 7px 0 #313131;
 }
 
 /* -----------------------------------------------Scrolling text styles */
@@ -236,7 +236,7 @@ main {
     flex: 1 0 auto;
 }
 
-/* ------------------------------------------Home page content */
+/* --------------------------------------------- Home_details content --------------------------------------------*/
 
 /* ------------------------------------------About */
 
@@ -299,7 +299,7 @@ main {
     background-color:#313131ea; /* Background color with opacity */
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    padding-bottom: 10px; /* Adjust padding as needed */
+    padding-bottom: 10px; 
 }
 
 .bottom-overlay > h6 {
@@ -364,7 +364,7 @@ main {
     color:rgb(221, 189, 102);
 }
 
-/* Styles for the subscribe to newsletter section */
+/* Subscribe newsletter */
 
 .subscribe-newsletter h2 {
     font-size: 14px;
@@ -410,15 +410,17 @@ main {
     color: #302321;
     letter-spacing: .5mm;
     padding-left: 2%;
-}
-
-#footer-address p {
-    margin: 0.1rem;
-    font-size: 80%;
+    align-self: end;
 }
 
 #footer-address h6 {
-    margin-left: 0.1rem;
+    margin-bottom: 0.2rem;
+    font-size: 0.7rem;
+}
+
+#footer-address p {
+    margin: 0.04rem;
+    font-size: 0.6rem;
 }
 
 #footer-directions {
@@ -436,6 +438,10 @@ main {
     text-align: center;
 }
 
+.footer-contact {
+    align-self: end;
+}
+
 .footer-contact p {
     font-size: 12px;
     margin-bottom: 2px;
@@ -448,7 +454,7 @@ main {
 }
 
 .footer-contact a {
-    font-size: 8px;
+    font-size: 0.6rem;
     margin-bottom: 2px;
 }
 
@@ -526,7 +532,14 @@ button {
 }
 
 
-/* ---------------------------------------------Media queries */
+/* ------------------------------------------------- Media queries -------------------------------------------------------- */
+/*
+Breakpoints:
+768px tablets
+1024px larger tablets
+1280px laptops
+1400px desktops
+*/
 
 /* Unique to tablets to ensure grey background doesn't transfer with the rest of the accumilitive styles */
 @media (min-width: 768px) and (max-width: 1199.98px){
@@ -537,7 +550,7 @@ button {
     }
 }
 
-/* -------------------------------------Medium devices such as tablets in landscape mode or small laptops (768px and up) */
+/* ------------------------------------- Medium devices such as tablets (768px and up) ---------------------------------------*/
 @media screen and (min-width: 768px) {
 
     /* -----------------------------------Navigation bar styles */
@@ -556,8 +569,6 @@ button {
     #navbarNav>ul a {
         font-size: large;
     }
-
-}
 
     /* ------------------------------------------Hero image content */
 
@@ -611,13 +622,12 @@ button {
         animation: my-animation 40s linear infinite;
 
       }
-
+    /* ----------------------------------- home_details content -----------------------------------*/
     /* ------------------------------------------About */
 
     .about>div>div>h2 {
         font-size: 20px;
     }
-
 
     .about>div>div>p {
         font-size: 18px;
@@ -668,6 +678,8 @@ button {
         letter-spacing: 0.9mm;
     }
 
+    /* ----------------------------------- home_details end -----------------------------------*/
+
     /* ---------------------------------------Footer styles */
 
     .back-to-top {
@@ -675,7 +687,7 @@ button {
         font-size: 32px;
     }
 
-    /* -------------------------------Subscribe row */
+    /* Subscribe newsletter */
     
     .subscribe-newsletter {
         padding-top: 5px!important;
@@ -701,13 +713,13 @@ button {
         margin-bottom: 20px;
     }
 
-    /* -------------------------------Social media links */
+    /* Social media links */
 
     .social-networks {
         font-size: 16px;
     }
 
-    /* -------------------------------Address column */
+    /* Address */
 
     #footer-address h6 {
         margin-bottom: 0.2rem;
@@ -715,35 +727,42 @@ button {
     }
     
     #footer-address p {
-        margin: 0.1rem;
-        font-size: 1rem;
+        margin: 0.04rem;
+        font-size: 0.9rem;
     }
 
-    /* -------------------------------Directions column */
+    /* Directions */
+    
+    #footer-directions {
+        font-size: 32px;
+        padding-top: 30px;
+    }
     
     #footer-directions a>i {
-        color: #302321;
-        font-size: 40px;
+        font-size: 30px;
     }
-
-
-    /* -------------------------------Contact column */
+    
+    /* Contact */
 
     .footer-contact p {
-        font-size: 20px;
+        font-size: 1rem;
         margin-bottom: 2px;
     }
     
     #footer-contact-links {
         padding: 0;
+        text-transform: uppercase;
+        font-weight: 400;
     }
     
     .footer-contact a {
-        font-size: 16px;
+        font-size: 0.9rem;
         margin-bottom: 2px;
+        margin-left: 5px;
     }
+}
 
-/* -------------------------------------Large devices such as laptops and small desktops (1024px and up) */
+/* -------------------------- Mid to large devices such as large tablets or small laptops (1024px and up) ------------------------ */
 @media screen and (min-width: 1024px) {
 
     body {
@@ -802,6 +821,9 @@ button {
         animation: my-animation 50s linear infinite;
     }
 
+    /* ----------------------------------- home_details content -----------------------------------*/
+
+    /* About */
     .about>div>div>h2 {
         font-size: 22px;
     }
@@ -811,7 +833,7 @@ button {
         font-size: 28px;
     }
 
-
+    /* Google Maps */
     .gmap_canvas iframe {
         width: 100%;
         height: 500px;
@@ -819,6 +841,7 @@ button {
         padding-bottom: 30px;
     }
 
+    /* Treatments */
     .treatment-item {
         margin-bottom: 40px;
     }
@@ -827,6 +850,9 @@ button {
         font-size: 16px;
     }
 
+    /* ----------------------------------- home_details end -----------------------------------*/
+
+    /* -------------------------------------- Footer */
     .back-to-top {
         font-size: 46px;
     }
@@ -839,9 +865,6 @@ button {
 
     .subscribe-newsletter h2 {
         font-size: 20px;
-    }
-
-    .subscribe-newsletter h2 {
         margin-bottom: 8px!important;
     }
 
@@ -850,13 +873,173 @@ button {
         padding-left: 6px;
     }
 
-    /* ---------------------------------------Footer styles */
+    /* Address */
 
+    #footer-address {
+        padding-left: 4%;
+    }
+
+    #footer-address h6 {
+        margin-bottom: 0.2rem;
+        font-size: 1.5rem;
+    }
+    
+    #footer-address p {
+        margin: 0.04rem;
+        font-size: 1.4rem;
+    }
+
+    /* Directions */
+    
+    #footer-directions {
+        font-size: 32px;
+        padding-top: 30px;
+    }
+    
+    #footer-directions a>i {
+        font-size: 60px;
+    }
+    
+    /* Contact */
+
+    .footer-contact p {
+        font-size: 2rem;
+        margin-bottom: 2px;
+    }
+    
+    #footer-contact-links {
+        padding: 0;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+    
+    .footer-contact a {
+        font-size: 1.9rem;
+        margin-bottom: 2px;
+        margin-left: 10px;
+    }
+}
+
+/* ------------------------------------- Large devices such as laptops (1280px and up) -------------------------------- */
+@media screen and (min-width: 1280px) {
+
+    .container {
+        max-width: 1400px;
+    }
+
+    .logo-link>img {
+        max-height: 210px;
+        max-width: 210px;
+    }
+
+
+    /* ---------------- Hero image content */
+    .hero > div {
+        min-height: 40rem;
+        max-height: 55rem
+    }
+
+    .hero > div > img {
+        min-height: 40rem;
+        max-height: 55rem;
+        width: 100%;
+    }
+
+    #home-cover-heading {
+        font-size: 6.5em;
+        letter-spacing: 10mm;
+        padding-top: 20px;
+        padding-bottom: 50px;
+        text-shadow:12px 14px 0 #313131;
+    }
+
+    #est-tag {
+        color: transparent;
+    }
+
+    .cover-text {
+        margin: 0px -50px;
+        padding-bottom: 150px;
+        font-size: 30px;
+    }
+
+    #scroll-text {
+
+        /* Set the animation properties */
+        -moz-animation: my-animation 55s linear infinite;
+        -webkit-animation: my-animation 55s linear infinite;
+        animation: my-animation 55s linear infinite;
+        font-size: 30px;
+    }
+
+    /* ----------------------------------- home_details content -----------------------------------*/
+    /* About */
+    .about {
+        font-size: 36px;
+    }
+
+    .about div > div > h2 {
+        font-size: 40px;
+    }
+
+    /* Treatments */
+
+    .treatments h2.text-uppercase {
+        font-size: 40px!important;
+        padding-bottom: 60px !important;
+    }
+
+    .treatments h4 {
+        font-size: 2.5rem;
+    }
+
+    .treatment-item small {
+        font-size: 26px;
+    }
+
+    .treatment-item {
+        margin-bottom: 80px;
+    }
+
+    .treatment-item > div > div p {
+        font-size: 30px;
+    }
+
+    /* Google Maps */
+    #maps h2 {
+        font-size: 40px;
+    }
+
+    .gmap_canvas iframe {
+        width: 100%;
+        height: 700px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+
+
+    /* ---------------------------------------Footer styles */
+    .back-to-top {
+        font-size: 56px;
+    }
+
+    .subscribe-newsletter h2 {
+        font-size: 26px;
+    }
+
+    #email-newsletter-help {
+        font-size: 16px;
+        padding-left: 6px;
+    }
 
 }
 
-/* -------------------------------------Larger devices such as large desktops (1280px and up) */
-@media screen and (min-width: 1280px) {
+    /* -------------------------------------Larger devices such as large desktops (1400px and up) */
+    @media screen and (min-width: 1400px) {
+
+    .container {
+        max-width: 90%;
+    }
 
     .logo-link>img {
         max-height: 210px;
@@ -947,11 +1130,4 @@ button {
         margin: 0 auto;
         padding-bottom: 30px;
     }
-
-
-    /* ---------------------------------------Footer styles */
-
-
-
-
 }
