@@ -332,6 +332,26 @@ main {
 
 /* ------------------------------------- Treatment_details content -------------------------------*/
 
+/* ------------------------------------------Treatments information */
+.treatments {
+    padding: 2em 0;
+    text-align: center;
+    margin: 0 2.5%;
+}
+
+.treatments>div>div>h2 {
+    font-size: 90%;
+    padding-bottom: 0.5em;
+    letter-spacing: 0.7mm;
+}
+
+.page-divider {
+    border: 2px solid black;
+    margin: 0px 12rem;
+}
+
+/* ------------------------------------------Treatment cards */
+
 .treatments__card {
     text-decoration: none;
     color: inherit;
