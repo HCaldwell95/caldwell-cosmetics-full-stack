@@ -120,7 +120,7 @@ a {
 #navbarNav>ul a {
     color: #eed6c2;
     text-transform: uppercase;
-    padding-right: 0.3em;
+    padding-right: 0.5em;
 }
 
 .active {
@@ -874,6 +874,15 @@ Breakpoints:
     }
 
     /* ----------------------------------- home_details end -----------------------------------*/
+
+    /* ------------------------------- treatment_details content ------------------------------*/
+
+    .treatments__card-wrapper {
+        background-image: url('/static/images/home-hero.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
 
     /* -------------------------------------- Footer */
     .back-to-top {

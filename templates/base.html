@@ -40,8 +40,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="{% url 'home_details' %}">Home</a></li>
                     <!-- Add other nav items here -->
+                    {% with url_name=request.resolver_match.url_name %}
+                    <li class="dropdown {% if not url_name or url_name == 'home_details' %}active{% endif %}">
+                        <a href="{% url 'home_details' %}">Home</a>
+                    </li>
+                    <li class="dropdown {% if url_name == 'treatment_details' %}active{% endif %}">
+                        <a href="{% url 'treatment_details' %}">Treatments</a>
+                    </li>
+                    {% endwith %}
                 </ul>
             </div>
             <div class="d-none d-md-block sign-up">
