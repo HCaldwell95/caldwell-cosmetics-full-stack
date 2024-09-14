@@ -34,7 +34,7 @@
 
 .italiana-regular {
     font-family: "Italiana", sans-serif;
-    font-weight: 400;
+    font-weight: 400!important;
     font-style: normal;
   }  
 
@@ -328,6 +328,65 @@ main {
     color: #fff;
     vertical-align: middle;
     padding-top: 15px;
+}
+
+/* ------------------------------------- Treatment_details content -------------------------------*/
+
+.treatments__card {
+    text-decoration: none;
+    color: inherit;
+}
+
+.treatments__card-wrapper {
+    position: relative;
+    height: 500px; /* Adjust as needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.treatments__card-wrapper:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.treatments__card-body {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3); /* Optional: background overlay to make text stand out */
+    width: 100%;
+    text-align: left;
+}
+
+.treatments__card-body>h2 {
+    color: white;
+}
+
+.treatments__card-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.treatments__card-wrapper--button {
+    margin-top: 10px;
+}
+
+.treatments__card-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.treatments__card-btn:hover {
+    background-color: #000;
+    color: #fff;
 }
 
 /* ---------------------------------------------Footer Content */
