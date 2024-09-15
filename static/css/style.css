@@ -262,13 +262,15 @@ main {
 
 /* ------------------------------------------About */
 
-.about {
+.about, 
+.treatments {
     padding: 2em 0;
     text-align: center;
     margin: 0 2.5%;
 }
 
-.about>div>div>h2 {
+.about>div>div>h2,
+.treatments>div>div>h2 {
     font-size: 90%;
     padding-bottom: 0.5em;
     letter-spacing: 0.7mm;
@@ -332,27 +334,9 @@ main {
 
 /* ------------------------------------- Treatment_details content -------------------------------*/
 
-/* ------------------------------------------Treatments information */
-.treatments {
-    padding: 2em 0;
-    text-align: center;
-    margin: 0 2.5%;
-}
-
-.treatments>div>div>h2 {
-    font-size: 90%;
-    padding-bottom: 0.5em;
-    letter-spacing: 0.7mm;
-}
-
-.page-divider {
-    border: 2px solid black;
-    margin: 0px 12rem;
-}
-
 /* ------------------------------------------Treatment cards */
 
-.treatments__card {
+.treatments__link {
     text-decoration: none;
     color: inherit;
 }
@@ -375,7 +359,7 @@ main {
     position: absolute;
     bottom: 0;
     padding: 20px;
-    background: rgba(0, 0, 0, 0.3); /* Optional: background overlay to make text stand out */
+    background: rgba(0, 0, 0, 0.5); /* Optional: background overlay to make text stand out */
     width: 100%;
     text-align: left;
 }
@@ -683,7 +667,8 @@ Breakpoints:
         object-fit: fill;
     }
 
-    #home-cover-heading {
+    #home-cover-heading,
+    #treatments-cover-heading {
         font-size: 3em;
         letter-spacing: 5mm;
         padding-top: 30px;
@@ -724,16 +709,21 @@ Breakpoints:
         animation: my-animation 40s linear infinite;
 
       }
-    /* ----------------------------------- home_details content -----------------------------------*/
+    /* --------------------------------- Shared templates content ---------------------------------*/
     /* ------------------------------------------About */
 
-    .about>div>div>h2 {
+    .about>div>div>h2,
+    .treatments>div>div>h2 {
         font-size: 20px;
     }
 
-    .about>div>div>p {
+    .about>div>div>p,
+    .treatments>div>div>p {
         font-size: 18px;
     }
+    /* ------------------------------- Shared templates content end -------------------------------*/
+
+    /* ----------------------------------- home_details content -----------------------------------*/
 
     /* ---------------------------------------Google Maps */    
 
@@ -781,6 +771,13 @@ Breakpoints:
     }
 
     /* ----------------------------------- home_details end -----------------------------------*/
+
+    /* ------------------------------ treatment_details content -------------------------------*/
+
+    
+
+    /* ---------------------------- treatment_details content end -----------------------------*/
+
 
     /* ---------------------------------------Footer styles */
 
@@ -898,7 +895,8 @@ Breakpoints:
         width: 100%;
     }
 
-    #home-cover-heading {
+    #home-cover-heading,
+    #treatments-cover-heading {
         font-size: 4em; 
         letter-spacing: 10mm;
         padding-top: 20px;
@@ -923,17 +921,24 @@ Breakpoints:
         animation: my-animation 50s linear infinite;
     }
 
-    /* ----------------------------------- home_details content -----------------------------------*/
+        /* -------------------------------- Shared templates content ------------------------------*/
+    /* ------------------------------------------About */
 
-    /* About */
-    .about>div>div>h2 {
+    .about>div>div>h2,
+    .treatments>div>div>h2 {
         font-size: 22px;
     }
 
 
-    .about>div>div>p {
+    .about>div>div>p,
+    .treatments>div>div>p {
         font-size: 28px;
     }
+
+    /* ------------------------------- Shared templates content end -------------------------------*/
+
+
+    /* ----------------------------------- home_details content -----------------------------------*/
 
     /* Google Maps */
     .gmap_canvas iframe {
@@ -957,11 +962,11 @@ Breakpoints:
     /* ------------------------------- treatment_details content ------------------------------*/
 
     .treatments__card-wrapper {
-        background-image: url('/static/images/home-hero.jpg');
-        background-size: cover;
-        background-position: center;
+        min-height: 550px;
     }
 
+
+    /* ------------------------------ treatment_details content end ----------------------------*/
 
     /* -------------------------------------- Footer */
     .back-to-top {
@@ -1056,9 +1061,10 @@ Breakpoints:
         width: 100%;
     }
 
-    #home-cover-heading {
+    #home-cover-heading,
+    #treatments-cover-heading {
         font-size: 6.5em;
-        letter-spacing: 10mm;
+        letter-spacing: 14mm;
         padding-top: 20px;
         padding-bottom: 50px;
         text-shadow:12px 14px 0 #313131;
@@ -1083,15 +1089,23 @@ Breakpoints:
         font-size: 30px;
     }
 
-    /* ----------------------------------- home_details content -----------------------------------*/
-    /* About */
-    .about {
+    /* -------------------------------- Shared templates content ------------------------------*/
+    /* ------------------------------------------About */
+
+    .about,
+    .treatments {
         font-size: 36px;
     }
 
+    .about div > div > h2,
     .about div > div > h2 {
         font-size: 40px;
     }
+    
+
+    /* ------------------------------- Shared templates content end -------------------------------*/
+
+    /* ----------------------------------- home_details content -----------------------------------*/
 
     /* Treatments */
 
@@ -1171,7 +1185,8 @@ Breakpoints:
         object-fit: cover;
     }
 
-    #home-cover-heading {
+    #home-cover-heading,
+    #treatments-cover-heading {
         font-size: 6.5em;
         letter-spacing: 10mm;
         padding-top: 20px;
@@ -1198,14 +1213,24 @@ Breakpoints:
         font-size: 30px;
     }
 
-    /* --------------------About Styles */
-    .about {
+    /* -------------------------------- Shared templates content ------------------------------*/
+    /* ------------------------------------------About */
+
+    .about,
+    .treatments {
         font-size: 36px;
     }
 
-    .about div > div > h2 {
+    .about div > div > h2,
+    .treatments div > div > h2 {
         font-size: 40px;
     }
+    
+    
+
+    /* ------------------------------- Shared templates content end -------------------------------*/
+
+    /* -------------------------------- Home_details content ------------------------------*/
 
     /* --------------------- Treatment Styles */
 
