@@ -397,6 +397,11 @@ main {
     color: #fff;
 }
 
+.treatment-information-heading {
+    text-align: center;
+    padding-top: 1em;
+}
+
 /* ---------------------------------------------Footer Content */
 
 .footer-main {
