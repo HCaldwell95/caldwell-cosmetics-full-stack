@@ -397,10 +397,57 @@ main {
     color: #fff;
 }
 
+/* Treatment information pages */
+
 .treatment-information-heading {
     text-align: center;
     padding-top: 1em;
 }
+
+/* Fixed banner styles */
+.fixed-banner {
+
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 150vh;
+    /* background-color: #f8f9fa; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); */
+    z-index: 100;
+}
+
+/* Button inside the banner, with vertical (rotated) text */
+.banner-button {
+
+    display: block;
+    padding: 5px 20px;
+    margin-right: 10px;
+    background-color: #eed6c2;
+    color: #302321;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Cormorant', serif;
+    transform: rotate(-90deg);
+    /* transform-origin: left center; */
+    white-space: nowrap;
+    
+    /* Adjust for the vertical orientation */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Button hover effect */
+.banner-button:hover {
+    background-color: #302121; /* Darker on hover */
+    color: #fff;
+}
+
+
 
 /* ---------------------------------------------Footer Content */
 
@@ -988,6 +1035,25 @@ Breakpoints:
         font-size: 3em;
     }
 
+    /* Fixed banner styles */
+    .fixed-banner {
+    width: 20px;
+    height: 150vh;
+    /* background-color: #f8f9fa; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); */
+    z-index: 100;
+    }
+
+    /* Button inside the banner, with vertical (rotated) text */
+    .banner-button {
+
+    display: block;
+    padding: 5px 20px;
+    margin-right: 10px;
+    }
 
     /* ------------------------------ treatment_details content end ----------------------------*/
 

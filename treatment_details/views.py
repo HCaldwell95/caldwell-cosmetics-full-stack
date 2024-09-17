@@ -11,7 +11,7 @@ def treatment_details(request):
     Returns:
         HttpResponse: Rendered treatments page template.
     """
-    treatments = Treatment.objects.all()  # Fetch all treatments from the database
+    treatments = Treatment.objects.all().order_by('name')  # Fetch all treatments from the database
     return render(request, 'treatments.html', {'treatments': treatments})
 
 def treatment_card_details(request, slug):
