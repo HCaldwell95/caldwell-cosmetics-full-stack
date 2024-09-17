@@ -3,64 +3,58 @@
 console.log('JavaScript is loaded and running.');
 
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('newsletter-form');
-    const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
-    const modalBodyContent = document.getElementById('modal-body-content');
+    const form = document.querySelector('#newsletter-subscription-form');
+    
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const formData = new FormData(form);
 
-    console.log('JavaScript loaded and running.');
-
-    if (form) {
-        console.log('Form found:', form);
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the form from submitting normally
-
-            console.log('Form submitted');
-            
-            const formData = new FormData(form);
-
-            console.log('Form data:', [...formData.entries()]);
-
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-Requested-With': 'XMLHttpRequest',
-                    'X-CSRFToken': document.querySelector('input[name="csrfmiddlewaretoken"]').value
-                }
-            })
-            .then(response => {
-                console.log('Response status:', response.status);
-                return response.json();
-            })
-            .then(data => {
-                console.log('Response data:', data);
-
-                if (data.success) {
-                    alert('Subscription successful!');
-                    form.reset(); // Optionally clear the form
-                } else {
-                    modalBodyContent.innerHTML = ''; // Clear any previous content
-                    if (data.errors) {
-                        Object.keys(data.errors).forEach(key => {
-                            data.errors[key].forEach(error => {
-                                modalBodyContent.innerHTML += `<p>${error}</p>`;
-                            });
+        fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-CSRFToken': form.querySelector('input[name="csrfmiddlewaretoken"]').value
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Optionally, you can show a success message or redirect
+                alert('Subscription successful!');
+            } else {
+                // If there are errors, display them in the modal
+                const modalBodyContent = document.getElementById('modal-body-content');
+                modalBodyContent.innerHTML = ''; // Clear previous errors
+                
+                if (data.errors) {
+                    const errorList = document.createElement('ul');
+                    for (let field in data.errors) {
+                        data.errors[field].forEach(error => {
+                            const listItem = document.createElement('li');
+                            listItem.textContent = `${field}: ${error}`;
+                            errorList.appendChild(listItem);
                         });
                     }
-                    errorModal.show(); // Show the modal
+                    modalBodyContent.appendChild(errorList);
                 }
-            })
-            .catch(error => {
-                console.error('Error during fetch:', error);
-                modalBodyContent.innerHTML = `<p>Something went wrong. Please try again later.</p>`;
-                errorModal.show(); // Show the modal
-            });
+
+                // Show the modal
+                const errorModal = new bootstrap.Modal(document.getElementById('errorModal'), {
+                    backdrop: 'static', // Disables closing by clicking outside the modal
+                    keyboard: true // Enables closing with the Esc key
+                });
+                errorModal.show();
+                
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
         });
-    } else {
-        console.error('Form element not found.');
-    }
+    });
 });
+
 
 /* ---------------------------------- Footer link modal to external page */
 

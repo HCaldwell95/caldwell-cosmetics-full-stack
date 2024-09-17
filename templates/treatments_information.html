@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ treatment.name }} | Caldwell Cosmetics{% endblock %}
+
+{% block hero %}
+    <!-- Hero image section -->
+    <section class="hero" id="home-hero">
+        <div class="container-fluid p-0 position-relative">
+            <img src="{% static 'images/treatments-hero.jpg' %}" class="img-fluid" alt="Image showing x">
+            <!-- Transparent tinting -->
+            <div class="color-overlay"></div>
+                <div class="position-absolute top-50 start-50 translate-middle text-center text-white hero-text-md">
+                    <h2 id="treatments-cover-heading">Treatments</h2>
+                    <div class="text-center cover-text">
+                        <p>
+                            Discover your best self today
+                            <span class="d-none d-md-block d-lg-block cover-text-md">Explore our range of expert services, designed to enhance your natural beauty and nurture your well-being.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scrolling Text Bar -->
+
+    <div id="scroll-container">
+        <div id="scroll-text">IPL Hair Reduction | Skin Rejuvenation | Platelet Rich Plasma (PRP) | Anti Wrinkle Injections | Hair Rejuvenation | illumiFacial® | Acne Treatments | Facial Veins or Pigment Removal | Consultations | </div>
+    </div>
+    {% endblock %}
+
+{% block content %}
+<section class="treatment-details"></section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <h1 class="italiana-regular treatment-information-heading">{{ treatment.name }}</h1>
+                <p>{{ treatment.description|safe }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

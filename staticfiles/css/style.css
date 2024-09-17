@@ -30,6 +30,27 @@
     box-sizing: border-box;
 }
 
+/* Google Fonts */
+
+.italiana-regular {
+    font-family: "Italiana", sans-serif;
+    font-weight: 400!important;
+    font-style: normal;
+  }  
+
+  .italiana-bold {
+    font-family: "Italiana", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }  
+
+  .cormorant {
+    font-family: "Cormorant", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
 /* ------------------------------General styles */
 body {
     min-height: 100vh;
@@ -37,6 +58,7 @@ body {
     flex-direction: column;
     background-color:rgb(253 247 245);
     font-size: 14px;
+    font-family: "Cormorant", serif;
 }
 
 /* Heading styles */
@@ -98,7 +120,7 @@ a {
 #navbarNav>ul a {
     color: #eed6c2;
     text-transform: uppercase;
-    padding-right: 0.3em;
+    padding-right: 0.5em;
 }
 
 .active {
@@ -111,7 +133,7 @@ a {
     color: #fff;
 }
 
-/* ------------------------------------------------Hero section */
+/* ------------------------------------------------Hero image content */
 .hero {
     width: 100%;
     height: 100%;
@@ -143,6 +165,16 @@ a {
     width: 100%;
 }
 
+#home-cover-heading, #treatments-cover-heading, #bookings-cover-heading, #contact-cover-heading {
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+    font-size: 2.1em;
+    font-weight: 400;
+    letter-spacing: 2mm;
+    color: #bebebe;
+    text-shadow:5px 7px 0 #313131;
+}
+
 .cover-text {
     letter-spacing: 0.4mm;
     text-transform: uppercase;
@@ -153,16 +185,6 @@ a {
     font-size: 70%;
     color: azure;
     padding-bottom: 2em;
-}
-
-#home-cover-heading, #treatments-cover-heading, #bookings-cover-heading, #contact-cover-heading {
-    margin-top: 0.5em;
-    padding-top: 0.5em;
-    font-size: 2.1em;
-    font-weight: 400;
-    letter-spacing: 2mm;
-    color: #bebebe;
-    text-shadow:5px 7px 0 #313131;
 }
 
 /* -----------------------------------------------Scrolling text styles */
@@ -236,17 +258,19 @@ main {
     flex: 1 0 auto;
 }
 
-/* ------------------------------------------Home page content */
+/* --------------------------------------------- Home_details content --------------------------------------------*/
 
 /* ------------------------------------------About */
 
-.about {
+.about, 
+.treatments {
     padding: 2em 0;
     text-align: center;
     margin: 0 2.5%;
 }
 
-.about>div>div>h2 {
+.about>div>div>h2,
+.treatments>div>div>h2 {
     font-size: 90%;
     padding-bottom: 0.5em;
     letter-spacing: 0.7mm;
@@ -273,7 +297,7 @@ main {
 
 /* ------------------------------------------Treatments */
 
-.treatments h2.text-uppercase {
+.home-treatments h2.text-uppercase {
     font-size: 90%!important;
     padding-bottom: 0.5em!important;
     letter-spacing: 0.7mm!important;
@@ -284,11 +308,11 @@ main {
     border-radius: 25px;
 }
 
-.treatment-item {
+.home-treatment-item {
     margin-bottom: 10px;
 }
 
-.treatment-item h4 {
+.home-treatment-item h4 {
     margin-bottom: 0px;
 }
 
@@ -299,13 +323,74 @@ main {
     background-color:#313131ea; /* Background color with opacity */
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-    padding-bottom: 10px; /* Adjust padding as needed */
+    padding-bottom: 10px; 
 }
 
 .bottom-overlay > h6 {
     color: #fff;
     vertical-align: middle;
     padding-top: 15px;
+}
+
+/* ------------------------------------- Treatment_details content -------------------------------*/
+
+/* ------------------------------------------Treatment cards */
+
+.treatments__link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.treatments__card-wrapper {
+    position: relative;
+    height: 500px; /* Adjust as needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.treatments__card-wrapper:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.treatments__card-body {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Optional: background overlay to make text stand out */
+    width: 100%;
+    text-align: left;
+}
+
+.treatments__card-body>h2 {
+    color: white;
+}
+
+.treatments__card-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.treatments__card-wrapper--button {
+    margin-top: 10px;
+}
+
+.treatments__card-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.treatments__card-btn:hover {
+    background-color: #000;
+    color: #fff;
 }
 
 /* ---------------------------------------------Footer Content */
@@ -364,7 +449,7 @@ main {
     color:rgb(221, 189, 102);
 }
 
-/* Styles for the subscribe to newsletter section */
+/* Subscribe newsletter */
 
 .subscribe-newsletter h2 {
     font-size: 14px;
@@ -377,7 +462,7 @@ main {
 /* -------------------------------------Social media links */
 
 .social-networks {
-    padding-top: 10px;
+    padding: 10px 0px 20px;
     margin: 5px 4%;
 }
 
@@ -395,7 +480,7 @@ main {
 }
 
 .social-networks a {
-    font-size: 32px;
+    font-size: 3em;
     color: #302321;
 }
 
@@ -409,12 +494,18 @@ main {
 #footer-address {
     color: #302321;
     letter-spacing: .5mm;
-    font-size: 80%;
+    padding-left: 2%;
+    align-self: end;
+}
+
+#footer-address h6 {
+    margin-bottom: 0.2rem;
+    font-size: 0.7rem;
 }
 
 #footer-address p {
-    margin: 0.1rem;
-    font-size: 8px;
+    margin: 0.04rem;
+    font-size: 0.6rem;
 }
 
 #footer-directions {
@@ -432,6 +523,10 @@ main {
     text-align: center;
 }
 
+.footer-contact {
+    align-self: end;
+}
+
 .footer-contact p {
     font-size: 12px;
     margin-bottom: 2px;
@@ -444,7 +539,7 @@ main {
 }
 
 .footer-contact a {
-    font-size: 8px;
+    font-size: 0.6rem;
     margin-bottom: 2px;
 }
 
@@ -459,13 +554,21 @@ main {
 .modal {
     display: none; 
     position: fixed; 
-    z-index: 1; 
+    z-index: 9999!important; 
     left: 0;
     top: 0;
     width: 100%; 
     height: 100%; 
     overflow: auto; 
     background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-backdrop.show {
+    z-index: 1040;
+}
+
+.modal-dialogue {
+    z-index: 9999;
 }
 
 /* Modal Content */
@@ -477,6 +580,7 @@ main {
     width: 80%; 
     max-width: 400px;
     text-align: center;
+    z-index: 9999;
 }
 
 /* Close Button */
@@ -510,4 +614,665 @@ button {
 #decline {
     background-color: #f44336; 
     color: white;
+}
+
+
+/* ------------------------------------------------- Media queries -------------------------------------------------------- */
+/*
+Breakpoints:
+768px tablets
+1024px larger tablets
+1280px laptops
+1400px desktops
+*/
+
+/* Unique to tablets to ensure grey background doesn't transfer with the rest of the accumilitive styles */
+@media (min-width: 768px) and (max-width: 1199.98px){
+    .md-lg-treatments {
+        background-color: rgb(182 182 182 / 10%);
+        border-radius: 10px;
+        padding: 30px;
+    }
+}
+
+/* ------------------------------------- Medium devices such as tablets (768px and up) ---------------------------------------*/
+@media screen and (min-width: 768px) {
+
+    /* -----------------------------------Navigation bar styles */
+
+    .logo-link>img {
+        max-height: 110px;
+        max-width: 110px;
+        padding-top: 5px;
+    }
+
+    .active {
+        background-color: rgba(95, 95, 95, 0.2);
+        border-radius: 10px;
+    }
+
+    #navbarNav>ul a {
+        font-size: large;
+    }
+
+    /* ------------------------------------------Hero image content */
+
+    .hero > div {
+        max-height: 28.125rem;
+    }
+
+    .hero > div > img {
+        max-height: 28.125rem;
+        width: 100%;
+        object-fit: fill;
+    }
+
+    #home-cover-heading,
+    #treatments-cover-heading {
+        font-size: 3em;
+        letter-spacing: 5mm;
+        padding-top: 30px;
+        text-shadow:8px 10px 0 #313131;
+        font-weight: 600;
+    }
+
+    #est-tag {
+        font-size: 100%;
+        padding-bottom: 0.5em;
+        letter-spacing: 0.9mm;
+    }
+
+    .cover-text {
+        padding-top: 20px;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.5mm;
+    }
+
+    .cover-text-md {
+        letter-spacing: 0.4mm;
+        padding-top: 10px;
+        text-transform: capitalize;
+        font-style:italic;
+        font-weight: 300;
+        color:#e9e9e9;
+        margin: 0px -50px;
+    }
+
+    /* -----------------------------------------------Scrolling text styles */
+
+    #scroll-text {
+        font-size: 16px;
+        /* Set the animation properties */
+        -moz-animation: my-animation 40s linear infinite;
+        -webkit-animation: my-animation 40s linear infinite;
+        animation: my-animation 40s linear infinite;
+
+      }
+    /* --------------------------------- Shared templates content ---------------------------------*/
+    /* ------------------------------------------About */
+
+    .about>div>div>h2,
+    .treatments>div>div>h2 {
+        font-size: 20px;
+    }
+
+    .about>div>div>p,
+    .treatments>div>div>p {
+        font-size: 18px;
+    }
+    /* ------------------------------- Shared templates content end -------------------------------*/
+
+    /* ----------------------------------- home_details content -----------------------------------*/
+
+    /* ---------------------------------------Google Maps */    
+
+    #maps h2 {
+        text-align: center;
+        font-size: 100%;
+        letter-spacing: 0.7mm;
+    }
+
+    /* ------------------------------------------Treatments */
+
+    .home-treatments h2.text-uppercase {
+        font-size: 120% !important;
+        padding-bottom: 1em !important;
+        letter-spacing: 0.9mm !important;
+        text-align: center;
+    }
+
+    .home-treatment-item {
+        vertical-align: middle;
+        margin-bottom: 20px;
+    }
+
+    .home-treatment-item img {
+        border-radius: 15px;
+        margin-right: 0!important;
+        padding-right: 0!important;
+    }
+
+    .home-treatment-item small {
+        font-size: 16px;
+    }
+
+    .md-treatments img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* ---------------------------------------Map styles */
+
+    #maps h2 {
+        font-size: 120%;
+        letter-spacing: 0.9mm;
+    }
+
+    /* ----------------------------------- home_details end -----------------------------------*/
+
+    /* ------------------------------ treatment_details content -------------------------------*/
+
+    
+
+    /* ---------------------------- treatment_details content end -----------------------------*/
+
+
+    /* ---------------------------------------Footer styles */
+
+    .back-to-top {
+        padding-bottom: 10px;
+        font-size: 32px;
+    }
+
+    /* Subscribe newsletter */
+    
+    .subscribe-newsletter {
+        padding-top: 5px!important;
+        padding-bottom: 5px!important;
+        width: 100%;
+        align-items: center;
+    }
+
+    .subscribe-newsletter h2 {
+        font-size: 18px;
+    }
+
+    .subscribe-newsletter h2 {
+        margin-bottom: 8px!important;
+    }
+
+    #email-newsletter-help {
+        font-size: 16px;
+        padding-left: 6px;
+    }
+
+    #newsletter-sign-up {
+        margin-bottom: 20px;
+    }
+
+    /* Social media links */
+
+    .social-networks {
+        font-size: 16px;
+    }
+
+    /* Address */
+
+    #footer-address h6 {
+        margin-bottom: 0.2rem;
+        font-size: 1rem;
+    }
+    
+    #footer-address p {
+        margin: 0.04rem;
+        font-size: 0.9rem;
+    }
+
+    /* Directions */
+    
+    #footer-directions {
+        font-size: 32px;
+        padding-top: 30px;
+    }
+    
+    #footer-directions a>i {
+        font-size: 30px;
+    }
+    
+    /* Contact */
+
+    .footer-contact p {
+        font-size: 1rem;
+        margin-bottom: 2px;
+    }
+    
+    #footer-contact-links {
+        padding: 0;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+    
+    .footer-contact a {
+        font-size: 0.9rem;
+        margin-bottom: 2px;
+        margin-left: 5px;
+    }
+}
+
+/* -------------------------- Mid to large devices such as large tablets or small laptops (1024px and up) ------------------------ */
+@media screen and (min-width: 1024px) {
+
+    body {
+        align-items: center;
+    }
+
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* ------------------- Navbar Styles */
+
+    #navbarNav>ul a {
+        font-size: 30px;
+    }
+
+    .custom-btn {
+        padding: 0.475 1.3rem !important;
+        font-size: 30px !important;
+    }
+
+    /* ------------------- Hero image content */
+
+    .hero > div {
+        max-height: 35rem;
+    }
+
+    .hero > div > img {
+        max-height: 35rem;
+        width: 100%;
+    }
+
+    #home-cover-heading,
+    #treatments-cover-heading {
+        font-size: 4em; 
+        letter-spacing: 10mm;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    #est-tag {
+        color: transparent;
+    }
+
+    .cover-text {
+        margin: 0px -50px;
+        padding-bottom: 100px;
+    }
+
+    #scroll-text {
+        font-size: 20px;
+        font-weight: 600;
+        /* Set the animation properties */
+        -moz-animation: my-animation 50s linear infinite;
+        -webkit-animation: my-animation 50s linear infinite;
+        animation: my-animation 50s linear infinite;
+    }
+
+        /* -------------------------------- Shared templates content ------------------------------*/
+    /* ------------------------------------------About */
+
+    .about>div>div>h2,
+    .treatments>div>div>h2 {
+        font-size: 22px;
+    }
+
+
+    .about>div>div>p,
+    .treatments>div>div>p {
+        font-size: 28px;
+    }
+
+    /* ------------------------------- Shared templates content end -------------------------------*/
+
+
+    /* ----------------------------------- home_details content -----------------------------------*/
+
+    /* Google Maps */
+    .gmap_canvas iframe {
+        width: 100%;
+        height: 500px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+
+    /* Treatments */
+    .home-treatment-item {
+        margin-bottom: 40px;
+    }
+
+    .home-treatment-item>div>div>div>p {
+        font-size: 16px;
+    }
+
+    /* ----------------------------------- home_details end -----------------------------------*/
+
+    /* ------------------------------- treatment_details content ------------------------------*/
+
+    .treatments__card-wrapper {
+        min-height: 550px;
+    }
+
+
+    /* ------------------------------ treatment_details content end ----------------------------*/
+
+    /* -------------------------------------- Footer */
+    .back-to-top {
+        font-size: 46px;
+    }
+
+    .subscribe-newsletter {
+        padding-top: 5px!important;
+        padding-bottom: 5px!important;
+        width: 100%;
+    }
+
+    .subscribe-newsletter h2 {
+        font-size: 20px;
+        margin-bottom: 8px!important;
+    }
+
+    #email-newsletter-help {
+        font-size: 16px;
+        padding-left: 6px;
+    }
+
+    /* Address */
+
+    #footer-address {
+        padding-left: 4%;
+    }
+
+    #footer-address h6 {
+        margin-bottom: 0.2rem;
+        font-size: 1.3rem;
+    }
+    
+    #footer-address p {
+        margin: 0.04rem;
+        font-size: 1.2rem;
+    }
+
+    /* Directions */
+    
+    #footer-directions {
+        font-size: 32px;
+        padding-top: 30px;
+    }
+    
+    #footer-directions a>i {
+        font-size: 60px;
+    }
+    
+    /* Contact */
+
+    .footer-contact p {
+        font-size: 1.8rem;
+        margin-bottom: 2px;
+    }
+    
+    #footer-contact-links {
+        padding: 0;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+    
+    .footer-contact a {
+        font-size: 1.5rem;
+        margin-bottom: 2px;
+        margin-left: 10px;
+    }
+}
+
+/* ------------------------------------- Large devices such as laptops (1280px and up) -------------------------------- */
+@media screen and (min-width: 1280px) {
+
+    .container {
+        max-width: 1400px;
+    }
+
+    .logo-link>img {
+        max-height: 210px;
+        max-width: 210px;
+    }
+
+
+    /* ---------------- Hero image content */
+    .hero > div {
+        min-height: 40rem;
+        max-height: 55rem
+    }
+
+    .hero > div > img {
+        min-height: 40rem;
+        max-height: 55rem;
+        width: 100%;
+    }
+
+    #home-cover-heading,
+    #treatments-cover-heading {
+        font-size: 6.5em;
+        letter-spacing: 14mm;
+        padding-top: 20px;
+        padding-bottom: 50px;
+        text-shadow:12px 14px 0 #313131;
+    }
+
+    #est-tag {
+        color: transparent;
+    }
+
+    .cover-text {
+        margin: 0px -50px;
+        padding-bottom: 150px;
+        font-size: 30px;
+    }
+
+    #scroll-text {
+
+        /* Set the animation properties */
+        -moz-animation: my-animation 55s linear infinite;
+        -webkit-animation: my-animation 55s linear infinite;
+        animation: my-animation 55s linear infinite;
+        font-size: 30px;
+    }
+
+    /* -------------------------------- Shared templates content ------------------------------*/
+    /* ------------------------------------------About */
+
+    .about,
+    .treatments {
+        font-size: 36px;
+    }
+
+    .about div > div > h2,
+    .about div > div > h2 {
+        font-size: 40px;
+    }
+    
+
+    /* ------------------------------- Shared templates content end -------------------------------*/
+
+    /* ----------------------------------- home_details content -----------------------------------*/
+
+    /* Treatments */
+
+    .home-treatments h2.text-uppercase {
+        font-size: 40px!important;
+        padding-bottom: 60px !important;
+    }
+
+    .home-treatments h4 {
+        font-size: 2.5rem;
+    }
+
+    .home-treatment-item small {
+        font-size: 26px;
+    }
+
+    .home-treatment-item {
+        margin-bottom: 80px;
+    }
+
+    .home-treatment-item > div > div p {
+        font-size: 30px;
+    }
+
+    /* Google Maps */
+    #maps h2 {
+        font-size: 40px;
+    }
+
+    .gmap_canvas iframe {
+        width: 100%;
+        height: 700px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+
+
+    /* ---------------------------------------Footer styles */
+    .back-to-top {
+        font-size: 56px;
+    }
+
+    .subscribe-newsletter h2 {
+        font-size: 26px;
+    }
+
+    #email-newsletter-help {
+        font-size: 16px;
+        padding-left: 6px;
+    }
+
+}
+
+    /* -------------------------------------Larger devices such as large desktops (1400px and up) */
+    @media screen and (min-width: 1400px) {
+
+    .container {
+        max-width: 90%;
+    }
+
+    .logo-link>img {
+        max-height: 210px;
+        max-width: 210px;
+    }
+
+
+    /* ---------------- Hero Styles */
+    .hero > div {
+        min-height: 55rem;
+        max-height: 86rem
+    }
+
+    .hero > div > img {
+        min-height: 55rem;
+        max-height: 86rem;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    #home-cover-heading,
+    #treatments-cover-heading {
+        font-size: 6.5em;
+        letter-spacing: 10mm;
+        padding-top: 20px;
+        padding-bottom: 50px;
+        text-shadow:12px 14px 0 #313131;
+    }
+
+    #est-tag {
+        color: transparent;
+    }
+
+    .cover-text {
+        margin: 0px -50px;
+        padding-bottom: 150px;
+        font-size: 30px;
+    }
+
+    #scroll-text {
+
+        /* Set the animation properties */
+        -moz-animation: my-animation 55s linear infinite;
+        -webkit-animation: my-animation 55s linear infinite;
+        animation: my-animation 55s linear infinite;
+        font-size: 30px;
+    }
+
+    /* -------------------------------- Shared templates content ------------------------------*/
+    /* ------------------------------------------About */
+
+    .about,
+    .treatments {
+        font-size: 36px;
+    }
+
+    .about div > div > h2,
+    .treatments div > div > h2 {
+        font-size: 40px;
+    }
+    
+    
+
+    /* ------------------------------- Shared templates content end -------------------------------*/
+
+    /* -------------------------------- Home_details content ------------------------------*/
+
+    /* --------------------- Treatment Styles */
+
+    .home-treatments h2.text-uppercase {
+        font-size: 40px!important;
+        padding-bottom: 60px !important;
+    }
+
+    h4 {
+        font-size: 2.5rem;
+    }
+
+    .home-treatment-item small {
+        font-size: 26px;
+    }
+
+    .home-treatment-item {
+        margin-bottom: 80px;
+    }
+
+    .home-treatment-item > div > div p {
+        font-size: 30px;
+    }
+
+
+    /* ------------------ Map Styles */
+    #maps h2 {
+        font-size: 40px;
+    }
+
+    .gmap_canvas iframe {
+        width: 100%;
+        height: 700px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+
+    /* ------------------- Footer */
+
+    /* Address */
+
+    #footer-address {
+        padding-left: 6%;
+    }
 }

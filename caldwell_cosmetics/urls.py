@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from home_details import views
 
+
+
 urlpatterns = [
     path('', include('home_details.urls')),  # This includes home_details.urls
     path('subscribe/', views.subscribe_to_newsletter, name='subscribe_to_newsletter'),

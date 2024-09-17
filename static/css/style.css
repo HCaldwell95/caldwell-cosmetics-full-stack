@@ -336,6 +336,10 @@ main {
 
 /* ------------------------------------------Treatment cards */
 
+.gallery {
+    padding-bottom: 30px;
+}
+
 .treatments__link {
     text-decoration: none;
     color: inherit;
@@ -1142,6 +1146,15 @@ Breakpoints:
         padding-bottom: 30px;
     }
 
+    /* --------------------------------- home_details content end --------------------------------*/
+
+    /* -------------------------------- treatment_details content ---------------------------------*/
+
+    .gallery {
+        padding-bottom: 80px;
+    }
+
+    /* -------------------------------- treatment_details content ---------------------------------*/
 
     /* ---------------------------------------Footer styles */
     .back-to-top {
