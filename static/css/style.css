@@ -489,7 +489,7 @@ main {
 }
 
 .social-networks a {
-    font-size: 3em;
+    font-size: 2em;
     color: #302321;
 }
 
@@ -972,6 +972,20 @@ Breakpoints:
 
     .treatments__card-wrapper {
         min-height: 550px;
+    }
+
+    .treatment-information-heading {
+        font-size: 4em;
+        text-transform: uppercase;
+        padding-bottom: 50px;
+    }
+
+    .treatment-details p, li {
+        font-size: 2em;
+    }
+
+    .treatment-details h2, h3 {
+        font-size: 3em;
     }
 
 
