@@ -10,5 +10,14 @@ class Booking(models.Model):
     # Admin confirmation of the booking
     is_confirmed = models.BooleanField(default=False)
 
+    def clean(self):
+        """ Ensures time slot is available for the selected treatment and date """
+        if Booking.objects.filter(date=self.date, time_slot=self.time_slot, treatment=self.treatment).exists():
+            raise ValidationError("This time slot is already booked.")
+
+    def save(self, *args, **kwargs):
+        self.clean()  # Run validation before saving
+        super().save(*args, **kwargs)
+
     def __str__(self):
         return f"{self.user} - {self.treatment} on {self.date} at {self.time_slot}"
