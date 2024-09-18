@@ -295,16 +295,10 @@ main {
     letter-spacing: 0.7mm;
 }
 
-/* ------------------------------------------Treatments */
+/* -----------------------------------------------------Treatments */
 
-.home-treatments h2.text-uppercase {
-    font-size: 90%!important;
-    padding-bottom: 0.5em!important;
-    letter-spacing: 0.7mm!important;
-    text-align: center;
-}
 
-/* -------------------------------------------Carousel */
+/* Carousel */
 
 .carousel-img {
     height: 250px; /* Set a fixed height */

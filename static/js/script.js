@@ -114,3 +114,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Carousel JS 
+$(document).ready(function() {
+    $('#home-carousel').carousel({
+        interval: 3000, // Time between slides
+        wrap: true // Infinite loop
+    });
+});
+
+$('.carousel-control-prev, .carousel-control-next').click(function(event) {
+    event.preventDefault();
+});

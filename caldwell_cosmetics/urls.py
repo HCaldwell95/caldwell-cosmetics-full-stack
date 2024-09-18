@@ -27,6 +27,7 @@ urlpatterns = [
     path('subscribe/', views.subscribe_to_newsletter, name='subscribe_to_newsletter'),
     path('admin/', admin.site.urls),  # Admin panel URL
     path('treatments/', include('treatment_details.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
 
 if settings.DEBUG:
