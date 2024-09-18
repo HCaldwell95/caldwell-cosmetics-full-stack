@@ -6,7 +6,10 @@
     <!-- Hero image section -->
     <section class="hero" id="home-hero">
         <div class="container-fluid p-0 position-relative">
-            <img src="{% static 'images/treatment-information-hero.jpg' %}" class="img-fluid" alt="Image showing x">
+
+            <!-- Make this a dynamic image when you have time -->
+
+            <img src="{% static 'images/treatment-information-hero.jpg' %}" class="img-fluid" alt="Hero image for {{ treatment.name }} treatment">
             <!-- Transparent tinting -->
             <div class="color-overlay"></div>
                 <div class="position-absolute top-50 start-50 translate-middle text-center text-white hero-text-md">
@@ -15,16 +18,10 @@
             </div>
         </div>
     </section>
-
-    <!-- Scrolling Text Bar -->
-
-    <div id="scroll-container">
-        <div id="scroll-text">IPL Hair Reduction | Skin Rejuvenation | Platelet Rich Plasma (PRP) | Anti Wrinkle Injections | Hair Rejuvenation | illumiFacial® | Acne Treatments | Facial Veins or Pigment Removal | Consultations | </div>
-    </div>
     {% endblock %}
 
 {% block content %}
-<section class="treatment-details"></section>
+<section class="treatment-details">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12">
