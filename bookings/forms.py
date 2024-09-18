@@ -13,6 +13,11 @@ class BookingForm(forms.ModelForm):
             'time_slot': forms.TimeInput(attrs={'type': 'time'}),  # Time picker
         }
     
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields['treatment'].queryset = Treatment.objects.all()  # Load available treatments
+    def clean(self):
+        cleaned_data = super().clean()
+        treatment = cleaned_data.get('treatment')
+        date = cleaned_data.get('date')
+        time_slot = cleaned_data.get('time_slot')
+
+        if Booking.objects.filter(date=date, time_slot=time_slot, treatment=treatment).exists():
+            raise ValidationError('This time slot is not available.')
