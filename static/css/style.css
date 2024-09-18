@@ -142,19 +142,8 @@ a {
 .hero {
     width: 100%;
     height: 100%;
-    position: relative;
-}
-
-.color-overlay::before {
-    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(95, 95, 95, 0.4);
 }
-
 
 /* Colour overlay to dim the background image */
 .color-overlay::before {
@@ -297,7 +286,7 @@ main {
 #maps {
     width: 100%;
     margin: 0 auto;
-    padding-bottom: 30px;
+    padding-bottom: 1em;
 }
 
 #maps h2 {
@@ -715,6 +704,8 @@ Breakpoints:
     }
 
     #navbarNav>ul {
+        display: flex !important;
+        text-align: right;
         align-items: center;
     }
     
