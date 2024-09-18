@@ -64,7 +64,7 @@
                 <div class="row">
                     {% for treatment in treatments %}
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-4 treatments__card">
-                        <a href="{% url 'treatment_detail' treatment.slug %}" class="treatments__link">
+                        <a href="{% url 'treatment_card_details' treatment.slug %}" class="treatments__link">
                             <div class="treatments__card-wrapper d-flex flex-column justify-content-end" style="background-image: url({{ treatment.image.url }});">
                                 <div class="treatments__card-body">
                                     <h2 class="treatments__card-heading italiana-regular">{{ treatment.name }}</h2>
