@@ -263,14 +263,14 @@ main {
 /* ------------------------------------------About */
 
 .about, 
-.treatments {
+.about-our-treatments {
     padding: 2em 0;
     text-align: center;
     margin: 0 2.5%;
 }
 
 .about>div>div>h2,
-.treatments>div>div>h2 {
+.about-our-treatments>div>h2 {
     font-size: 90%;
     padding-bottom: 0.5em;
     letter-spacing: 0.7mm;
@@ -304,32 +304,34 @@ main {
     text-align: center;
 }
 
-#about-treatments img {
-    border-radius: 25px;
+/* -------------------------------------------Carousel */
+
+.carousel-img {
+    height: 250px; /* Set a fixed height */
+    width: 100%; /* Ensure the image fills its container */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border: 2px solid #ddd; /* Add a border around the images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for better distinction */
+    border-radius: 10px; /* Optional: Round the corners of images */
+    transition: transform 0.3s ease; /* Smooth hover effect */
 }
 
-.home-treatment-item {
-    margin-bottom: 10px;
+.carousel-img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
-.home-treatment-item h4 {
-    margin-bottom: 0px;
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Makes the arrow buttons visible over the images */
+    border-radius: 50%;
+    padding: 10px;
+    height: 40px;
+    width: 40px;
 }
 
-.bottom-overlay {
-    position: relative;
-    margin-top: -52px;
-    text-align: center;
-    background-color:#313131ea; /* Background color with opacity */
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    padding-bottom: 10px; 
-}
-
-.bottom-overlay > h6 {
-    color: #fff;
-    vertical-align: middle;
-    padding-top: 15px;
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
 }
 
 /* ------------------------------------- Treatment_details content -------------------------------*/
@@ -769,14 +771,15 @@ Breakpoints:
     /* ------------------------------------------About */
 
     .about>div>div>h2,
-    .treatments>div>div>h2 {
+    .about-our-treatments>div>h2 {
         font-size: 20px;
     }
 
     .about>div>div>p,
-    .treatments>div>div>p {
+    .about-our-treatments>div>p {
         font-size: 18px;
     }
+
     /* ------------------------------- Shared templates content end -------------------------------*/
 
     /* ----------------------------------- home_details content -----------------------------------*/
@@ -791,33 +794,13 @@ Breakpoints:
 
     /* ------------------------------------------Treatments */
 
-    .home-treatments h2.text-uppercase {
+    .about-our-treatments h2.text-uppercase {
         font-size: 120% !important;
         padding-bottom: 1em !important;
         letter-spacing: 0.9mm !important;
         text-align: center;
     }
 
-    .home-treatment-item {
-        vertical-align: middle;
-        margin-bottom: 20px;
-    }
-
-    .home-treatment-item img {
-        border-radius: 15px;
-        margin-right: 0!important;
-        padding-right: 0!important;
-    }
-
-    .home-treatment-item small {
-        font-size: 16px;
-    }
-
-    .md-treatments img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
 
     /* ---------------------------------------Map styles */
 
