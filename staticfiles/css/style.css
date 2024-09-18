@@ -145,28 +145,16 @@ a {
     position: relative;
 }
 
+/* Colour overlay to dim the background image */
 .color-overlay::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(95, 95, 95, 0.4);
-}
-
-
-/* Colour overlay to dim the background image */
-.color-overlay::before {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     background-color: rgba(95, 95, 95, 0.4);
     margin: 0;
     display: block;
-    height: auto;
+    height: 100%;
     width: 100%;
 }
 
@@ -297,7 +285,7 @@ main {
 #maps {
     width: 100%;
     margin: 0 auto;
-    padding-bottom: 30px;
+    padding-bottom: 1em;
 }
 
 #maps h2 {
@@ -413,18 +401,14 @@ main {
 
 /* Fixed banner styles */
 .fixed-banner {
-
-
     position: fixed;
     top: 0;
     right: 0;
     width: 20px;
     height: 150vh;
-    /* background-color: #f8f9fa; */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); */
     z-index: 100;
 }
 
@@ -715,6 +699,8 @@ Breakpoints:
     }
 
     #navbarNav>ul {
+        display: flex !important;
+        text-align: right;
         align-items: center;
     }
     
@@ -805,9 +791,9 @@ Breakpoints:
     /* ------------------------------------------Treatments */
 
     .about-our-treatments h2.text-uppercase {
-        font-size: 120% !important;
-        padding-bottom: 1em !important;
-        letter-spacing: 0.9mm !important;
+        font-size: 22px;
+        padding-bottom: 1em;
+        letter-spacing: 0.9mm;
         text-align: center;
     }
 
@@ -973,13 +959,15 @@ Breakpoints:
     /* ------------------------------------------About */
 
     .about>div>div>h2,
+    .about-our-treatments>div>h2,
     .treatments>div>div>h2 {
         font-size: 22px;
     }
 
 
-    .about>div>div>p,
-    .treatments>div>div>p {
+    .about > div > div > p,
+    .about-our-treatments > div > p,
+    .treatments > div > div > p {
         font-size: 28px;
     }
 
@@ -1049,19 +1037,19 @@ Breakpoints:
     .fixed-banner {
     width: 20px;
     height: 150vh;
-    /* background-color: #f8f9fa; */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); */
     z-index: 100;
+    padding-right: 1em;
+    font-size: 2em;
     }
 
     /* Button inside the banner, with vertical (rotated) text */
     .banner-button {
 
     display: block;
-    padding: 5px 20px;
+    padding: 0.5em 2em;
     margin-right: 10px;
     }
 
@@ -1192,12 +1180,13 @@ Breakpoints:
     /* ------------------------------------------About */
 
     .about,
+    .about-our-treatments,
     .treatments {
         font-size: 36px;
     }
 
     .about div > div > h2,
-    .about div > div > h2 {
+    .about-our-treatments div > h2 {
         font-size: 40px;
     }
     
@@ -1248,6 +1237,22 @@ Breakpoints:
     .gallery {
         padding-bottom: 80px;
     }
+
+    /* Fixed banner */
+    .fixed-banner {
+        width: 3em;
+        height: 150vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        }
+    
+        /* Banner button */
+        .banner-button {
+        padding: 0.5em 1em;
+        font-size: 1.5em;
+        }
 
     /* -------------------------------- treatment_details content ---------------------------------*/
 
@@ -1325,11 +1330,13 @@ Breakpoints:
     /* ------------------------------------------About */
 
     .about,
+    .about-our-treatments,
     .treatments {
         font-size: 36px;
     }
 
     .about div > div > h2,
+    .about-our-treatments div > h2,,
     .treatments div > div > h2 {
         font-size: 40px;
     }
