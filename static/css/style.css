@@ -438,7 +438,21 @@ main {
     color: #fff;
 }
 
+/* ----------------------------------- Bookings content ------------------------------------*/
 
+.booking-page>h2, 
+.booking-confirmation>h2 {
+    text-align: center;
+    padding: 1em;
+}
+
+.book-your-appointment,
+.booking-confirmation {
+    padding-bottom: 1.5em;
+    align-self: center;
+    font-size: 1.5em;
+    text-align: center;
+}
 
 /* ---------------------------------------------Footer Content */
 
@@ -1336,7 +1350,7 @@ Breakpoints:
     }
 
     .about div > div > h2,
-    .about-our-treatments div > h2,,
+    .about-our-treatments div > h2,
     .treatments div > div > h2 {
         font-size: 40px;
     }

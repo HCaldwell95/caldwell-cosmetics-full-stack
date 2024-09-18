@@ -1,7 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,  get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+from django.utils.dateparse import parse_date
 from .forms import BookingForm
 from .models import Booking
+from .models import Appointment
+
 
 @login_required
 def book_appointment(request):
@@ -16,3 +20,11 @@ def book_appointment(request):
         form = BookingForm()
     
     return render(request, 'bookings/book_appointment.html', {'form': form})
+
+@login_required
+def booking_confirmation(request, booking_id):
+    try:
+        booking = Booking.objects.get(id=booking_id, user=request.user)
+    except Booking.DoesNotExist:
+        return redirect('error_page')  # Redirect to an error page if booking doesn't exist
+    return render(request, 'bookings/booking_confirmation.html', {'booking': booking})

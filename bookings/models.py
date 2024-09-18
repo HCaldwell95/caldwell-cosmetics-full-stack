@@ -21,3 +21,11 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"{self.user} - {self.treatment} on {self.date} at {self.time_slot}"
+
+class Appointment(models.Model):
+    title = models.CharField(max_length=100)
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField(null=True, blank=True)  # Optional end time
+
+    def __str__(self):
+        return self.title
