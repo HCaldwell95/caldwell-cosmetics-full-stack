@@ -23,11 +23,12 @@ from home_details import views
 
 
 urlpatterns = [
-    path('', include('home_details.urls')),  # This includes home_details.urls
+    path('', include('home_details.urls')),
     path('subscribe/', views.subscribe_to_newsletter, name='subscribe_to_newsletter'),
-    path('admin/', admin.site.urls),  # Admin panel URL
+    path('admin/', admin.site.urls),
     path('treatments/', include('treatment_details.urls')),
     path('accounts/', include('accounts.urls')),
+    path('bookings/', include('bookings.urls')),
 ] 
 
 if settings.DEBUG:

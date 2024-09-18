@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Log In | Caldwell Cosmetics{% endblock %}
+{% block title %}Make A Booking | Caldwell Cosmetics{% endblock %}
 
 {% block hero %}
 
@@ -21,10 +21,11 @@
 
 {% block content %}
 
+<h2>Book Your Appointment</h2>
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Log In</button>
+    <button type="submit">Submit</button>
 </form>
 
 {% endblock %}
