@@ -114,3 +114,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Carousel JS 
+$(document).ready(function() {
+    $('#home-carousel').carousel({
+        interval: 3000, // Time between slides
+        wrap: true // Infinite loop
+    });
+});
+
+$('.carousel-control-prev, .carousel-control-next').click(function(event) {
+    event.preventDefault();
+});
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Select the dropdown button and hero text
+    const dropdownToggle = document.querySelector('navbar-toggler');
+    const heroText = document.getElementById('hero-text');
+    
+    // Add click event listener to the dropdown toggle button
+    dropdownToggle.addEventListener('click', function() {
+        // Toggle the 'hidden-hero-text' class
+        heroText.classList.toggle('hidden-hero-text');
+    });
+});
+
+

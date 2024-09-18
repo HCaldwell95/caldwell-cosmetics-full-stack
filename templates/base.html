@@ -34,38 +34,44 @@
 <body>
     <nav class="navbar navbar-light navbar-expand-sm navbar-container">
         <div class="container-fluid">
-            <a href="/" class="navbar-brand mr-auto logo-link"><img src="{% static 'images/mini-logo.png' %}" alt="Logo"></a>
+            <a href="/" class="navbar-brand mr-auto logo-link">
+                <img src="{% static 'images/mini-logo.png' %}" alt="Logo">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <!-- Add other nav items here -->
                     {% with url_name=request.resolver_match.url_name %}
-                    <li class="dropdown {% if not url_name or url_name == 'home_details' %}active{% endif %}">
-                        <a href="{% url 'home_details' %}">Home</a>
+                    <li class="nav-item {% if not url_name or url_name == 'home_details' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'home_details' %}">Home</a>
                     </li>
-                    <li class="dropdown {% if url_name == 'treatment_details' %}active{% endif %}">
-                        <a href="{% url 'treatment_details' %}">Treatments</a>
+                    <li class="nav-item {% if url_name == 'treatment_details' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'treatment_details' %}">Treatments</a>
                     </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item {% if url_name == 'profile' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-dark custom-btn" onclick="location.href='{% url 'logout' %}'">
+                            Sign Out
+                        </button>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-dark custom-btn" onclick="location.href='{% url 'login' %}'">
+                            Sign In / Sign Up
+                        </button>
+                    </li>
+                    {% endif %}
                     {% endwith %}
                 </ul>
             </div>
-            <div class="d-none d-md-block sign-up">
-                {% if user.is_authenticated %}
-                <!-- Shows Sign Out button if the user is logged in -->
-                <button type="button" class="btn btn-dark custom-btn" onclick="location.href='{% url 'logout' %}'">
-                    Sign Out
-                </button>
-                {% else %}
-                <!-- Show Sign In / Sign Up button if the user is not logged in -->
-                <button type="button" class="btn btn-dark custom-btn" onclick="location.href='{% url 'signup' %}'">
-                    Sign In / Sign Up
-                </button>
-            {% endif %}
-            </div>
         </div>
     </nav>
+    
+    
         
     <!-- Hero Section Block -->
      {% block hero %}

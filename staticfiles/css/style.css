@@ -123,14 +123,19 @@ a {
     padding-right: 0.5em;
 }
 
-.active {
-    color: #e09e67!important;
+.navbar-nav .nav-item.active .nav-link {
+    color: #ffbd66!important;
     text-decoration: underline;
     font-size: 18px;
+    font-weight: bold; /* Optional: make the font bold */
 }
 
 .sign-up a {
     color: #fff;
+}
+
+#navbarNav > ul > button {
+    padding-bottom: 100px;
 }
 
 /* ------------------------------------------------Hero image content */
@@ -185,6 +190,10 @@ a {
     font-size: 70%;
     color: azure;
     padding-bottom: 2em;
+}
+
+.hidden-hero-text {
+    display: none;
 }
 
 /* -----------------------------------------------Scrolling text styles */
@@ -263,6 +272,7 @@ main {
 /* ------------------------------------------About */
 
 .about, 
+.about-our-treatments,
 .treatments {
     padding: 2em 0;
     text-align: center;
@@ -270,6 +280,7 @@ main {
 }
 
 .about>div>div>h2,
+.about-our-treatments>div>h2,
 .treatments>div>div>h2 {
     font-size: 90%;
     padding-bottom: 0.5em;
@@ -295,46 +306,46 @@ main {
     letter-spacing: 0.7mm;
 }
 
-/* ------------------------------------------Treatments */
+/* -----------------------------------------------------Treatments */
 
-.home-treatments h2.text-uppercase {
-    font-size: 90%!important;
-    padding-bottom: 0.5em!important;
-    letter-spacing: 0.7mm!important;
-    text-align: center;
+
+/* Carousel */
+
+.carousel-img {
+    height: 250px; /* Set a fixed height */
+    width: 100%; /* Ensure the image fills its container */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border: 2px solid #ddd; /* Add a border around the images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for better distinction */
+    border-radius: 10px; /* Optional: Round the corners of images */
+    transition: transform 0.3s ease; /* Smooth hover effect */
 }
 
-#about-treatments img {
-    border-radius: 25px;
+.carousel-img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
-.home-treatment-item {
-    margin-bottom: 10px;
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Makes the arrow buttons visible over the images */
+    border-radius: 50%;
+    padding: 10px;
+    height: 40px;
+    width: 40px;
 }
 
-.home-treatment-item h4 {
-    margin-bottom: 0px;
-}
-
-.bottom-overlay {
-    position: relative;
-    margin-top: -52px;
-    text-align: center;
-    background-color:#313131ea; /* Background color with opacity */
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    padding-bottom: 10px; 
-}
-
-.bottom-overlay > h6 {
-    color: #fff;
-    vertical-align: middle;
-    padding-top: 15px;
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
 }
 
 /* ------------------------------------- Treatment_details content -------------------------------*/
 
 /* ------------------------------------------Treatment cards */
+
+.gallery {
+    padding-bottom: 30px;
+}
 
 .treatments__link {
     text-decoration: none;
@@ -392,6 +403,58 @@ main {
     background-color: #000;
     color: #fff;
 }
+
+/* Treatment information pages */
+
+.treatment-information-heading {
+    text-align: center;
+    padding-top: 1em;
+}
+
+/* Fixed banner styles */
+.fixed-banner {
+
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 150vh;
+    /* background-color: #f8f9fa; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); */
+    z-index: 100;
+}
+
+/* Button inside the banner, with vertical (rotated) text */
+.banner-button {
+
+    display: block;
+    padding: 5px 20px;
+    margin-right: 10px;
+    background-color: #eed6c2;
+    color: #302321;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Cormorant', serif;
+    transform: rotate(-90deg);
+    /* transform-origin: left center; */
+    white-space: nowrap;
+    
+    /* Adjust for the vertical orientation */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Button hover effect */
+.banner-button:hover {
+    background-color: #302121; /* Darker on hover */
+    color: #fff;
+}
+
+
 
 /* ---------------------------------------------Footer Content */
 
@@ -480,7 +543,7 @@ main {
 }
 
 .social-networks a {
-    font-size: 3em;
+    font-size: 2em;
     color: #302321;
 }
 
@@ -651,6 +714,11 @@ Breakpoints:
         border-radius: 10px;
     }
 
+    #navbarNav>ul {
+        align-items: center;
+    }
+    
+
     #navbarNav>ul a {
         font-size: large;
     }
@@ -713,14 +781,15 @@ Breakpoints:
     /* ------------------------------------------About */
 
     .about>div>div>h2,
-    .treatments>div>div>h2 {
+    .about-our-treatments>div>h2 {
         font-size: 20px;
     }
 
     .about>div>div>p,
-    .treatments>div>div>p {
+    .about-our-treatments>div>p {
         font-size: 18px;
     }
+
     /* ------------------------------- Shared templates content end -------------------------------*/
 
     /* ----------------------------------- home_details content -----------------------------------*/
@@ -735,33 +804,13 @@ Breakpoints:
 
     /* ------------------------------------------Treatments */
 
-    .home-treatments h2.text-uppercase {
+    .about-our-treatments h2.text-uppercase {
         font-size: 120% !important;
         padding-bottom: 1em !important;
         letter-spacing: 0.9mm !important;
         text-align: center;
     }
 
-    .home-treatment-item {
-        vertical-align: middle;
-        margin-bottom: 20px;
-    }
-
-    .home-treatment-item img {
-        border-radius: 15px;
-        margin-right: 0!important;
-        padding-right: 0!important;
-    }
-
-    .home-treatment-item small {
-        font-size: 16px;
-    }
-
-    .md-treatments img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
 
     /* ---------------------------------------Map styles */
 
@@ -880,7 +929,6 @@ Breakpoints:
     }
 
     .custom-btn {
-        padding: 0.475 1.3rem !important;
         font-size: 30px !important;
     }
 
@@ -965,6 +1013,57 @@ Breakpoints:
         min-height: 550px;
     }
 
+    .treatment-information-heading {
+        font-size: 4em;
+    }
+
+    .treatment-details {
+        margin: 2em 4em;
+    }
+
+    /* General styles for treatment details */
+    .treatment-details h2, .treatment-details h3 {
+        font-size: 2.7em;
+        font-weight: 700;
+        text-align: center;
+        padding-bottom: 1em;
+    }
+
+    .treatment-details p,
+    .treatment-details ol li,
+    body > main > section > div > div > div > div > ul {
+        font-size: 2em;
+        padding-bottom: 1em;
+    }
+
+    .treatment-details ol>li {
+        font-size: 1em;
+        list-style-type: none;
+    }
+   
+    .treatment-details ol>li>h6 {
+        font-size: 2.2em;
+    }
+
+    /* Fixed banner styles */
+    .fixed-banner {
+    width: 20px;
+    height: 150vh;
+    /* background-color: #f8f9fa; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); */
+    z-index: 100;
+    }
+
+    /* Button inside the banner, with vertical (rotated) text */
+    .banner-button {
+
+    display: block;
+    padding: 5px 20px;
+    margin-right: 10px;
+    }
 
     /* ------------------------------ treatment_details content end ----------------------------*/
 
@@ -1142,6 +1241,15 @@ Breakpoints:
         padding-bottom: 30px;
     }
 
+    /* --------------------------------- home_details content end --------------------------------*/
+
+    /* -------------------------------- treatment_details content ---------------------------------*/
+
+    .gallery {
+        padding-bottom: 80px;
+    }
+
+    /* -------------------------------- treatment_details content ---------------------------------*/
 
     /* ---------------------------------------Footer styles */
     .back-to-top {
