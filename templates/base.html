@@ -52,9 +52,17 @@
                 </ul>
             </div>
             <div class="d-none d-md-block sign-up">
-                <button type="button" class="btn btn-dark custom-btn" onclick="location.href='/login'">
+                {% if user.is_authenticated %}
+                <!-- Shows Sign Out button if the user is logged in -->
+                <button type="button" class="btn btn-dark custom-btn" onclick="location.href='{% url 'logout' %}'">
+                    Sign Out
+                </button>
+                {% else %}
+                <!-- Show Sign In / Sign Up button if the user is not logged in -->
+                <button type="button" class="btn btn-dark custom-btn" onclick="location.href='{% url 'signup' %}'">
                     Sign In / Sign Up
                 </button>
+            {% endif %}
             </div>
         </div>
     </nav>

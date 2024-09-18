@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Profile | Caldwell Cosmetics{% endblock %}
+
+{% block hero %}
+
+<!-- Hero image section -->
+<section class="hero" id="home-hero">
+    <div class="container-fluid p-0 position-relative">
+        <img src="{% static 'images/home-hero.jpg' %}" class="img-fluid" alt="Image showing x">
+        <!-- Transparent tinting -->
+        <div class="color-overlay"></div>
+            <div class="position-absolute top-50 start-50 translate-middle text-center text-white hero-text-md">
+                <h2 id="home-cover-heading">Caldwell Cosmetics</h2>
+                <h3 id="est-tag">Est.2024</h3>
+            </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block content %}
+
+<h2>Sign Up</h2>
+
+<form method="POST" class="form">
+    {% csrf_token %}
+    <div class="mb-3">
+        {{ form.username.label_tag }}
+        {{ form.username }}
+    </div>
+    <div class="mb-3">
+        {{ form.email.label_tag }}
+        {{ form.email }}
+    </div>
+    <div class="mb-3">
+        {{ form.password1.label_tag }}
+        {{ form.password1 }}
+    </div>
+    <div class="mb-3">
+        {{ form.password2.label_tag }}
+        {{ form.password2 }}
+    </div>
+    <button type="submit" class="btn btn-dark">Sign Up</button>
+</form>
+
+<p>Already have an account? <a href="{% url 'login' %}">Log in</a></p>
+
+{% endblock %}

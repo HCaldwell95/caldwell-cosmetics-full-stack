@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'home_details',
     'treatment_details',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -134,6 +135,12 @@ EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = env('EMAIL_PORT', cast=int)
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
+
+# Determines where users are redirected after logging in/out
+LOGIN_REDIRECT_URL = 'profile'
+LOGOUT_REDIRECT_URL = 'home_details'
+LOGIN_URL = 'login'
+
 
 # Test database configuration
 if 'test' in sys.argv:
