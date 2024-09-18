@@ -15,6 +15,9 @@ import os
 import sys
 import dj_database_url
 import environ
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -52,6 +55,8 @@ INSTALLED_APPS = [
     'home_details',
     'treatment_details',
     'accounts',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -150,3 +155,11 @@ if 'test' in sys.argv:
             'NAME': ':memory:',
         }
     }
+
+CLOUDINARY_STORAGE = {
+    'cloud_name': env('CLOUDINARY_CLOUD_NAME'),
+    'api_key': env('CLOUDINARY_API_KEY'),
+    'api_secret': env('CLOUDINARY_API_SECRET'),
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

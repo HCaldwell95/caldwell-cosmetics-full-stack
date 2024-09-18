@@ -28,7 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),  # Admin panel URL
     path('treatments/', include('treatment_details.urls')),
     path('accounts/', include('accounts.urls')),
-]
+] 
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
