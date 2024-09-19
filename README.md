@@ -216,8 +216,6 @@ The initial skeleton provides a broad framework that is refined and expanded upo
 ### Wirefames
 [Balsamiq](https://balsamiq.com/wireframes/ "Balsamiq") was utilised to design the website's layout and navigation flow. I started by developing a mobile version following a mobile-first approach and then created versions for medium and large screens. Ensuring responsiveness across various devices was a key focus.
 
-### Wireframes
-
 Basic wireframes are provided below. Please note that these may differ slightly from the final website design:
 
 * [Home Page](image.jpg "Home Page")
@@ -225,15 +223,56 @@ Basic wireframes are provided below. Please note that these may differ slightly 
 * [Meet The Team](image.jpg "Meet The Team") – The Meet The Team Page follows the same rulings and stylings as the Home Page and Treatments Page, showing only detailed information on the practitioners at Caldwell Cosmetics.
 * [My Bookings](image.jpg "My Bookings") – The Bookings Page follows the trend, displaying only the information and fields required to create, edit and delete bookings.
 
-
-
 ## Surface
 
 ### Font
+
+The fonts used in this project are imported from Google Fonts:
+
+* <span style="font-family: 'Cormorant', serif;">Cormorant</span>: This font family includes a range of styles, such as italic and varying weights from 300 to 700, providing flexibility for different text elements.
+
+* <span style="font-family: 'Italiana', serif;">Italiana</span>: A single-style serif font that brings a classic, elegant look.
+These fonts have been chosen to enhance the visual appeal and readability across the website.
+
 ### Icons
+
+Font Awesome has been utilised to obtain some icons for the website. Icons were only utilised in the footer of the page to make the social links stand out as well as small details on the contact details in the footer.
+
 ### Colours
+
+The colour palette used in this project has been carefully chosen to create a soft, professional, and visually appealing design. Here’s an explanation of each colour and its role:
+
+* --color-background-light (rgb(255, 251, 249)): A soft off-white background that offers a clean, minimalistic base for the site's layout.
+
+* --color-background-cream (rgb(253, 247, 245)): A warm cream tone that provides a welcoming and gentle contrast, adding depth to the background.
+
+* --color-border (rgba(0, 0, 0, 0.5)): A semi-transparent black used for subtle borders around key elements, providing structure without overpowering the design.
+
+* --color-heading (black): A bold black colour that ensures clarity and emphasis for headings and key text elements.
+
+* --color-accent (#eed6c2): A peachy accent that brings warmth and soft contrast, drawing attention to interactive or highlighted sections of the site.
+
+* --color-accent-dark (#302121): A deep, dark brown used for text and links, creating an elegant contrast that is easy to read.
+
+* --color-overlay (rgba(95, 95, 95, 0.4)): A grey overlay used in hero sections to subtly darken background images, ensuring text and foreground elements are clear.
+
+* These colours, combined with the defined font sizes and border styling, enhance the site's readability, aesthetic appeal, and user experience.
+
 ### Responsive Screens
 
+The following breakpoints have been chosen to ensure the design adapts seamlessly across various screen sizes, providing an optimal user experience:
+
+- **768px (Tablets)**: Targets smaller tablets and larger smartphones. The layout adjusts to portrait tablet viewing, ensuring content is readable and user interaction is comfortable without overcrowding the screen.
+  
+- **1024px (Larger Tablets)**: For larger tablets in landscape mode, the design adapts to make use of the wider screen, spacing elements more generously.
+  
+- **1280px (Laptops)**: This breakpoint targets laptops, allowing for a more desktop-like experience. The layout may include additional elements or columns that fit comfortably on the larger screen.
+  
+- **1400px (Desktops)**: For larger desktop displays, the design becomes more spacious, often expanding content areas or including more detailed design elements for full desktop users.
+
+These breakpoints help maintain a consistent and user-friendly experience across different devices, from tablets to desktops.
+
+&nbsp;
 
 
 # Features
@@ -241,21 +280,77 @@ Basic wireframes are provided below. Please note that these may differ slightly 
 ## Existing Features
 
 ### Landing Page
+- The landing page introduces Caldwell Cosmetics and highlights key services and offerings.
+- It includes a hero image with an overlay, drawing attention to the business' core message.
+
 ### Navigation Bar
+- A fully responsive navigation bar with links to important pages like Home, Treatments, and My Bookings.
+- Provides easy access to different sections of the website.
+
 ### Scrolling Text Bar
+- A scrolling text bar on the homepage displaying available treatments.
+- Enhances user engagement by promoting the key services in a visually dynamic way.
+
 ### Find Us Map
+- An embedded Google Map that shows the location of the clinic.
+- Helps users find the clinic easily and adds credibility to the business.
+
 ### How to Book Treatments Section
+- A clear, step-by-step guide on how users can book treatments.
+- Encourages easy navigation from registration to booking appointments.
+
 ### Footer
+- Contains contact details, social media links, and a subscription form.
+- Provides essential information and a call to action for visitors to stay connected.
+
 ### Profile
+- Users can create and manage their profile after registering on the website.
+- Profiles include essential details such as names, contact information, and booking history.
+
 ### My Bookings Page
+- Logged-in users can view their existing bookings on this page.
+- Displays details about confirmed and pending appointments.
+
 ### New Booking Page
+- Allows users to book new treatments by selecting a treatment, date, and time.
+- Integrated with a dropdown for treatments and pickers for date and time selection.
+
 ### Edit Booking Page
+- Users can modify their existing bookings by selecting a different date or time.
+- Ensures flexibility in managing appointments.
+
 ### Delete Booking Page
+- Users have the option to delete their existing bookings if needed.
+- A confirmation prompt ensures users don’t accidentally remove bookings.
+
 ### Django Template Pages
+- The website uses Django’s templating system to manage pages dynamically.
+- Templates like `base.html` provide a consistent layout for content across all pages.
+
 ### Messages
+- Flash messages notify users of actions such as successful booking, editing, or errors.
+- Helps improve user experience by providing immediate feedback on actions.
+
 ### Error Pages
+- Custom 404 and 500 error pages give users clear guidance when something goes wrong.
+- Maintains the branding of the site while handling errors gracefully.
 
+## Planned Features
 
+### Online Booking System Improvements
+- Incorporating real-time updates for appointment availability.
+- Expanding treatment options and allowing users to filter available slots by their preferences.
+
+### Subscription Service
+- Further integration of the newsletter service, allowing users to manage their preferences and receive updates on new treatments.
+
+### Social Media Integration
+- Deeper integration with social media platforms, allowing users to share their bookings or experiences directly from the website.
+
+### E-commerce Integration
+- Future potential to integrate an online store for purchasing skincare products and other related items.
+
+&nbsp;
 
 # Technologies Used
 
@@ -331,11 +426,98 @@ Views to handle booking data (booking_events and events views return JSON data f
 
 ## Databases
 
+The project uses Django’s ORM to interact with the following databases:
 
-# Testing
+- **Primary Database**: 
+  - **PostgreSQL**: Used for storing user data, bookings, treatments, and other dynamic content. It provides a robust and scalable solution for handling relational data.
+  
+- **Cloudinary**: 
+  - **Image Storage**: Used to store and serve images efficiently. This allows for easy management of media assets with optimized delivery.
+
+## Testing
+
+The project includes various tests to ensure functionality and reliability:
+
+### Automated Tests
+
+- **Integration Tests**: Validate the interaction between different components of the application, ensuring that data flows correctly between the user interface, views, and models.
+
+#### Booking System Automated Test
+
+This section describes the tests implemented for the booking functionality using Django's test framework. The `BookingTestCase` class ensures that various aspects of the booking system work correctly.
+
+
+#### Test Setup
+
+Before each test runs, the `setUp` method prepares the test environment by:
+- **Creating a Test User**: A user named `testuser` with a password `testpass` is created.
+- **Creating a Test Treatment**: A treatment named `Test Treatment` is added.
+- **Logging In**: The test user is logged in to simulate user actions.
+- **Creating a Test Booking**: A booking for the test user is created with today's date, a time slot of 14:00, and a status of not confirmed.
+
+#### Test Cases
+
+- **Test Booking Creation**: Checks if a booking instance is successfully created. The test verifies that the booking count in the database is exactly one after creation.
+
+- **Test Booking Page Access**: Verifies that the 'My Bookings' page can be accessed by logged-in users. It checks that the page returns a status code of 200 and uses the correct template.
+
+- **Test Booking Display on Page**: Ensures that the created booking is correctly displayed on the 'My Bookings' page. It verifies that the treatment name, time slot, and booking status are shown as expected.
+
+- **Test Booking Time Slot Validation**: Validates that the system prevents double-booking for the same time slot. The test attempts to create another booking with the same details and checks if a `ValidationError` is raised.
+
+- **Test Admin Can Confirm Booking**: Tests whether an admin or the system can confirm a booking. It sets the `is_confirmed` field to `True` and verifies that the status has been updated correctly.
+
+These tests help ensure that the booking system operates smoothly, handles edge cases, and maintains data integrity.
+
+- **Unit Tests**: Written to verify the correctness of individual units of code. For instance, tests are included for models such as `Subscriber` to ensure that unique constraints and email validation work as expected.
+
+## Testing Subscriber Model
+
+This section describes the tests for the `Subscriber` model, ensuring its functionality and data integrity.
+
+### Test Setup
+
+Before each test runs, the `setUp` method initializes the test environment by:
+- **Creating a Test Subscriber**: A subscriber with the email `test@example.com` is added to the database.
+
+### Test Cases
+
+- **Test Subscriber Creation**: Verifies that a subscriber can be created and successfully saved to the database. The test checks that the subscriber count is exactly one and that the email of the saved subscriber matches `test@example.com`.
+
+- **Test Subscriber Email Uniqueness**: Ensures that the email field is unique. The test attempts to create a new subscriber with the same email as an existing one and checks if a `ValidationError` is raised, confirming that duplicate emails are not allowed.
+
+- **Test Subscriber Email Format**: Validates that the email field enforces proper email format. The test creates a subscriber with an invalid email format and verifies that a `ValidationError` is raised.
+
+- **Test Subscriber String Method**: Tests the `__str__` method of the `Subscriber` model to ensure it returns the correct string representation of the subscriber. The test checks that the method returns the email `test@example.com`.
+
+These tests help verify that the `Subscriber` model handles data correctly, enforces unique and valid email addresses, and provides a proper string representation.
+
+
+### Manual Tests
+
+- **User Interface Testing**: Manual testing is conducted to verify that the user interface functions correctly across different devices and screen sizes. This includes checking that forms are displayed properly and that navigation links work as intended.
+
+- **Feature Testing**: Ensures that key features such as booking appointments, viewing bookings, and editing profiles are functioning as expected. This involves simulating user interactions and verifying that the expected results are achieved.
+
+### Test Coverage
+
+- **Comprehensive Coverage**: Efforts are made to cover a wide range of scenarios, including edge cases and error conditions, to ensure the application performs reliably under various conditions.
+
+These testing practices help maintain high code quality and improve the overall user experience.
+
+- **Unit Tests**: Written to verify the correctness of individual units of code. For instance, tests are included for models such as `Subscriber` to ensure that unique constraints and email validation work as expected.
 
 ## Code Validation
+
 ### W3C HTML Validator
+
+![Alt text](documentation/base-html-validator-filtered-first.png)
+
+
+![Alt text](documentation/home-html-validation-list.png)
+
+![Alt text](documentation/treatments-html-validation-list.png)
+
 #### First Attempt of Home Page
 
 IMAGE SHOWING VALIDATOR ISSUES 1-7
@@ -355,15 +537,28 @@ The primary issue that arose in the first attempt was the inclusion of an anchor
 ```
 
 #### Final Attempt of Home Page
+
+![Alt text](documentation/base-html-validator-filtered-final.png)
+
 #### Only Attempt of the Django Templates
-#### First Attempt of Bookings Page
-#### Final Attempt of Bookings Page
+
+![Alt text](documentation/treatments-html-validation-list.png)
+![Alt text](documentation/home-html-validation-list.png)
 
 ### W3C CSS Validator
+
 #### First Attempt of CSS File
+![Alt text](documentation/css_validator_first.png)
+#### Final Attempt of CSS File
+![Alt text](documentation/css_validator_final.png)
 
 ### JSHint
+
+#### First Attempt of JavaScript Files
+![Alt text](documentation/scriptjs-validator.png)
+
 #### Final Attempt of JavaScript Files
+![Alt text](documentation/scriptjs-validator-final.png)
 
 ### Python Syntax Checker PEP8 Validation
 #### First Attempt of Python Files
@@ -371,12 +566,16 @@ The primary issue that arose in the first attempt was the inclusion of an anchor
 
 ## Lighthouse
 ### Final Attempt for Lighthouse
+![Alt text](documentation/lighthouse-initial-scan.png)
 
 ## Responsiveness
 ## Web Aim Contrast Checker
 ## Browser Compatability
 ## Manual Testing
 ## Automated Testing
+
+### 
+
 
 # Bugs
 ## Resolved
@@ -425,11 +624,52 @@ The issue was resolved by removing the backdrop. This was achieved by adding the
 ## Unresolved
 
 # Deployment
+During the process of coding up the website, the code was deployed on GitHub to allow for continuous manual testing and code validation. The following steps were conducted to deploy the website on GitHub:
+
 ## Create Application
+1. Create a Heroku account if you don’t have one and login.
+2. Create a new application, by selecting the “new” button on the top right of the dashboard and click “Create new app”.
+3. Choose a unique name for the application and select the region you live in, followed by "Create App".
+\
+&nbsp;
+
 ## ElephantSQL
-## Cloudinary
+4. Go to [elephantsql.com](https://www.elephantsql.com/), login with GitHub and create a new instance.
+5. Copy the URL once the project instance has been created. This value can also be saved with as environment variable used to equal the `DATABASES` variable in `settings.py`.
+6. Install the `dj-database-url` package version 0.5.0 by using `pip3 install dj_database_url==0.5.0` to format the URL into one that Django can use, subsequently updating the `requirements.txt`.
+\
+&nbsp;
+
+## Cloudinary 
+7. Create a cloudinary account.
+8. Add any images for your project in the “Media Library”.
+9. Copy the Cloudinary API URL from your dashboard.
+\
+&nbsp;
+
 ## Final Repo Preparations
-## Heroku Deployment
+10. Make sure to make any migrations in the project, by typing `python3 manage.py makemigrations` followed by `python3 manage.py migrate` into the terminal.
+11. Ensure a `Procfile`, which contains `web: gunicorn [project_name].wsgi:application` is added to the project.
+\
+&nbsp;
+
+## Heroku Deploy
+12. Go back to Heroku and when the Project’s page opens up, go to the "settings" tab and scroll down to the “Config Vars” section. 
+13. Enter the following key-valuen pairs in the “Config Vars” section: 
+	* Key = `PORT` : Value = 8000
+	* Key = `SECRET_KEY` : Value = Django Secret Key value obtained from `settings.py`
+	* Key = `DATABASE_URL` : Value = ElephantSQL URL from point 5.
+	* Key = `CLOUDINARY_URL` : Value = Cloudinary API URL from your Cloudinary account in point 9.
+14. Go to the “Deploy” tab next and scroll down to the GitHub deployment method.
+15. Search for the suitable repository and then connect to it by selecting the “Connect” button.
+16. Scroll down to the bottom of the “Deploy” Page and select the type of deployment you want to conduct. If you opt to “Automatically Deploy”, it will deploy every time you push new code to your repository. Otherwise, you will have to manually deploy, by selecting the button at the bottom of the page.
+17. The application is now deployed!
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
 
 # Credits
 ## For Code Help and Advice

@@ -39,7 +39,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'caldwell-cosmetics-full-stack-ecf887f27496.herokuapp.com', 
-    'localhost', 
+    'localhost',
+    'http://localhost/', 
     '*'
 ]
 

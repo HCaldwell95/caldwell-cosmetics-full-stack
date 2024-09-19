@@ -238,15 +238,21 @@ main {
 /* ------------------------------------------ About Section */
 .about, 
 .about-our-treatments,
-.treatments {
+.treatments,
+.booking-process {
     padding-top: 2em;
     text-align: center;
     margin: 0 2.5%;
 }
 
+.booking-process > div > ol {
+    text-align: justify;
+}
+
 .about > div > div > h2,
 .about-our-treatments > div > h2,
-.treatments > div > div > h2 {
+.treatments > div > div > h2,
+.booking-process > div > h2 {
     font-size: var(--font-size-small);
     padding-bottom: 0.5em;
     letter-spacing: 0.7mm;
@@ -867,12 +873,14 @@ Breakpoints:
     /* --------------------------------- Shared templates content ---------------------------------*/
     /* ------------------------------------------ About ------------------------------------------ */
     .about>div>div>h2,
-    .about-our-treatments>div>h2 {
+    .about-our-treatments>div>h2,
+    .booking-process > div > h2 {
         font-size: 20px;
     }
 
     .about>div>div>p,
-    .about-our-treatments>div>p {
+    .about-our-treatments>div>p,
+    .booking-process > div > p {
         font-size: 18px;
     }
 
@@ -1032,14 +1040,16 @@ Breakpoints:
 
     .about>div>div>h2,
     .about-our-treatments>div>h2,
-    .treatments>div>div>h2 {
+    .treatments>div>div>h2,
+    .booking-process > div > h2 {
         font-size: 22px;
     }
 
 
     .about > div > div > p,
     .about-our-treatments > div > p,
-    .treatments > div > div > p {
+    .treatments > div > div > p,
+    .booking-process > div > p {
         font-size: 28px;
     }
 
@@ -1253,12 +1263,14 @@ Breakpoints:
     /* -------------------------------- Shared templates content ------------------------------*/
     .about,
     .about-our-treatments,
-    .treatments {
+    .treatments,
+    .booking-process {
         font-size: 36px;
     }
 
     .about div > div > h2,
-    .about-our-treatments div > h2 {
+    .about-our-treatments div > h2,
+    .booking-process > div > h2 {
         font-size: 40px;
     }
 
@@ -1390,13 +1402,15 @@ Breakpoints:
     /* -------------------------------- Shared templates content ------------------------------*/
     .about,
     .about-our-treatments,
-    .treatments {
+    .treatments,
+    .booking-process {
         font-size: 36px;
     }
 
     .about div > div > h2,
     .about-our-treatments div > h2,
-    .treatments div > div > h2 {
+    .treatments div > div > h2,
+    .booking-process > div > h2 {
         font-size: 40px;
     }
 
