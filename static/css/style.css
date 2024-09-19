@@ -1,107 +1,95 @@
-/* Colour References
+/* ------------------------------ Color References ------------------------------ */
 
-    Background colours:
+/* Background Colors */
+:root {
+    --color-background-light: rgb(255, 251, 249); /* Off-White */
+    --color-background-cream: rgb(253, 247, 245); /* Cream */
+    --color-hero-overlay: rgba(95, 95, 95, 0.4); /* Hero image tint overlay */
+    --color-accent-peach: #eed6c2; /* Peach Accent */
+    --color-dark-brown: #302321; /* Dark Brown for text and social media links */
+}
 
-    Body background: rgb(255, 251, 249); Off-White
-    Body background: rgb(253 247 245); Cream
-    Hero image tint overlay: rgba(95, 95, 95, 0.4);
-    Accent (peach): ##eed6c2;
+/* ------------------------------ Font Variables ------------------------------ */
+:root {
+    --font-italiana: 'Italiana', sans-serif;
+    --font-cormorant: 'Cormorant', serif;
+    --font-weight-regular: 400;
+    --font-weight-bold: 600;
+    --font-size-base: 14px;
+    --font-family-base: var(--font-cormorant);
+}
 
-    ----------------------
-
-    Font Colours:
-    Dark Brown: color: #302321; (also used for social media links)
-
-    Button Colours:
-    Subscribe border: solid #9e754e;
-    Subscribe background-color: #c09061;
-
-
-
-
-
-
-*/
-
-/* Wildcard selector to override default styles added by the browser */
+/* ------------------------------ Global Styles ------------------------------ */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-/* Google Fonts */
-
-.italiana-regular {
-    font-family: "Italiana", sans-serif;
-    font-weight: 400!important;
-    font-style: normal;
-  }  
-
-  .italiana-bold {
-    font-family: "Italiana", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-  }  
-
-  .cormorant {
-    font-family: "Cormorant", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-  }
-
-/* ------------------------------General styles */
+/* Base Styles */
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color:rgb(253 247 245);
-    font-size: 14px;
-    font-family: "Cormorant", serif;
+    background-color: var(--color-background-cream);
+    font-size: var(--font-size-base);
+    font-family: var(--font-family-base);
 }
 
-/* Heading styles */
+/* ------------------------------ Font Styles ------------------------------ */
+.italiana-regular {
+    font-family: var(--font-italiana);
+    font-weight: var(--font-weight-regular);
+    font-style: normal;
+}  
+
+.italiana-bold {
+    font-family: var(--font-italiana);
+    font-weight: var(--font-weight-bold);
+    font-style: normal;
+}  
+
+.cormorant {
+    font-family: var(--font-cormorant);
+    font-weight: var(--font-weight-regular);
+    font-style: normal;
+}
+
+/* ------------------------------ Heading Styles ------------------------------ */
 h2, h3, h4, h5, h6 {
-    color: black;
+    color: var(--color-dark-brown);
     text-transform: uppercase;
 }
 
+/* ------------------------------ Utility Styles ------------------------------ */
 .small-hr {
-    border: 1px solid rgba(0, 0, 0, 0.5); /* Add transparency to the border color */
+    border: 1px solid var(--color-dark-brown); /* Use dark brown for the border */
     width: 80%;
     margin: 0 auto;
 }
 
-/* Style to hide unwanted headings */
-.hidden-heading {
+.hidden-heading, .hidden-cover-text {
     display: none;
 }
 
-.hidden-cover-text {
-    display: none;
-}
-
-/* Style to remove underline from hyperlinks */
 a {
     text-decoration: none;
 }
 
-/* -----------------------------------Navigation bar styles */
+/* ----------------------------------- Navigation Bar Styles ----------------------------------- */
 
 /* Styles for the navbar container */
 .navbar-container {
     background-color: transparent;
-    padding-top: 0!important;
+    padding-top: 0 !important;
     box-sizing: border-box;
     z-index: 1000;
     position: absolute;
-    height: auto;
     width: 100%;
 }
 
 /* Style for the logo link in navbar */
-.logo-link>img {
+.logo-link > img {
     max-width: 80px;
     max-height: 40px;
 }
@@ -112,19 +100,19 @@ a {
 }
 
 /* Styles for the navbar dropdown items */
-#navbarNav>ul {
+#navbarNav > ul {
     display: flex;
     text-align: right;
 }
 
-#navbarNav>ul a {
-    color: #eed6c2;
+#navbarNav > ul a {
+    color: var(--color-accent-peach); /* Using a variable for consistency */
     text-transform: uppercase;
     padding-right: 0.5em;
 }
 
 .navbar-nav .nav-item.active .nav-link {
-    color: #ffbd66!important;
+    color: #ffbd66 !important;
     text-decoration: underline;
     font-size: 18px;
     font-weight: bold; /* Optional: make the font bold */
@@ -138,40 +126,43 @@ a {
     padding-bottom: 100px;
 }
 
-/* ------------------------------------------------Hero image content */
+/* ----------------------------------- Hero Image Content ----------------------------------- */
 .hero {
     width: 100%;
     height: 100%;
     position: relative;
 }
 
-/* Colour overlay to dim the background image */
+/* Color overlay to dim the background image */
 .color-overlay::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     background-color: rgba(95, 95, 95, 0.4);
-    margin: 0;
-    display: block;
     height: 100%;
     width: 100%;
 }
 
-#home-cover-heading, #treatments-cover-heading, #bookings-cover-heading, #contact-cover-heading {
+/* Heading styles for hero cover */
+#home-cover-heading, 
+#treatments-cover-heading, 
+#bookings-cover-heading, 
+#contact-cover-heading {
     margin-top: 0.5em;
     padding-top: 0.5em;
     font-size: 2.1em;
-    font-weight: 400;
+    font-weight: var(--font-weight-regular);
     letter-spacing: 2mm;
     color: #bebebe;
-    text-shadow:5px 7px 0 #313131;
+    text-shadow: 5px 7px 0 #313131;
 }
 
+/* General cover text styles */
 .cover-text {
     letter-spacing: 0.4mm;
     text-transform: uppercase;
-    color:#e9e9e9;
+    color: #e9e9e9;
 }
 
 #est-tag {
@@ -184,104 +175,83 @@ a {
     display: none;
 }
 
-/* -----------------------------------------------Scrolling text styles */
+/* ----------------------------------------------- Scrolling Text Styles ----------------------------------------------- */
 
 /* Styles for the scroll container */ 
 #scroll-container {
     border-bottom: 3px groove #ecd2be9a;
-    width:100%;
+    width: 100%;
     padding: 5px 10px;
     overflow: hidden;
     white-space: nowrap;
 }
 
 #scroll-text {
-  /* Set the initial position of the text for the animation */
-  -moz-transform: translateX(100%);
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
+    /* Set the initial position of the text for the animation */
+    transform: translateX(100%);
   
-  /* Set the animation properties */
-  -moz-animation: my-animation 27s linear infinite;
-  -webkit-animation: my-animation 27s linear infinite;
-  animation: my-animation 27s linear infinite;
+    /* Set the animation properties */
+    animation: my-animation 27s linear infinite;
 }
 
-/* Define the animation keyframes for Firefox */
-@-moz-keyframes my-animation {
-  from { -moz-transform: translateX(100%); }
-  to { -moz-transform: translateX(-100%); }
-}
-
-/* Define the animation keyframes for Chrome */
-@-webkit-keyframes my-animation {
-  from { -webkit-transform: translateX(100%); }
-  to { -webkit-transform: translateX(-100%); }
-}
-
-/* Animation keyframes */
-@-moz-keyframes my-animation {
-    from { -moz-transform: translateX(200%); }
-    to { -moz-transform: translateX(-200%); }
-  }
-  
-  @-webkit-keyframes my-animation {
-    from { -webkit-transform: translateX(200%); }
-    to { -webkit-transform: translateX(-200%); }
-  }
-  
-  @keyframes my-animation {
+/* Define the animation keyframes */
+@keyframes my-animation {
     0% {
-      -moz-transform: translateX(200%);
-      -webkit-transform: translateX(200%);
-      transform: translateX(200%);
+        transform: translateX(200%);
     }
-  
-    50% { 
-      -moz-transform: translateX(-200%);
-      -webkit-transform: translateX(-200%);
-      transform: translateX(-200%);
+    50% {
+        transform: translateX(-200%);
     }
-  
     100% {
-      -moz-transform: translateX(200%);
-      -webkit-transform: translateX(200%);
-      transform: translateX(200%);
+        transform: translateX(200%);
     }
-  }
+}
 
 /* Style to push main content to fill page */
 main {
     flex: 1 0 auto;
 }
 
-/* --------------------------------------------- Home_details content --------------------------------------------*/
+/* ----------------------------------------------- Home_details content ----------------------------------------------- */
 
-/* ------------------------------------------About */
+/* Define CSS Variables for reusable values */
+:root {
+    --color-background-light: rgb(255, 251, 249);
+    --color-background-cream: rgb(253, 247, 245);
+    --color-border: rgba(0, 0, 0, 0.5);
+    --color-heading: black;
+    --color-accent: #eed6c2;
+    --color-accent-dark: #302121;
+    --color-overlay: rgba(95, 95, 95, 0.4);
+    --font-size-heading: 1.5rem;
+    --font-size-small: 90%;
+    --border-width: 2px;
+    --border-radius: 10px;
+}
 
+/* ------------------------------------------ About Section */
 .about, 
 .about-our-treatments,
 .treatments {
-    padding: 2em 0;
+    padding-top: 2em;
     text-align: center;
     margin: 0 2.5%;
 }
 
-.about>div>div>h2,
-.about-our-treatments>div>h2,
-.treatments>div>div>h2 {
-    font-size: 90%;
+.about > div > div > h2,
+.about-our-treatments > div > h2,
+.treatments > div > div > h2 {
+    font-size: var(--font-size-small);
     padding-bottom: 0.5em;
     letter-spacing: 0.7mm;
 }
 
 .page-divider {
-    border: 2px solid black;
-    margin: 0px 12rem;
+    border: var(--border-width) solid var(--color-heading);
+    margin: 0 12rem;
 }
 
-/* ------------------------------------------Google Maps */
-
+/* ------------------------------------------ Google Maps */
 #maps {
     width: 100%;
     margin: 0 auto;
@@ -294,19 +264,17 @@ main {
     letter-spacing: 0.7mm;
 }
 
-/* -----------------------------------------------------Treatments */
-
+/* ----------------------------------------------------- Treatments */
 
 /* Carousel */
-
 .carousel-img {
-    height: 250px; /* Set a fixed height */
-    width: 100%; /* Ensure the image fills its container */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    border: 2px solid #ddd; /* Add a border around the images */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for better distinction */
-    border-radius: 10px; /* Optional: Round the corners of images */
-    transition: transform 0.3s ease; /* Smooth hover effect */
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border: var(--border-width) solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease;
 }
 
 .carousel-img:hover {
@@ -315,7 +283,7 @@ main {
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5); /* Makes the arrow buttons visible over the images */
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
     padding: 10px;
     height: 40px;
@@ -324,13 +292,12 @@ main {
 
 .carousel-control-prev-icon:hover,
 .carousel-control-next-icon:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* ------------------------------------- Treatment_details content -------------------------------*/
+/* ------------------------------------- Treatment_details content */
 
-/* ------------------------------------------Treatment cards */
-
+/* Treatment Cards */
 .gallery {
     padding-bottom: 30px;
 }
@@ -363,12 +330,12 @@ main {
     text-align: left;
 }
 
-.treatments__card-body>h2 {
+.treatments__card-body > h2 {
     color: white;
 }
 
 .treatments__card-heading {
-    font-size: 1.5rem;
+    font-size: var(--font-size-heading);
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -392,14 +359,13 @@ main {
     color: #fff;
 }
 
-/* Treatment information pages */
-
+/* Treatment Information Pages */
 .treatment-information-heading {
     text-align: center;
     padding-top: 1em;
 }
 
-/* Fixed banner styles */
+/* Fixed Banner Styles */
 .fixed-banner {
     position: fixed;
     top: 0;
@@ -412,36 +378,42 @@ main {
     z-index: 100;
 }
 
-/* Button inside the banner, with vertical (rotated) text */
 .banner-button {
-
     display: block;
     padding: 5px 20px;
     margin-right: 10px;
-    background-color: #eed6c2;
-    color: #302321;
+    background-color: var(--color-accent);
+    color: var(--color-heading);
     text-align: center;
     text-decoration: none;
     border-radius: 5px;
     font-family: 'Cormorant', serif;
     transform: rotate(-90deg);
-    /* transform-origin: left center; */
-    white-space: nowrap;
-    
-    /* Adjust for the vertical orientation */
     white-space: nowrap; /* Prevent text from wrapping */
 }
 
-/* Button hover effect */
+/* Button Hover Effect */
 .banner-button:hover {
-    background-color: #302121; /* Darker on hover */
+    background-color: var(--color-accent-dark);
     color: #fff;
 }
 
-/* ----------------------------------- Bookings content ------------------------------------*/
+/* Define CSS Variables for reusable values */
+:root {
+    --color-accent: #eed6c2;
+    --color-dark-brown: #302321;
+    --color-light-gray: rgba(0, 0, 0, 0.2);
+    --color-border: black;
+    --font-size-large: 1.5em;
+    --font-size-small: 0.7rem;
+    --font-size-xsmall: 0.6rem;
+    --border-width: 2px;
+}
 
-.booking-page>h2, 
-.booking-confirmation>h2 {
+/* ----------------------------------- Bookings Content ------------------------------------ */
+
+.booking-page > h2, 
+.booking-confirmation > h2 {
     text-align: center;
     padding: 1em;
 }
@@ -450,7 +422,7 @@ main {
 .booking-confirmation {
     padding-bottom: 1.5em;
     align-self: center;
-    font-size: 1.5em;
+    font-size: var(--font-size-large);
     text-align: center;
 }
 
@@ -461,16 +433,16 @@ main {
     font-family: sans-serif;
 }
 
-/* ---------------------------------------------Footer Content */
+/* --------------------------------------------- Footer Content --------------------------------------------- */
 
 .footer-main {
-    background-color:#eed6c2;
+    background-color: var(--color-accent);
     width: 100%;
     left: 0;
     bottom: 0;
     position: relative;
     margin-top: 10px;
-    border-top: 2px ridge black;
+    border-top: var(--border-width) ridge var(--color-border);
 }
 
 .footer-main h6 {
@@ -479,16 +451,15 @@ main {
 }
 
 /* Background image for the footer */
-
 #footer-background-image {
-    position: relative; /* Required to position the pseudo-element */
+    position: relative;
     z-index: 1;
 }
 
 #footer-background-image::before {
     content: "";
     position: absolute;
-    background-image:url(../images/footer-overlay.jpg);
+    background-image: url(../images/footer-overlay.jpg);
     background-size: cover;
     width: 100%;
     height: 100%;
@@ -503,22 +474,20 @@ main {
     text-align: center;
     position: sticky;
     bottom: 0;
-    /* Stick to the bottom of the viewport */
     padding-top: 2px;
     margin-bottom: 0;
-    font-size: 120%;  
+    font-size: 120%;
 }
 
 .back-to-top a {
-    color: #302321; 
+    color: var(--color-dark-brown);
 }
 
 .back-to-top a:hover {
-    color:rgb(221, 189, 102);
+    color: rgb(221, 189, 102);
 }
 
 /* Subscribe newsletter */
-
 .subscribe-newsletter h2 {
     font-size: 14px;
 }
@@ -527,20 +496,19 @@ main {
     padding-left: 5px;
 }
 
-/* -------------------------------------Social media links */
+/* ------------------------------------- Social Media Links ------------------------------------- */
 
 .social-networks {
-    padding: 10px 0px 20px;
+    padding: 10px 0 20px;
     margin: 5px 4%;
 }
 
-.social-networks>ul {
+.social-networks > ul {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     list-style-type: none;
-    padding-left: 0px;
-    padding-right: 0px!important;
+    padding: 0;
 }
 
 .social-networks li {
@@ -549,41 +517,40 @@ main {
 
 .social-networks a {
     font-size: 2em;
-    color: #302321;
+    color: var(--color-dark-brown);
 }
 
-/* Footer address styles */
-
+/* Footer Address Styles */
 #footer-box {
     padding-top: 0.5%;
     padding-bottom: 1%;
 }
 
 #footer-address {
-    color: #302321;
-    letter-spacing: .5mm;
+    color: var(--color-dark-brown);
+    letter-spacing: 0.5mm;
     padding-left: 2%;
     align-self: end;
 }
 
 #footer-address h6 {
     margin-bottom: 0.2rem;
-    font-size: 0.7rem;
+    font-size: var(--font-size-small);
 }
 
 #footer-address p {
     margin: 0.04rem;
-    font-size: 0.6rem;
+    font-size: var(--font-size-xsmall);
 }
 
 #footer-directions {
-    color: #302321;
+    color: var(--color-dark-brown);
     font-size: 32px;
     padding-top: 30px;
 }
 
-#footer-directions a>i {
-    color: #302321;
+#footer-directions a > i {
+    color: var(--color-dark-brown);
     font-size: 30px;
 }
 
@@ -607,22 +574,22 @@ main {
 }
 
 .footer-contact a {
-    font-size: 0.6rem;
+    font-size: var(--font-size-xsmall);
     margin-bottom: 2px;
 }
 
 .small-print {
     font-size: 60%;
-    color: #302321;
+    color: var(--color-dark-brown);
     padding-bottom: 10px;
 }
 
-/* ------------------------Modal Container */
+/* ------------------------ Modal Container ------------------------ */
 
 .modal {
     display: none; 
     position: fixed; 
-    z-index: 9999!important; 
+    z-index: 9999; 
     left: 0;
     top: 0;
     width: 100%; 
@@ -639,24 +606,28 @@ main {
     z-index: 9999;
 }
 
-/* Modal Content */
+/* ------------------------ Modal Content ------------------------ */
+
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
+    border-radius: 5px; /* Add rounded corners for a modern look */
     width: 80%; 
     max-width: 400px;
     text-align: center;
-    z-index: 9999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
 }
 
-/* Close Button */
+/* ------------------------ Close Button ------------------------ */
+
 .close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    transition: color 0.3s; /* Smooth transition for hover effect */
 }
 
 .close:hover,
@@ -664,14 +635,19 @@ main {
     color: black;
     text-decoration: none;
     cursor: pointer;
+    outline: none; /* Remove default outline */
 }
 
-/* Buttons */
+/* ------------------------ Buttons ------------------------ */
+
 button {
     padding: 10px 20px;
     margin: 10px;
     border: none;
+    border-radius: 4px; /* Add rounded corners for buttons */
     cursor: pointer;
+    font-size: 16px; /* Make text larger for better readability */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
 }
 
 #accept {
@@ -679,9 +655,17 @@ button {
     color: white;
 }
 
+#accept:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
 #decline {
     background-color: #f44336; 
     color: white;
+}
+
+#decline:hover {
+    background-color: #e53935; /* Slightly darker red on hover */
 }
 
 
@@ -778,15 +762,11 @@ Breakpoints:
 
     #scroll-text {
         font-size: 16px;
-        /* Set the animation properties */
-        -moz-animation: my-animation 40s linear infinite;
-        -webkit-animation: my-animation 40s linear infinite;
         animation: my-animation 40s linear infinite;
+    }
 
-      }
     /* --------------------------------- Shared templates content ---------------------------------*/
-    /* ------------------------------------------About */
-
+    /* ------------------------------------------ About ------------------------------------------ */
     .about>div>div>h2,
     .about-our-treatments>div>h2 {
         font-size: 20px;
@@ -797,11 +777,9 @@ Breakpoints:
         font-size: 18px;
     }
 
-    /* ------------------------------- Shared templates content end -------------------------------*/
-
     /* ----------------------------------- home_details content -----------------------------------*/
 
-    /* ---------------------------------------Google Maps */    
+    /* ---------------------------------------- Google Maps ---------------------------------------*/    
 
     #maps h2 {
         text-align: center;
@@ -809,33 +787,14 @@ Breakpoints:
         letter-spacing: 0.7mm;
     }
 
-    /* ------------------------------------------Treatments */
-
-    .about-our-treatments h2.text-uppercase {
-        font-size: 22px;
-        padding-bottom: 1em;
-        letter-spacing: 0.9mm;
-        text-align: center;
-    }
-
-
-    /* ---------------------------------------Map styles */
+    /* ----------------------------------------- Map styles ---------------------------------------*/
 
     #maps h2 {
         font-size: 120%;
         letter-spacing: 0.9mm;
     }
 
-    /* ----------------------------------- home_details end -----------------------------------*/
-
-    /* ------------------------------ treatment_details content -------------------------------*/
-
-    
-
-    /* ---------------------------- treatment_details content end -----------------------------*/
-
-
-    /* ---------------------------------------Footer styles */
+    /* ----------------------------------------- Footer styles -------------------------------------*/
 
     .back-to-top {
         padding-bottom: 10px;
@@ -843,7 +802,6 @@ Breakpoints:
     }
 
     /* Subscribe newsletter */
-    
     .subscribe-newsletter {
         padding-top: 5px!important;
         padding-bottom: 5px!important;
@@ -853,9 +811,6 @@ Breakpoints:
 
     .subscribe-newsletter h2 {
         font-size: 18px;
-    }
-
-    .subscribe-newsletter h2 {
         margin-bottom: 8px!important;
     }
 
@@ -869,13 +824,11 @@ Breakpoints:
     }
 
     /* Social media links */
-
     .social-networks {
         font-size: 16px;
     }
 
     /* Address */
-
     #footer-address h6 {
         margin-bottom: 0.2rem;
         font-size: 1rem;
@@ -887,7 +840,6 @@ Breakpoints:
     }
 
     /* Directions */
-    
     #footer-directions {
         font-size: 32px;
         padding-top: 30px;
@@ -898,7 +850,6 @@ Breakpoints:
     }
     
     /* Contact */
-
     .footer-contact p {
         font-size: 1rem;
         margin-bottom: 2px;
@@ -929,7 +880,7 @@ Breakpoints:
         padding-right: 0;
     }
 
-    /* ------------------- Navbar Styles */
+    /* --------------------- Navbar Styles ---------------------*/
 
     #navbarNav>ul a {
         font-size: 30px;
@@ -939,7 +890,7 @@ Breakpoints:
         font-size: 30px !important;
     }
 
-    /* ------------------- Hero image content */
+    /* ------------------- Hero image content ------------------*/
 
     .hero > div {
         max-height: 35rem;
@@ -954,7 +905,7 @@ Breakpoints:
     #treatments-cover-heading {
         font-size: 4em; 
         letter-spacing: 10mm;
-        padding-top: 20px;
+        padding-top: 2em;
         padding-bottom: 10px;
     }
 
@@ -970,14 +921,11 @@ Breakpoints:
     #scroll-text {
         font-size: 20px;
         font-weight: 600;
-        /* Set the animation properties */
-        -moz-animation: my-animation 50s linear infinite;
-        -webkit-animation: my-animation 50s linear infinite;
         animation: my-animation 50s linear infinite;
     }
 
-        /* -------------------------------- Shared templates content ------------------------------*/
-    /* ------------------------------------------About */
+    /* -------------------------------- Shared templates content ------------------------------*/
+    /* ------------------------------------------About ----------------------------------------*/
 
     .about>div>div>h2,
     .about-our-treatments>div>h2,
@@ -998,6 +946,11 @@ Breakpoints:
     /* ----------------------------------- home_details content -----------------------------------*/
 
     /* Google Maps */
+
+    #maps {
+        padding: 2em 5em 2em 5em;
+    }
+
     .gmap_canvas iframe {
         width: 100%;
         height: 500px;
@@ -1010,11 +963,13 @@ Breakpoints:
         margin-bottom: 40px;
     }
 
-    .home-treatment-item>div>div>div>p {
+    .home-treatment-item > div > div > div > p {
         font-size: 16px;
     }
 
-    /* ----------------------------------- home_details end -----------------------------------*/
+    #home-carousel {
+        padding: 2em 3em 2em 3em;
+    }
 
     /* ------------------------------- treatment_details content ------------------------------*/
 
@@ -1074,9 +1029,7 @@ Breakpoints:
     margin-right: 10px;
     }
 
-    /* ------------------------------ treatment_details content end ----------------------------*/
-
-    /* -------------------------------------- Footer */
+    /* -------------------------------------- Footer --------------------------------------*/
     .back-to-top {
         font-size: 46px;
     }
@@ -1089,7 +1042,7 @@ Breakpoints:
 
     .subscribe-newsletter h2 {
         font-size: 20px;
-        margin-bottom: 8px!important;
+        margin-bottom: 8px;
     }
 
     #email-newsletter-help {
@@ -1120,7 +1073,7 @@ Breakpoints:
         padding-top: 30px;
     }
     
-    #footer-directions a>i {
+    #footer-directions a > i {
         font-size: 60px;
     }
     
@@ -1148,19 +1101,18 @@ Breakpoints:
 @media screen and (min-width: 1280px) {
 
     .container {
-        max-width: 1400px;
+        max-width: 95%;
     }
 
-    .logo-link>img {
+    .logo-link > img {
         max-height: 210px;
         max-width: 210px;
     }
 
-
-    /* ---------------- Hero image content */
+    /* ---------------- Hero image content ---------------- */
     .hero > div {
         min-height: 40rem;
-        max-height: 55rem
+        max-height: 55rem;
     }
 
     .hero > div > img {
@@ -1173,9 +1125,9 @@ Breakpoints:
     #treatments-cover-heading {
         font-size: 6.5em;
         letter-spacing: 14mm;
-        padding-top: 20px;
-        padding-bottom: 50px;
-        text-shadow:12px 14px 0 #313131;
+        padding-top: 2em;
+        padding-bottom: 0.2em;
+        text-shadow: 12px 14px 0 #313131;
     }
 
     #est-tag {
@@ -1183,23 +1135,17 @@ Breakpoints:
     }
 
     .cover-text {
-        margin: 0px -50px;
-        padding-bottom: 150px;
+        margin: 0 -50px;
+        padding-bottom: 5em;
         font-size: 30px;
     }
 
     #scroll-text {
-
-        /* Set the animation properties */
-        -moz-animation: my-animation 55s linear infinite;
-        -webkit-animation: my-animation 55s linear infinite;
-        animation: my-animation 55s linear infinite;
         font-size: 30px;
+        animation: my-animation 55s linear infinite;
     }
 
     /* -------------------------------- Shared templates content ------------------------------*/
-    /* ------------------------------------------About */
-
     .about,
     .about-our-treatments,
     .treatments {
@@ -1210,16 +1156,11 @@ Breakpoints:
     .about-our-treatments div > h2 {
         font-size: 40px;
     }
-    
 
-    /* ------------------------------- Shared templates content end -------------------------------*/
-
-    /* ----------------------------------- home_details content -----------------------------------*/
-
+    /* ------------------------------- home_details content ------------------------------- */
     /* Treatments */
-
     .home-treatments h2.text-uppercase {
-        font-size: 40px!important;
+        font-size: 40px !important;
         padding-bottom: 60px !important;
     }
 
@@ -1253,8 +1194,7 @@ Breakpoints:
 
     /* --------------------------------- home_details content end --------------------------------*/
 
-    /* -------------------------------- treatment_details content ---------------------------------*/
-
+    /* -------------------------------- treatment_details content -------------------------------- */
     .gallery {
         padding-bottom: 80px;
     }
@@ -1267,17 +1207,15 @@ Breakpoints:
         justify-content: center;
         align-items: center;
         z-index: 100;
-        }
-    
-        /* Banner button */
-        .banner-button {
+    }
+
+    /* Banner button */
+    .banner-button {
         padding: 0.5em 1em;
         font-size: 1.5em;
-        }
+    }
 
-    /* -------------------------------- treatment_details content ---------------------------------*/
-
-    /* ---------------------------------------Footer styles */
+    /* --------------------------------------- Footer styles -------------------------------- */
     .back-to-top {
         font-size: 56px;
     }
@@ -1291,25 +1229,24 @@ Breakpoints:
         padding-left: 6px;
     }
 
+    /* Address */
+    #footer-address {
+        padding-left: 6%;
+    }
 }
 
-    /* -------------------------------------Larger devices such as large desktops (1400px and up) */
-    @media screen and (min-width: 1400px) {
+/* ------------------------------------- Larger devices such as large desktops (1400px and up) */
+@media screen and (min-width: 1400px) {
 
-    .container {
-        max-width: 90%;
-    }
-
-    .logo-link>img {
+    .logo-link > img {
         max-height: 210px;
         max-width: 210px;
     }
 
-
-    /* ---------------- Hero Styles */
+    /* ---------------- Hero Styles ---------------- */
     .hero > div {
         min-height: 55rem;
-        max-height: 86rem
+        max-height: 86rem;
     }
 
     .hero > div > img {
@@ -1325,7 +1262,7 @@ Breakpoints:
         letter-spacing: 10mm;
         padding-top: 20px;
         padding-bottom: 50px;
-        text-shadow:12px 14px 0 #313131;
+        text-shadow: 12px 14px 0 #313131;
     }
 
     #est-tag {
@@ -1333,23 +1270,17 @@ Breakpoints:
     }
 
     .cover-text {
-        margin: 0px -50px;
+        margin: 0 -50px;
         padding-bottom: 150px;
         font-size: 30px;
     }
 
     #scroll-text {
-
-        /* Set the animation properties */
-        -moz-animation: my-animation 55s linear infinite;
-        -webkit-animation: my-animation 55s linear infinite;
-        animation: my-animation 55s linear infinite;
         font-size: 30px;
+        animation: my-animation 55s linear infinite;
     }
 
     /* -------------------------------- Shared templates content ------------------------------*/
-    /* ------------------------------------------About */
-
     .about,
     .about-our-treatments,
     .treatments {
@@ -1361,17 +1292,10 @@ Breakpoints:
     .treatments div > div > h2 {
         font-size: 40px;
     }
-    
-    
 
-    /* ------------------------------- Shared templates content end -------------------------------*/
-
-    /* -------------------------------- Home_details content ------------------------------*/
-
-    /* --------------------- Treatment Styles */
-
+    /* ------------------------------- Home_details content ------------------------------ */
     .home-treatments h2.text-uppercase {
-        font-size: 40px!important;
+        font-size: 40px !important;
         padding-bottom: 60px !important;
     }
 
@@ -1391,8 +1315,7 @@ Breakpoints:
         font-size: 30px;
     }
 
-
-    /* ------------------ Map Styles */
+    /* ------------------ Map Styles ------------------ */
     #maps h2 {
         font-size: 40px;
     }
@@ -1404,10 +1327,7 @@ Breakpoints:
         padding-bottom: 30px;
     }
 
-    /* ------------------- Footer */
-
-    /* Address */
-
+    /* ------------------- Footer ------------------- */
     #footer-address {
         padding-left: 6%;
     }
