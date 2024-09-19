@@ -22,6 +22,17 @@ def book_appointment(request):
     return render(request, 'bookings/book_appointment.html', {'form': form})
 
 @login_required
+def booking_events(request):
+    bookings = Booking.objects.filter(user=request.user)  # Adjust filter as needed
+    events = []
+    for booking in bookings:
+        events.append({
+            'title': str(booking.treatment),  # Display treatment name or any other relevant title
+            'start': booking.date.isoformat() + 'T' + str(booking.time_slot)  # Format the date and time
+        })
+    return JsonResponse(events, safe=False)
+
+@login_required
 def booking_confirmation(request, booking_id):
     try:
         booking = Booking.objects.get(id=booking_id, user=request.user)
