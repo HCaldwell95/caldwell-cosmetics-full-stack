@@ -258,6 +258,14 @@ main {
 }
 
 /* ------------------------------------------ Google Maps */
+
+.mapouter #gmap_canvas iframe {
+    border: none; /* replaces frameborder=0 */
+    width: 100%; /* make iframe responsive */
+    height: 500px; /* set a fixed height */
+    overflow: hidden; /* disables scrolling */
+}
+
 #maps {
     width: 100%;
     margin: 0 auto;

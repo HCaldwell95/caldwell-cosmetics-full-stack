@@ -9,3 +9,4 @@ node_modules/
 .vscode/
 cloudinary_python.txt
 .env
+PERSONAL_USE_TEMPLATES

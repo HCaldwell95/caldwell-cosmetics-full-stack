@@ -39,10 +39,10 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-light navbar-expand-sm navbar-container">
+    <nav class="navbar navbar-light navbar-expand-sm navbar-container" aria-label="Main navigation">
         <div class="container-fluid">
-            <a href="/" class="navbar-brand mr-auto logo-link">
-                <img src="{% static 'images/mini-logo.png' %}" alt="Logo">
+            <a href="/" class="navbar-brand mr-auto logo-link" aria-label="Home page">
+                <img src="{% static 'images/mini-logo.png' %}" alt="Caldwell Cosmetics Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -51,28 +51,27 @@
                 <ul class="navbar-nav ms-auto">
                     {% with url_name=request.resolver_match.url_name %}
                     <li class="nav-item {% if not url_name or url_name == 'home_details' %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'home_details' %}">Home</a>
+                        <a class="nav-link" href="{% url 'home_details' %}" aria-label="Home">Home</a>
                     </li>
                     <li class="nav-item {% if url_name == 'treatment_details' %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'treatment_details' %}">Treatments</a>
+                        <a class="nav-link" href="{% url 'treatment_details' %}" aria-label="Treatments">Treatments</a>
                     </li>
-
+    
                     {% if user.is_authenticated %}
-                    <li class="nav-item {% if url_name == 'my_bookings' %}active{% endif %}"></li>
-                        <a class="nav-link" href="{% url 'my_bookings' %}">Bookings</a>
+                    <li class="nav-item {% if url_name == 'my_bookings' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'my_bookings' %}" aria-label="Bookings">Bookings</a>
                     </li>
                     <li class="nav-item {% if url_name == 'profile' %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
+                        <a class="nav-link" href="{% url 'profile' %}" aria-label="My Profile">My Profile</a>
                     </li>
                     <li class="nav-item">
-                        <button type="button" class="btn btn-dark custom-btn custom-btn-mobile" onclick="location.href='{% url 'logout' %}'">
+                        <button type="button" class="btn btn-dark custom-btn custom-btn-mobile" onclick="location.href='{% url 'logout' %}'" aria-label="Sign Out">
                             Sign Out
                         </button>
                     </li>
-
                     {% else %}
                     <li class="nav-item">
-                        <button type="button" class="btn btn-dark custom-btn custom-btn-mobile" onclick="location.href='{% url 'signup' %}'">
+                        <button type="button" class="btn btn-dark custom-btn custom-btn-mobile" onclick="location.href='{% url 'signup' %}'" aria-label="Sign In or Sign Up">
                             Sign In / Sign Up
                         </button>
                     </li>
@@ -83,8 +82,6 @@
         </div>
     </nav>
     
-    
-        
     <!-- Hero Section Block -->
      {% block hero %}
      {% endblock %}
@@ -110,7 +107,6 @@
                 <h2 class="hidden-heading">Subscription Newsletter</h2>
             {% include 'letter/_newsletter_form.html' %}
             </section>
-
 
             <section id="socials" class="container-fluid">
                 <h2 class="hidden-heading">Socials</h2>
@@ -179,6 +175,7 @@
                     </div>
                 </div>
             </section>
+        </div>
     </footer>
 
     <div id="footer-link-modal" class="modal">
