@@ -103,13 +103,14 @@ a {
 #navbarNav > ul {
     display: flex;
     text-align: right;
-    align-items: center;
+    align-items: end;
 }
 
 #navbarNav > ul a {
     color: var(--color-accent-peach); /* Using a variable for consistency */
     text-transform: uppercase;
-    padding-right: 0.5em;
+    padding-right: 0.3em;
+    font-size: 10px;
 }
 
 .navbar-nav .nav-item.active .nav-link {
@@ -257,6 +258,14 @@ main {
 }
 
 /* ------------------------------------------ Google Maps */
+
+.mapouter #gmap_canvas iframe {
+    border: none; /* replaces frameborder=0 */
+    width: 100%; /* make iframe responsive */
+    height: 500px; /* set a fixed height */
+    overflow: hidden; /* disables scrolling */
+}
+
 #maps {
     width: 100%;
     margin: 0 auto;
@@ -438,7 +447,7 @@ main {
     font-family: sans-serif;
 }
 
-/* ----------------------------------- Profile Content ------------------------------------ */
+/* ----------------------------------- Accounts Content ------------------------------------ */
 
 /* General form styling */
 .user-profile {
@@ -447,7 +456,7 @@ main {
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: var(--color-background-light);
 }
 
 /* Form headings */
@@ -456,6 +465,14 @@ main {
     border-bottom: 2px solid #ddd;
     padding-bottom: 10px;
     font-size: 1.5em;
+}
+
+.user-profile label {
+    font-size: 1.5em;
+}
+
+.user-profile input, textarea {
+    width: 100%;
 }
 
 /* Form elements */
@@ -467,22 +484,31 @@ main {
     border: 1px solid #ccc; /* Light border color */
 }
 
-/* Submit button styling */
-.user-profile .btn-primary {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1em;
-    border-radius: 4px;
-    background-color: #007bff; /* Primary button color */
-    border: none;
-    color: #fff;
-    cursor: pointer;
-}
-
 /* Add hover effect for the button */
 .user-profile .btn-primary:hover {
     background-color: #0056b3; /* Darker shade on hover */
 }
+
+.user-profile-details {
+    padding-bottom: 10em;
+    padding-top: 2em;
+}
+
+.user-profile-details > div > div > div h1 {
+    padding-top: 2em;
+    padding-bottom: 1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2mm;
+}
+
+.user-profile-details > div > div > div > p {
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 1em;
+}
+
+
 
 /* --------------------------------------------- Footer Content --------------------------------------------- */
 
@@ -738,6 +764,15 @@ Breakpoints:
     }
 }
 
+/* Unique to mobiles as this only affects the dropdown menu */
+@media (max-width: 750px) {
+    .custom-btn-mobile {
+        font-size: 0.65rem;
+        padding: 3px 8px;
+        margin: 0;
+    }
+}
+
 /* ------------------------------------- Medium devices such as tablets (768px and up) ---------------------------------------*/
 @media screen and (min-width: 768px) {
 
@@ -753,17 +788,18 @@ Breakpoints:
         background-color: rgba(95, 95, 95, 0.2);
         border-radius: 10px;
     }
-
-    #navbarNav>ul {
-        display: flex !important;
-        text-align: right;
-        align-items: center;
-    }
     
-
-    #navbarNav>ul a {
-        font-size: large;
+    #navbarNav .navbar-nav {
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;       
     }
+
+    #navbarNav .navbar-nav .nav-link {
+        font-size: 1.5em !important;
+        text-align: right !important;
+    }
+
 
     /* ------------------------------------------Hero image content */
 
@@ -935,12 +971,14 @@ Breakpoints:
 
     /* --------------------- Navbar Styles ---------------------*/
 
-    #navbarNav>ul a {
-        font-size: 30px;
-    }
-
     .custom-btn {
         font-size: 30px !important;
+    }
+
+    #navbarNav .navbar-nav {
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
     }
 
     /* ------------------- Hero image content ------------------*/

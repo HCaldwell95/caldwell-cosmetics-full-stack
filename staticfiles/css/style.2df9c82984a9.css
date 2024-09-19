@@ -1,0 +1,1431 @@
+/* ------------------------------ Color References ------------------------------ */
+
+/* Background Colors */
+:root {
+    --color-background-light: rgb(255, 251, 249); /* Off-White */
+    --color-background-cream: rgb(253, 247, 245); /* Cream */
+    --color-hero-overlay: rgba(95, 95, 95, 0.4); /* Hero image tint overlay */
+    --color-accent-peach: #eed6c2; /* Peach Accent */
+    --color-dark-brown: #302321; /* Dark Brown for text and social media links */
+}
+
+/* ------------------------------ Font Variables ------------------------------ */
+:root {
+    --font-italiana: 'Italiana', sans-serif;
+    --font-cormorant: 'Cormorant', serif;
+    --font-weight-regular: 400;
+    --font-weight-bold: 600;
+    --font-size-base: 14px;
+    --font-family-base: var(--font-cormorant);
+}
+
+/* ------------------------------ Global Styles ------------------------------ */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-background-cream);
+    font-size: var(--font-size-base);
+    font-family: var(--font-family-base);
+}
+
+/* ------------------------------ Font Styles ------------------------------ */
+.italiana-regular {
+    font-family: var(--font-italiana);
+    font-weight: var(--font-weight-regular);
+    font-style: normal;
+}  
+
+.italiana-bold {
+    font-family: var(--font-italiana);
+    font-weight: var(--font-weight-bold);
+    font-style: normal;
+}  
+
+.cormorant {
+    font-family: var(--font-cormorant);
+    font-weight: var(--font-weight-regular);
+    font-style: normal;
+}
+
+/* ------------------------------ Heading Styles ------------------------------ */
+h2, h3, h4, h5, h6 {
+    color: var(--color-dark-brown);
+    text-transform: uppercase;
+}
+
+/* ------------------------------ Utility Styles ------------------------------ */
+.small-hr {
+    border: 1px solid var(--color-dark-brown); /* Use dark brown for the border */
+    width: 80%;
+    margin: 0 auto;
+}
+
+.hidden-heading, .hidden-cover-text {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ----------------------------------- Navigation Bar Styles ----------------------------------- */
+
+/* Styles for the navbar container */
+.navbar-container {
+    background-color: transparent;
+    padding-top: 0 !important;
+    box-sizing: border-box;
+    z-index: 1000;
+    position: absolute;
+    width: 100%;
+}
+
+/* Style for the logo link in navbar */
+.logo-link > img {
+    max-width: 80px;
+    max-height: 40px;
+}
+
+/* Styles for the navbar button icon to override Bootstrap */
+.navbar-toggler {
+    background-color: #eed6c280;
+}
+
+/* Styles for the navbar dropdown items */
+#navbarNav > ul {
+    display: flex;
+    text-align: right;
+    align-items: end;
+}
+
+#navbarNav > ul a {
+    color: var(--color-accent-peach); /* Using a variable for consistency */
+    text-transform: uppercase;
+    padding-right: 0.3em;
+    font-size: 10px;
+}
+
+.navbar-nav .nav-item.active .nav-link {
+    color: #ffbd66 !important;
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: bold; /* Optional: make the font bold */
+}
+
+.sign-up a {
+    color: #fff;
+}
+
+#navbarNav > ul > button {
+    padding-bottom: 100px;
+}
+
+/* ----------------------------------- Hero Image Content ----------------------------------- */
+.hero {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Color overlay to dim the background image */
+.color-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(95, 95, 95, 0.4);
+    height: 100%;
+    width: 100%;
+}
+
+/* Heading styles for hero cover */
+#home-cover-heading, 
+#treatments-cover-heading, 
+#bookings-cover-heading, 
+#profile-cover-heading {
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+    font-size: 2.1em;
+    font-weight: var(--font-weight-regular);
+    letter-spacing: 2mm;
+    color: #bebebe;
+    text-shadow: 5px 7px 0 #313131;
+}
+
+#bookings-cover-heading {
+    padding-bottom: 2em;
+}
+
+/* General cover text styles */
+.cover-text {
+    letter-spacing: 0.4mm;
+    text-transform: uppercase;
+    color: #e9e9e9;
+}
+
+#est-tag {
+    font-size: 70%;
+    color: azure;
+    padding-bottom: 2em;
+}
+
+.hidden-hero-text {
+    display: none;
+}
+
+/* ----------------------------------------------- Scrolling Text Styles ----------------------------------------------- */
+
+/* Styles for the scroll container */ 
+#scroll-container {
+    border-bottom: 3px groove #ecd2be9a;
+    width: 100%;
+    padding: 5px 10px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#scroll-text {
+    /* Set the initial position of the text for the animation */
+    transform: translateX(100%);
+  
+    /* Set the animation properties */
+    animation: my-animation 27s linear infinite;
+}
+
+/* Define the animation keyframes */
+@keyframes my-animation {
+    0% {
+        transform: translateX(200%);
+    }
+    50% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(200%);
+    }
+}
+
+/* Style to push main content to fill page */
+main {
+    flex: 1 0 auto;
+}
+
+/* ----------------------------------------------- Home_details content ----------------------------------------------- */
+
+/* Define CSS Variables for reusable values */
+:root {
+    --color-background-light: rgb(255, 251, 249);
+    --color-background-cream: rgb(253, 247, 245);
+    --color-border: rgba(0, 0, 0, 0.5);
+    --color-heading: black;
+    --color-accent: #eed6c2;
+    --color-accent-dark: #302121;
+    --color-overlay: rgba(95, 95, 95, 0.4);
+    --font-size-heading: 1.5rem;
+    --font-size-small: 90%;
+    --border-width: 2px;
+    --border-radius: 10px;
+}
+
+/* ------------------------------------------ About Section */
+.about, 
+.about-our-treatments,
+.treatments {
+    padding-top: 2em;
+    text-align: center;
+    margin: 0 2.5%;
+}
+
+.about > div > div > h2,
+.about-our-treatments > div > h2,
+.treatments > div > div > h2 {
+    font-size: var(--font-size-small);
+    padding-bottom: 0.5em;
+    letter-spacing: 0.7mm;
+}
+
+.page-divider {
+    border: var(--border-width) solid var(--color-heading);
+    margin: 0 12rem;
+}
+
+/* ------------------------------------------ Google Maps */
+
+.mapouter #gmap_canvas iframe {
+    border: none; /* replaces frameborder=0 */
+    width: 100%; /* make iframe responsive */
+    height: 500px; /* set a fixed height */
+    overflow: hidden; /* disables scrolling */
+}
+
+#maps {
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 1em;
+}
+
+#maps h2 {
+    text-align: center;
+    font-size: 100%;
+    letter-spacing: 0.7mm;
+}
+
+/* ----------------------------------------------------- Treatments */
+
+/* Carousel */
+.carousel-img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border: var(--border-width) solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease;
+}
+
+.carousel-img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 10px;
+    height: 40px;
+    width: 40px;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* ------------------------------------- Treatment_details content */
+
+/* Treatment Cards */
+.gallery {
+    padding-bottom: 30px;
+}
+
+.treatments__link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.treatments__card-wrapper {
+    position: relative;
+    height: 500px; /* Adjust as needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.treatments__card-wrapper:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.treatments__card-body {
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Optional: background overlay to make text stand out */
+    width: 100%;
+    text-align: left;
+}
+
+.treatments__card-body > h2 {
+    color: white;
+}
+
+.treatments__card-heading {
+    font-size: var(--font-size-heading);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.treatments__card-wrapper--button {
+    margin-top: 10px;
+}
+
+.treatments__card-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.treatments__card-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Treatment Information Pages */
+.treatment-information-heading {
+    text-align: center;
+    padding-top: 1em;
+}
+
+/* Fixed Banner Styles */
+.fixed-banner {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 150vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.banner-button {
+    display: block;
+    padding: 5px 20px;
+    margin-right: 10px;
+    background-color: var(--color-accent);
+    color: var(--color-heading);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Cormorant', serif;
+    transform: rotate(-90deg);
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Button Hover Effect */
+.banner-button:hover {
+    background-color: var(--color-accent-dark);
+    color: #fff;
+}
+
+/* Define CSS Variables for reusable values */
+:root {
+    --color-accent: #eed6c2;
+    --color-dark-brown: #302321;
+    --color-light-gray: rgba(0, 0, 0, 0.2);
+    --color-border: black;
+    --font-size-large: 1.5em;
+    --font-size-small: 0.7rem;
+    --font-size-xsmall: 0.6rem;
+    --border-width: 2px;
+}
+
+/* ----------------------------------- Bookings Content ------------------------------------ */
+
+.booking-page > h2, 
+.booking-confirmation > h2 {
+    text-align: center;
+    padding: 1em;
+}
+
+.book-your-appointment,
+.booking-confirmation {
+    padding-bottom: 1.5em;
+    align-self: center;
+    font-size: var(--font-size-large);
+    text-align: center;
+}
+
+.booking-calendar {
+    flex: 0 0 auto;
+    width: 100%;
+    font-size: larger;
+    font-family: sans-serif;
+}
+
+/* ----------------------------------- Accounts Content ------------------------------------ */
+
+/* General form styling */
+.user-profile {
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto; /* Center the form */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: var(--color-background-light);
+}
+
+/* Form headings */
+.user-profile h2 {
+    margin-top: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.user-profile label {
+    font-size: 1.5em;
+}
+
+.user-profile input, textarea {
+    width: 100%;
+}
+
+/* Form elements */
+.user-profile .form-control {
+    width: 100%; /* Make text fields take up the full width */
+    padding: 10px; /* Add padding inside the text fields */
+    margin-bottom: 15px; /* Space between fields */
+    border-radius: 4px; /* Rounded corners */
+    border: 1px solid #ccc; /* Light border color */
+}
+
+/* Add hover effect for the button */
+.user-profile .btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.user-profile-details {
+    padding-bottom: 10em;
+    padding-top: 2em;
+}
+
+.user-profile-details > div > div > div h1 {
+    padding-top: 2em;
+    padding-bottom: 1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2mm;
+}
+
+.user-profile-details > div > div > div > p {
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 1em;
+}
+
+
+
+/* --------------------------------------------- Footer Content --------------------------------------------- */
+
+.footer-main {
+    background-color: var(--color-accent);
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    position: relative;
+    margin-top: 10px;
+    border-top: var(--border-width) ridge var(--color-border);
+}
+
+.footer-main h6 {
+    font-size: 8px;
+    font-weight: 700;
+}
+
+/* Background image for the footer */
+#footer-background-image {
+    position: relative;
+    z-index: 1;
+}
+
+#footer-background-image::before {
+    content: "";
+    position: absolute;
+    background-image: url("../images/footer-overlay.e65c642ee128.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/* Style for back-to-top class */
+.back-to-top {
+    text-align: center;
+    position: sticky;
+    bottom: 0;
+    padding-top: 2px;
+    margin-bottom: 0;
+    font-size: 120%;
+}
+
+.back-to-top a {
+    color: var(--color-dark-brown);
+}
+
+.back-to-top a:hover {
+    color: rgb(221, 189, 102);
+}
+
+/* Subscribe newsletter */
+.subscribe-newsletter h2 {
+    font-size: 14px;
+}
+
+#email-newsletter-help {
+    padding-left: 5px;
+}
+
+/* ------------------------------------- Social Media Links ------------------------------------- */
+
+.social-networks {
+    padding: 10px 0 20px;
+    margin: 5px 4%;
+}
+
+.social-networks > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-networks li {
+    text-align: center;
+}
+
+.social-networks a {
+    font-size: 2em;
+    color: var(--color-dark-brown);
+}
+
+/* Footer Address Styles */
+#footer-box {
+    padding-top: 0.5%;
+    padding-bottom: 1%;
+}
+
+#footer-address {
+    color: var(--color-dark-brown);
+    letter-spacing: 0.5mm;
+    padding-left: 2%;
+    align-self: end;
+}
+
+#footer-address h6 {
+    margin-bottom: 0.2rem;
+    font-size: var(--font-size-small);
+}
+
+#footer-address p {
+    margin: 0.04rem;
+    font-size: var(--font-size-xsmall);
+}
+
+#footer-directions {
+    color: var(--color-dark-brown);
+    font-size: 32px;
+    padding-top: 30px;
+}
+
+#footer-directions a > i {
+    color: var(--color-dark-brown);
+    font-size: 30px;
+}
+
+#footer-directions p {
+    text-align: center;
+}
+
+.footer-contact {
+    align-self: end;
+}
+
+.footer-contact p {
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+#footer-contact-links {
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.footer-contact a {
+    font-size: var(--font-size-xsmall);
+    margin-bottom: 2px;
+}
+
+.small-print {
+    font-size: 60%;
+    color: var(--color-dark-brown);
+    padding-bottom: 10px;
+}
+
+/* ------------------------ Modal Container ------------------------ */
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-backdrop.show {
+    z-index: 1040;
+}
+
+.modal-dialogue {
+    z-index: 9999;
+}
+
+/* ------------------------ Modal Content ------------------------ */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 5px; /* Add rounded corners for a modern look */
+    width: 80%; 
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+/* ------------------------ Close Button ------------------------ */
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    outline: none; /* Remove default outline */
+}
+
+/* ------------------------ Buttons ------------------------ */
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 4px; /* Add rounded corners for buttons */
+    cursor: pointer;
+    font-size: 16px; /* Make text larger for better readability */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+}
+
+#accept {
+    background-color: #4CAF50; 
+    color: white;
+}
+
+#accept:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+#decline {
+    background-color: #f44336; 
+    color: white;
+}
+
+#decline:hover {
+    background-color: #e53935; /* Slightly darker red on hover */
+}
+
+
+/* ------------------------------------------------- Media queries -------------------------------------------------------- */
+/*
+Breakpoints:
+768px tablets
+1024px larger tablets
+1280px laptops
+1400px desktops
+*/
+
+/* Unique to tablets to ensure grey background doesn't transfer with the rest of the accumilitive styles */
+@media (min-width: 768px) and (max-width: 1199.98px){
+    .md-lg-treatments {
+        background-color: rgb(182 182 182 / 10%);
+        border-radius: 10px;
+        padding: 30px;
+    }
+}
+
+/* Unique to mobiles as this only affects the dropdown menu */
+@media (max-width: 750px) {
+    .custom-btn-mobile {
+        font-size: 0.65rem;
+        padding: 3px 8px;
+        margin: 0;
+    }
+}
+
+/* ------------------------------------- Medium devices such as tablets (768px and up) ---------------------------------------*/
+@media screen and (min-width: 768px) {
+
+    /* -----------------------------------Navigation bar styles */
+
+    .logo-link>img {
+        max-height: 110px;
+        max-width: 110px;
+        padding-top: 5px;
+    }
+
+    .active {
+        background-color: rgba(95, 95, 95, 0.2);
+        border-radius: 10px;
+    }
+    
+    #navbarNav .navbar-nav {
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;       
+    }
+
+    #navbarNav .navbar-nav .nav-link {
+        font-size: 1.5em !important;
+        text-align: right !important;
+    }
+
+
+    /* ------------------------------------------Hero image content */
+
+    .hero > div {
+        max-height: 28.125rem;
+    }
+
+    .hero > div > img {
+        max-height: 28.125rem;
+        width: 100%;
+        object-fit: fill;
+    }
+
+    #home-cover-heading,
+    #treatments-cover-heading,
+    #bookings-cover-heading,
+    #profile-cover-heading {
+        font-size: 3em;
+        letter-spacing: 5mm;
+        padding-top: 30px;
+        text-shadow:8px 10px 0 #313131;
+        font-weight: 600;
+    }
+
+    #est-tag {
+        font-size: 100%;
+        padding-bottom: 0.5em;
+        letter-spacing: 0.9mm;
+    }
+
+    .cover-text {
+        padding-top: 20px;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.5mm;
+    }
+
+    .cover-text-md {
+        letter-spacing: 0.4mm;
+        padding-top: 10px;
+        text-transform: capitalize;
+        font-style:italic;
+        font-weight: 300;
+        color:#e9e9e9;
+        margin: 0px -50px;
+    }
+
+    /* -----------------------------------------------Scrolling text styles */
+
+    #scroll-text {
+        font-size: 16px;
+        animation: my-animation 40s linear infinite;
+    }
+
+    /* --------------------------------- Shared templates content ---------------------------------*/
+    /* ------------------------------------------ About ------------------------------------------ */
+    .about>div>div>h2,
+    .about-our-treatments>div>h2 {
+        font-size: 20px;
+    }
+
+    .about>div>div>p,
+    .about-our-treatments>div>p {
+        font-size: 18px;
+    }
+
+    /* ----------------------------------- home_details content -----------------------------------*/
+
+    /* ---------------------------------------- Google Maps ---------------------------------------*/    
+
+    #maps h2 {
+        text-align: center;
+        font-size: 100%;
+        letter-spacing: 0.7mm;
+    }
+
+    /* ----------------------------------------- Map styles ---------------------------------------*/
+
+    #maps h2 {
+        font-size: 120%;
+        letter-spacing: 0.9mm;
+    }
+
+    /* ----------------------------------------- Footer styles -------------------------------------*/
+
+    .back-to-top {
+        padding-bottom: 10px;
+        font-size: 32px;
+    }
+
+    /* Subscribe newsletter */
+    .subscribe-newsletter {
+        padding-top: 5px!important;
+        padding-bottom: 5px!important;
+        width: 100%;
+        align-items: center;
+    }
+
+    .subscribe-newsletter h2 {
+        font-size: 18px;
+        margin-bottom: 8px!important;
+    }
+
+    #email-newsletter-help {
+        font-size: 16px;
+        padding-left: 6px;
+    }
+
+    #newsletter-sign-up {
+        margin-bottom: 20px;
+    }
+
+    /* Social media links */
+    .social-networks {
+        font-size: 16px;
+    }
+
+    /* Address */
+    #footer-address h6 {
+        margin-bottom: 0.2rem;
+        font-size: 1rem;
+    }
+    
+    #footer-address p {
+        margin: 0.04rem;
+        font-size: 0.9rem;
+    }
+
+    /* Directions */
+    #footer-directions {
+        font-size: 32px;
+        padding-top: 30px;
+    }
+    
+    #footer-directions a>i {
+        font-size: 30px;
+    }
+    
+    /* Contact */
+    .footer-contact p {
+        font-size: 1rem;
+        margin-bottom: 2px;
+    }
+    
+    #footer-contact-links {
+        padding: 0;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+    
+    .footer-contact a {
+        font-size: 0.9rem;
+        margin-bottom: 2px;
+        margin-left: 5px;
+    }
+}
+
+/* -------------------------- Mid to large devices such as large tablets or small laptops (1024px and up) ------------------------ */
+@media screen and (min-width: 1024px) {
+
+    body {
+        align-items: center;
+    }
+
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* --------------------- Navbar Styles ---------------------*/
+
+    .custom-btn {
+        font-size: 30px !important;
+    }
+
+    #navbarNav .navbar-nav {
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+    }
+
+    /* ------------------- Hero image content ------------------*/
+
+    .hero > div {
+        max-height: 35rem;
+    }
+
+    .hero > div > img {
+        max-height: 35rem;
+        width: 100%;
+    }
+
+    #home-cover-heading,
+    #treatments-cover-heading,
+    #bookings-cover-heading,
+    #profile-cover-heading {
+        font-size: 4em; 
+        letter-spacing: 10mm;
+        padding-top: 2em;
+        padding-bottom: 10px;
+    }
+
+    #est-tag {
+        color: transparent;
+    }
+
+    .cover-text {
+        margin: 0px -50px;
+        padding-bottom: 100px;
+    }
+
+    #scroll-text {
+        font-size: 20px;
+        font-weight: 600;
+        animation: my-animation 50s linear infinite;
+    }
+
+    /* -------------------------------- Shared templates content ------------------------------*/
+    /* ------------------------------------------About ----------------------------------------*/
+
+    .about>div>div>h2,
+    .about-our-treatments>div>h2,
+    .treatments>div>div>h2 {
+        font-size: 22px;
+    }
+
+
+    .about > div > div > p,
+    .about-our-treatments > div > p,
+    .treatments > div > div > p {
+        font-size: 28px;
+    }
+
+    /* ------------------------------- Shared templates content end -------------------------------*/
+
+
+    /* ----------------------------------- home_details content -----------------------------------*/
+
+    /* Google Maps */
+
+    #maps {
+        padding: 2em 5em 2em 5em;
+    }
+
+    .gmap_canvas iframe {
+        width: 100%;
+        height: 500px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+
+    /* Treatments */
+    .home-treatment-item {
+        margin-bottom: 40px;
+    }
+
+    .home-treatment-item > div > div > div > p {
+        font-size: 16px;
+    }
+
+    #home-carousel {
+        padding: 2em 3em 2em 3em;
+    }
+
+    /* ------------------------------- treatment_details content ------------------------------*/
+
+    .treatments__card-wrapper {
+        min-height: 550px;
+    }
+
+    .treatment-information-heading {
+        font-size: 4em;
+    }
+
+    .treatment-details {
+        margin: 2em 4em;
+    }
+
+    /* General styles for treatment details */
+    .treatment-details h2, .treatment-details h3 {
+        font-size: 2.7em;
+        font-weight: 700;
+        text-align: center;
+        padding-bottom: 1em;
+    }
+
+    .treatment-details p,
+    .treatment-details ol li,
+    body > main > section > div > div > div > div > ul {
+        font-size: 2em;
+        padding-bottom: 1em;
+    }
+
+    .treatment-details ol>li {
+        font-size: 1em;
+        list-style-type: none;
+    }
+   
+    .treatment-details ol>li>h6 {
+        font-size: 2.2em;
+    }
+
+    /* Fixed banner styles */
+    .fixed-banner {
+    width: 20px;
+    height: 150vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    padding-right: 1em;
+    font-size: 2em;
+    }
+
+    /* Button inside the banner, with vertical (rotated) text */
+    .banner-button {
+
+    display: block;
+    padding: 0.5em 2em;
+    margin-right: 10px;
+    }
+
+    /* -------------------------------------- Footer --------------------------------------*/
+    .back-to-top {
+        font-size: 46px;
+    }
+
+    .subscribe-newsletter {
+        padding-top: 5px!important;
+        padding-bottom: 5px!important;
+        width: 100%;
+    }
+
+    .subscribe-newsletter h2 {
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    #email-newsletter-help {
+        font-size: 16px;
+        padding-left: 6px;
+    }
+
+    /* Address */
+
+    #footer-address {
+        padding-left: 4%;
+    }
+
+    #footer-address h6 {
+        margin-bottom: 0.2rem;
+        font-size: 1.3rem;
+    }
+    
+    #footer-address p {
+        margin: 0.04rem;
+        font-size: 1.2rem;
+    }
+
+    /* Directions */
+    
+    #footer-directions {
+        font-size: 32px;
+        padding-top: 30px;
+    }
+    
+    #footer-directions a > i {
+        font-size: 60px;
+    }
+    
+    /* Contact */
+
+    .footer-contact p {
+        font-size: 1.8rem;
+        margin-bottom: 2px;
+    }
+    
+    #footer-contact-links {
+        padding: 0;
+        text-transform: uppercase;
+        font-weight: 400;
+    }
+    
+    .footer-contact a {
+        font-size: 1.5rem;
+        margin-bottom: 2px;
+        margin-left: 10px;
+    }
+}
+
+/* ------------------------------------- Large devices such as laptops (1280px and up) -------------------------------- */
+@media screen and (min-width: 1280px) {
+
+    .container {
+        max-width: 95%;
+    }
+
+    .logo-link > img {
+        max-height: 210px;
+        max-width: 210px;
+    }
+
+    /* ---------------- Hero image content ---------------- */
+    .hero > div {
+        min-height: 40rem;
+        max-height: 55rem;
+    }
+
+    .hero > div > img {
+        min-height: 40rem;
+        max-height: 55rem;
+        width: 100%;
+    }
+
+    #home-cover-heading,
+    #treatments-cover-heading,
+    #bookings-cover-heading,
+    #profile-cover-heading {
+        font-size: 6.5em;
+        letter-spacing: 14mm;
+        padding-top: 2em;
+        padding-bottom: 0.2em;
+        text-shadow: 12px 14px 0 #313131;
+    }
+
+    #est-tag {
+        color: transparent;
+    }
+
+    .cover-text {
+        margin: 0 -50px;
+        padding-bottom: 5em;
+        font-size: 30px;
+    }
+
+    #scroll-text {
+        font-size: 30px;
+        animation: my-animation 55s linear infinite;
+    }
+
+    /* -------------------------------- Shared templates content ------------------------------*/
+    .about,
+    .about-our-treatments,
+    .treatments {
+        font-size: 36px;
+    }
+
+    .about div > div > h2,
+    .about-our-treatments div > h2 {
+        font-size: 40px;
+    }
+
+    /* ------------------------------- home_details content ------------------------------- */
+    /* Treatments */
+    .home-treatments h2.text-uppercase {
+        font-size: 40px !important;
+        padding-bottom: 60px !important;
+    }
+
+    .home-treatments h4 {
+        font-size: 2.5rem;
+    }
+
+    .home-treatment-item small {
+        font-size: 26px;
+    }
+
+    .home-treatment-item {
+        margin-bottom: 80px;
+    }
+
+    .home-treatment-item > div > div p {
+        font-size: 30px;
+    }
+
+    /* Google Maps */
+    #maps h2 {
+        font-size: 40px;
+    }
+
+    .gmap_canvas iframe {
+        width: 100%;
+        height: 700px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+
+    /* --------------------------------- home_details content end --------------------------------*/
+
+    /* -------------------------------- treatment_details content -------------------------------- */
+    .gallery {
+        padding-bottom: 80px;
+    }
+
+    /* Fixed banner */
+    .fixed-banner {
+        width: 3em;
+        height: 150vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+    }
+
+    /* Banner button */
+    .banner-button {
+        padding: 0.5em 1em;
+        font-size: 1.5em;
+    }
+
+    /* --------------------------------------- Footer styles -------------------------------- */
+    .back-to-top {
+        font-size: 56px;
+    }
+
+    .subscribe-newsletter h2 {
+        font-size: 26px;
+    }
+
+    #email-newsletter-help {
+        font-size: 16px;
+        padding-left: 6px;
+    }
+
+    /* Address */
+    #footer-address {
+        padding-left: 6%;
+    }
+}
+
+/* ------------------------------------- Larger devices such as large desktops (1400px and up) */
+@media screen and (min-width: 1400px) {
+
+    .logo-link > img {
+        max-height: 210px;
+        max-width: 210px;
+    }
+
+    /* ---------------- Hero Styles ---------------- */
+    .hero > div {
+        min-height: 55rem;
+        max-height: 86rem;
+    }
+
+    .hero > div > img {
+        min-height: 55rem;
+        max-height: 86rem;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    #home-cover-heading,
+    #treatments-cover-heading,
+    #bookings-cover-heading,
+    #profile-cover-heading {
+        font-size: 6.5em;
+        letter-spacing: 10mm;
+        padding-top: 20px;
+        padding-bottom: 50px;
+        text-shadow: 12px 14px 0 #313131;
+    }
+
+    #est-tag {
+        color: transparent;
+    }
+
+    .cover-text {
+        margin: 0 -50px;
+        padding-bottom: 150px;
+        font-size: 30px;
+    }
+
+    #scroll-text {
+        font-size: 30px;
+        animation: my-animation 55s linear infinite;
+    }
+
+    /* -------------------------------- Shared templates content ------------------------------*/
+    .about,
+    .about-our-treatments,
+    .treatments {
+        font-size: 36px;
+    }
+
+    .about div > div > h2,
+    .about-our-treatments div > h2,
+    .treatments div > div > h2 {
+        font-size: 40px;
+    }
+
+    /* ------------------------------- Home_details content ------------------------------ */
+    .home-treatments h2.text-uppercase {
+        font-size: 40px !important;
+        padding-bottom: 60px !important;
+    }
+
+    h4 {
+        font-size: 2.5rem;
+    }
+
+    .home-treatment-item small {
+        font-size: 26px;
+    }
+
+    .home-treatment-item {
+        margin-bottom: 80px;
+    }
+
+    .home-treatment-item > div > div p {
+        font-size: 30px;
+    }
+
+    /* ------------------ Map Styles ------------------ */
+    #maps h2 {
+        font-size: 40px;
+    }
+
+    .gmap_canvas iframe {
+        width: 100%;
+        height: 700px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+
+    /* ------------------- Footer ------------------- */
+    #footer-address {
+        padding-left: 6%;
+    }
+}
