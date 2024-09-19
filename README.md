@@ -259,10 +259,76 @@ Basic wireframes are provided below. Please note that these may differ slightly 
 
 # Technologies Used
 
+Backend
+Django: Python-based web framework for managing backend processes.
+Django-environ: Used for managing environment variables securely.
+Frontend
+HTML5: Markup language used for building the website’s structure.
+CSS3: Custom styles to enhance the visual appearance and user experience.
+Bootstrap: Front-end framework used for responsive design and layout.
+JavaScript: Adds interactivity and dynamic behavior, especially for the calendar and form validations.
+Database
+Relational database management (RDBMS) for storing user information, treatments, and bookings data.
+Django's ORM (Object-Relational Mapping) system to interact with the database.
+Appointment Booking
+Integrated FullCalendar JavaScript library for displaying appointments and booking times.
+Views to handle booking data (booking_events and events views return JSON data for appointments).
+
 ## Languages
+
+* [HTML](https://www.w3.org/TR/html5/ "HTML") – Used to design the Django templates for views and models in the project's applications.
+
+* [CSS](https://www.w3.org/Style/CSS/Overview.en.html "CSS") – Applied to style the website.
+
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript "JavaScript") – Utilized for creating the flag animation and updating the track image when clicked.
+
+* [Python](https://www.python.org/ "Python") – The primary language for Django, used to develop all forms, models, and views.
+
 ## Tools
+
+* [Django](https://www.djangoproject.com/ "Django") – The framework used in this project to incorporate databases with a website.
+
+* [Gitpod](https://www.gitpod.io/ "Gitpod") – Used as the development environment.
+
+* [GitHub](https://github.com/ "GitHub") – This project’s Version Control Management System.
+
+* [Heroku](https://www.heroku.com/ "Heroku") – To deploy the webpage.
+
+* [Bootstrap](https://getbootstrap.com/ "Bootstrap") – A front-end framework for designing responsive and mobile-first websites. It includes CSS and JavaScript components for layout, forms, buttons, and other UI elements.
+
+* [FullCalendar](https://fullcalendar.io/ "FullCalendar") – A JavaScript library used for displaying and managing calendar events, integrated into my booking system to show available time slots and user appointments.
+
+* [jQuery](https://jquery.com/ "jQuery") – A JavaScript library used to simplify DOM manipulation, event handling, and AJAX interactions, which might be used alongside Bootstrap for enhancing interactivity.
+
+* [django-environ](https://django-environ.readthedocs.io/ "django-environ") – A library for managing environment variables in Django projects, used to handle settings and configuration securely.
+
+* [Cloudinary](https://cloudinary.com/ "Cloudinary") – Used to store website's images.
+
+* [Balsamiq](https://balsamiq.com/ "Balsamiq") – For the creation of associated wireframes.
+
 ## Styling
-## Validation
+
+* [Bootstrap](https://getbootstrap.com/ "Bootstrap") – Provides additional styling and ready-to-use components, such as carousels, for enhancing the website's design.
+
+* [Font Awesome](https://fontawesome.com/ "Font Awesome") – Used for incorporating social media icons and a variety of other icons throughout the site.
+
+* [Google Fonts](https://fonts.google.com/ "Google Fonts") – Supplies the font styles utilised in this project for a customised typographic experience.
+
+## Validation and Analysis
+
+* [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML Validation Service") – Used to validate all HTML files, including Django templates, ensuring that they conform to web standards.
+
+* [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS Validation Service") – Validates the `style.css` file, ensuring proper styling and adherence to standards.
+
+* [JSHint](https://jshint.com/ "JSHint") – Checks the code within the `script.js` file for potential errors and code quality issues, promoting cleaner and more reliable JavaScript.
+
+* [PEP8 Python Syntax Checker](https://www.python.org/dev/peps/pep-0008/ "PEP8 Python Syntax Checker") – Ensures that all Python files follow PEP8 standards for style and formatting, maintaining consistency and readability.
+
+* [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/ "WebAIM Contrast Checker") – Analyses color contrast ratios to ensure accessibility and readability for users with visual impairments.
+
+* [Lighthouse](https://developers.google.com/web/tools/lighthouse "Lighthouse") – Assesses the website's performance, accessibility, and adherence to best practices, providing insights for improving overall user experience.
+
+
 ## Databases
 
 
