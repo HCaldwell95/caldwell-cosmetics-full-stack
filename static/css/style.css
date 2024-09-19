@@ -148,7 +148,7 @@ a {
 #home-cover-heading, 
 #treatments-cover-heading, 
 #bookings-cover-heading, 
-#contact-cover-heading {
+#profile-cover-heading {
     margin-top: 0.5em;
     padding-top: 0.5em;
     font-size: 2.1em;
@@ -156,6 +156,10 @@ a {
     letter-spacing: 2mm;
     color: #bebebe;
     text-shadow: 5px 7px 0 #313131;
+}
+
+#bookings-cover-heading {
+    padding-bottom: 2em;
 }
 
 /* General cover text styles */
@@ -727,7 +731,9 @@ Breakpoints:
     }
 
     #home-cover-heading,
-    #treatments-cover-heading {
+    #treatments-cover-heading,
+    #bookings-cover-heading,
+    #profile-cover-heading {
         font-size: 3em;
         letter-spacing: 5mm;
         padding-top: 30px;
@@ -902,7 +908,9 @@ Breakpoints:
     }
 
     #home-cover-heading,
-    #treatments-cover-heading {
+    #treatments-cover-heading,
+    #bookings-cover-heading,
+    #profile-cover-heading {
         font-size: 4em; 
         letter-spacing: 10mm;
         padding-top: 2em;
@@ -1122,7 +1130,9 @@ Breakpoints:
     }
 
     #home-cover-heading,
-    #treatments-cover-heading {
+    #treatments-cover-heading,
+    #bookings-cover-heading,
+    #profile-cover-heading {
         font-size: 6.5em;
         letter-spacing: 14mm;
         padding-top: 2em;
@@ -1257,7 +1267,9 @@ Breakpoints:
     }
 
     #home-cover-heading,
-    #treatments-cover-heading {
+    #treatments-cover-heading,
+    #bookings-cover-heading,
+    #profile-cover-heading {
         font-size: 6.5em;
         letter-spacing: 10mm;
         padding-top: 20px;

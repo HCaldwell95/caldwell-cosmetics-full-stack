@@ -9,9 +9,11 @@ class AppointmentAdmin(admin.ModelAdmin):
     search_fields = ('title',) 
 
 class BookingAdmin(admin.ModelAdmin):
-    list_display = ('id', 'user', 'treatment', 'date', 'time_slot')
-    list_filter = ('user', 'date')
+    list_display = ('id', 'user', 'treatment', 'date', 'time_slot', 'is_confirmed')
+    list_filter = ('is_confirmed', 'date', 'treatment')
     search_fields = ('user__username', 'treatment')
+
+    list_editable = ('is_confirmed',)
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
