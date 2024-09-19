@@ -20,11 +20,21 @@
 {% endblock %}
 
 {% block content %}
-
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Log In</button>
-</form>
+<section class="user-profile-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <h1 class="italiana-regular treatment-information-heading">Log In</h1>
+                <form method="POST" class="user-profile">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-dark">Log In</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock %}

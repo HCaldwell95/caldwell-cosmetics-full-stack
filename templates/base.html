@@ -56,21 +56,23 @@
                     <li class="nav-item {% if url_name == 'treatment_details' %}active{% endif %}">
                         <a class="nav-link" href="{% url 'treatment_details' %}">Treatments</a>
                     </li>
+
                     {% if user.is_authenticated %}
+                    <li class="nav-item {% if url_name == 'my_bookings' %}active{% endif %}"></li>
+                        <a class="nav-link" href="{% url 'my_bookings' %}">Bookings</a>
+                    </li>
                     <li class="nav-item {% if url_name == 'profile' %}active{% endif %}">
                         <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
                     </li>
-                    <li class="nav-item {% if url_name == 'my_bookings' %}active{% endif %}">
-                        <a class="nav-link" href="{% url 'my_bookings' %}">Bookings</a>
-                    </li>
                     <li class="nav-item">
-                        <button type="button" class="btn btn-dark custom-btn" onclick="location.href='{% url 'logout' %}'">
+                        <button type="button" class="btn btn-dark custom-btn custom-btn-mobile" onclick="location.href='{% url 'logout' %}'">
                             Sign Out
                         </button>
                     </li>
+
                     {% else %}
                     <li class="nav-item">
-                        <button type="button" class="btn btn-dark custom-btn" onclick="location.href='{% url 'signup' %}'">
+                        <button type="button" class="btn btn-dark custom-btn custom-btn-mobile" onclick="location.href='{% url 'signup' %}'">
                             Sign In / Sign Up
                         </button>
                     </li>
