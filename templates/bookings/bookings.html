@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}My Bookings | Caldwell Cosmetics{% endblock %}
+
+{% block hero %}
+
+<!-- Hero image section -->
+<section class="hero" id="home-hero">
+    <div class="container-fluid p-0 position-relative">
+        <img src="{% static 'images/home-hero.jpg' %}" class="img-fluid" alt="Image showing x">
+        <!-- Transparent tinting -->
+        <div class="color-overlay"></div>
+        <div class="position-absolute top-50 start-50 translate-middle text-center text-white hero-text-md">
+            <h2 id="home-cover-heading">My Bookings</h2>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block content %}
+
+<h1>My Bookings</h1>
+
+    {% if user_bookings %}
+        <ul>
+            {% for booking in user_bookings %}
+                <li>{{ booking.treatment }} on {{ booking.date }} at {{ booking.time_slot }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You have no bookings.</p>
+    {% endif %}
+
+
+{% endblock %}

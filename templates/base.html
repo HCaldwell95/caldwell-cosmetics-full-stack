@@ -60,6 +60,9 @@
                     <li class="nav-item {% if url_name == 'profile' %}active{% endif %}">
                         <a class="nav-link" href="{% url 'profile' %}">My Profile</a>
                     </li>
+                    <li class="nav-item {% if url_name == 'my_bookings' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'my_bookings' %}">Bookings</a>
+                    </li>
                     <li class="nav-item">
                         <button type="button" class="btn btn-dark custom-btn" onclick="location.href='{% url 'logout' %}'">
                             Sign Out
