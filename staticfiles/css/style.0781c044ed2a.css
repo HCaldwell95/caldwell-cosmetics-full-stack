@@ -546,7 +546,7 @@ main {
 #footer-background-image::before {
     content: "";
     position: absolute;
-    background-image: url(../images/footer-overlay.jpg);
+    background-image: url("../images/footer-overlay.e65c642ee128.jpg");
     background-size: cover;
     width: 100%;
     height: 100%;

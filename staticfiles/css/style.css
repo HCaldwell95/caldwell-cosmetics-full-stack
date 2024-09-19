@@ -447,6 +447,16 @@ main {
     font-family: sans-serif;
 }
 
+.booking-link {
+    padding-top: 3em;
+    padding-bottom: 2em;
+    align-items: center;
+}
+
+.booking-link-btn {
+    font-size: 2em;
+}
+
 /* ----------------------------------- Accounts Content ------------------------------------ */
 
 /* General form styling */

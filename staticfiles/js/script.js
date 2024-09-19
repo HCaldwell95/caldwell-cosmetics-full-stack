@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     for (let field in data.errors) {
                         data.errors[field].forEach(error => {
                             const listItem = document.createElement('li');
-                            listItem.textContent = ${field}: ${error};
+                            listItem.textContent = `${field}: ${error}`;
                             errorList.appendChild(listItem);
                         });
                     }
@@ -126,3 +126,5 @@ $(document).ready(function() {
 $('.carousel-control-prev, .carousel-control-next').click(function(event) {
     event.preventDefault();
 });
+
+

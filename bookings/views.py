@@ -12,10 +12,13 @@ def bookings(request):
     context = {'user_bookings': user_bookings}
     return render(request, 'bookings/bookings.html', context)
 
+def parent_view(request):
+    form = BookingForm()
+    return render(request, 'parent_template.html', {'form': form})
+    
+
 @login_required
 def book_appointment(request):
-    if not request.user.is_authenticated:
-        return redirect('signup')
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
