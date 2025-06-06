@@ -4,6 +4,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.treatment_details, name='treatment_details'),
-    path('<slug:slug>/', views.treatment_card_details, name='treatment_card_details'),  # Individual treatment page
+    path('', views.treatment_details, name='treatment_details'),  # List of treatments
+    path('<slug:slug>/', views.treatment_card_details, name='treatment_card_details'),  # Detail page per treatment
 ]

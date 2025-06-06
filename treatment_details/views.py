@@ -16,4 +16,11 @@ def treatment_details(request):
 
 def treatment_card_details(request, slug):
     treatment = get_object_or_404(Treatment, slug=slug)
-    return render(request, 'treatments_information.html', {'treatment': treatment})
+
+    # Build the partial template path dynamically
+    treatment_template = f"treatments/partials/{treatment.slug}.html"
+
+    return render(request, 'treatments/treatment_information.html', {
+        'treatment': treatment,
+        'treatment_template': treatment_template,
+    })

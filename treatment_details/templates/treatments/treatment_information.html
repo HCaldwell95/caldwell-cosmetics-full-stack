@@ -1,24 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block title %}{{ treatment.name }} | Caldwell Cosmetics{% endblock %}
 
 {% block hero %}
     <!-- Hero image section -->
     <section class="hero" id="home-hero">
         <div class="container-fluid p-0 position-relative">
-
-            <!-- Make this a dynamic image when you have time -->
-
             <img src="{% static 'images/treatment-information-hero.jpg' %}" class="img-fluid" alt="A calm and clean studio wall with a mirror and plant">
-            <!-- Transparent tinting -->
             <div class="color-overlay"></div>
-                <div class="position-absolute top-50 start-50 translate-middle text-center text-white hero-text-md">
-                    <h2 id="treatments-cover-heading">Caldwell Cosmetics</h2>
-                </div>
+            <div class="position-absolute top-50 start-50 translate-middle text-center text-white hero-text-md">
+                <h2 id="treatments-cover-heading">Caldwell Cosmetics</h2>
             </div>
         </div>
     </section>
-    {% endblock %}
+{% endblock %}
 
 {% block content %}
 <section class="treatment-details">
@@ -26,7 +22,9 @@
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <h1 class="italiana-regular treatment-information-heading">{{ treatment.name }}</h1>
-                <p>{{ treatment.description|safe }}</p>
+
+                {# Dynamic include of treatment-specific partial template based on slug #}
+                {% include treatment_template %}
             </div>
         </div>
     </div>
