@@ -1,40 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}My Profile | Caldwell Cosmetics{% endblock %}
+{% block title %}Edit Profile | Caldwell Cosmetics{% endblock %}
 
 {% block hero %}
-
-<!-- Hero image section -->
 <section class="hero" id="home-hero">
     <div class="container-fluid p-0 position-relative">
         <img src="{% static 'images/profile-hero.jpg' %}" class="img-fluid" alt="Dark linen with a green leafed plant">
-        <!-- Transparent tinting -->
         <div class="color-overlay"></div>
-            <div class="position-absolute top-50 start-50 translate-middle text-center text-white hero-text-md">
-                <h2 id="home-cover-heading">Caldwell Cosmetics</h2>
-                <h3 id="est-tag">Est.2024</h3>
-            </div>
+        <div class="position-absolute top-50 start-50 translate-middle text-center text-white hero-text-md">
+            <h2 id="home-cover-heading">Caldwell Cosmetics</h2>
+            <h3 id="est-tag">Est.2024</h3>
+        </div>
     </div>
 </section>
-
 {% endblock %}
-
-
 
 {% block content %}
 <section class="user-profile-details">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12">
-                <h1 class="italiana-regular treatment-information-heading">My Profile</h1>
+                <h1 class="italiana-regular treatment-information-heading">Edit Profile</h1>
                 <form method="POST" class="user-profile">
                     {% csrf_token %}
-                    
-                    <!-- User Login Form (CustomUserCreationForm) -->
-                    <h2>Log In Details</h2>
+                    <h2>Login Details</h2>
                     {{ u_form.as_p }}
 
-                    <!-- Personal Details Form (UserProfileForm) -->
                     <h2>Personal Details</h2>
                     {{ p_form.as_p }}
 
@@ -46,5 +37,4 @@
         </div>
     </div>
 </section>
-
 {% endblock %}

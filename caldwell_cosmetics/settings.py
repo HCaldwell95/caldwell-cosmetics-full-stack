@@ -55,11 +55,10 @@ INSTALLED_APPS = [
     'ckeditor',
     'home_details',
     'treatment_details',
-    'accounts',
+    'accounts.apps.AccountsConfig',
     'cloudinary',
     'cloudinary_storage',
     'bookings',
-    
 ]
 
 MIDDLEWARE = [
@@ -78,7 +77,7 @@ ROOT_URLCONF = 'caldwell_cosmetics.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR / 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

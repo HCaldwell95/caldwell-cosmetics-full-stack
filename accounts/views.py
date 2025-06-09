@@ -1,8 +1,9 @@
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib.auth.models import Group
-from .forms import CustomUserCreationForm, UserProfileForm
+from .forms import CustomUserCreationForm, CustomUserForm, UserProfileForm
 from .models import UserProfile
 
 def signup(request):
@@ -22,25 +23,27 @@ def signup(request):
     
     return render(request, 'accounts/signup.html', {'form': form})
 
-def profile(request):
-    # Load the user's profile, or create one if it doesn't exist
-    profile, created = UserProfile.objects.get_or_create(user=request.user)
+@login_required
+def profile_view(request):
+    return render(request, 'accounts/profile.html', {
+        'user': request.user,
+        'profile': request.user.profile,  # If applicable
+    })
 
+@login_required
+def edit_profile_view(request):
     if request.method == 'POST':
-        u_form = CustomUserCreationForm(request.POST, instance=request.user)
-        p_form = UserProfileForm(request.POST, instance=profile)
-
+        u_form = CustomUserForm(request.POST, instance=request.user)
+        p_form = UserProfileForm(request.POST, instance=request.user.profile)
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
             return redirect('profile')
     else:
-        u_form = CustomUserCreationForm(instance=request.user)
-        p_form = UserProfileForm(instance=profile)
+        u_form = CustomUserForm(instance=request.user)
+        p_form = UserProfileForm(instance=request.user.profile)
 
-    context = {
+    return render(request, 'accounts/edit_profile.html', {
         'u_form': u_form,
-        'p_form': p_form,
-    }
-
-    return render(request, 'accounts/profile.html', context)
+        'p_form': p_form
+    })
