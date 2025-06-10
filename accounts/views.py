@@ -69,5 +69,5 @@ def delete_account(request):
         user.save()
         logout(request)
         messages.success(request, 'Your account has been deleted.')
-        return redirect('home')
+        return redirect('home_details')
     return render(request, 'accounts/delete_account.html')

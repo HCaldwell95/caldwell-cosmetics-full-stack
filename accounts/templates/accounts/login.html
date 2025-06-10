@@ -2,8 +2,11 @@
 {% load static %}
 {% block title %}Log In | Caldwell Cosmetics{% endblock %}
 
-{% block hero %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+{% endblock %}
 
+{% block hero %}
 <!-- Hero image section -->
 <section class="hero" id="home-hero">
     <div class="container-fluid p-0 position-relative">
@@ -16,7 +19,6 @@
             </div>
     </div>
 </section>
-
 {% endblock %}
 
 {% block content %}
@@ -36,5 +38,4 @@
         </div>
     </div>
 </section>
-
 {% endblock %}

@@ -2,8 +2,11 @@
 {% load static %}
 {% block title %}Sign Up | Caldwell Cosmetics{% endblock %}
 
-{% block hero %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+{% endblock %}
 
+{% block hero %}
 <!-- Hero image section -->
 <section class="hero" id="home-hero">
     <div class="container-fluid p-0 position-relative">
@@ -16,11 +19,9 @@
             </div>
     </div>
 </section>
-
 {% endblock %}
 
 {% block content %}
-
 <section class="user-profile-details">
     <div class="container">
         <div class="row">
@@ -49,11 +50,10 @@
                         <button type="submit" class="btn btn-dark">Sign Up</button>
                     </div>
                 </form>
-
+                
                 <p>Already have an account? <a href="{% url 'login' %}">Log in</a></p>
             </div>
         </div>
     </div>
 </section>
-
 {% endblock %}

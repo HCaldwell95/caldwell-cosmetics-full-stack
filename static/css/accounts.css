@@ -2,6 +2,68 @@
    User Profile Styles
    ========================================================================== */
 
+/* General form styling */
+.user-profile {
+    max-width: 800px; /* Adjust as needed */
+    margin: 0 auto; /* Center the form */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: var(--color-background-light);
+}
+
+/* Form headings */
+.user-profile h2 {
+    margin-top: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.user-profile label {
+    font-size: 1.5em;
+}
+
+.user-profile input, textarea {
+    width: 100%;
+}
+
+/* Form elements */
+.user-profile .form-control {
+    width: 100%; /* Make text fields take up the full width */
+    padding: 10px; /* Add padding inside the text fields */
+    margin-bottom: 15px; /* Space between fields */
+    border-radius: 4px; /* Rounded corners */
+    border: 1px solid #ccc; /* Light border color */
+}
+
+/* Add hover effect for the button */
+.user-profile .btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.user-profile-details {
+    padding-bottom: 10em;
+    padding-top: 2em;
+}
+
+.user-profile-details > div > div > div h1 {
+    padding-top: 2em;
+    padding-bottom: 1em;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2mm;
+}
+
+.user-profile-details > div > div > div > p {
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 1em;
+}
+
+
+
+
 /* Base Styling */
 .user-profile-details {
   color: #333;
