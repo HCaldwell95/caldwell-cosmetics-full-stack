@@ -1,8 +1,9 @@
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
-from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login, logout
 from django.contrib.auth.models import Group
+from django.shortcuts import render, redirect
 from .forms import CustomUserCreationForm, CustomUserForm, UserProfileForm
 from .models import UserProfile
 
@@ -59,3 +60,14 @@ def edit_profile_view(request):
         'u_form': u_form,
         'p_form': p_form
     })
+
+@login_required
+def delete_account(request):
+    if request.method == 'POST':
+        user = request.user
+        user.is_active = False
+        user.save()
+        logout(request)
+        messages.success(request, 'Your account has been deleted.')
+        return redirect('home')
+    return render(request, 'accounts/delete_account.html')
