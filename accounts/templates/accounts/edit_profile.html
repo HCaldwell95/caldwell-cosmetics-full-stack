@@ -2,6 +2,11 @@
 {% load static %}
 {% block title %}Edit Profile | Caldwell Cosmetics{% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/accounts.css' %}">
+{% endblock %}
+
+
 {% block hero %}
 <section class="hero" id="home-hero">
     <div class="container-fluid p-0 position-relative">
@@ -19,7 +24,7 @@
 <section class="user-profile-details">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-md-12">
+            <div class="col-12 col-md-8 col-lg-6 mx-auto">
                 <h1 class="italiana-regular treatment-information-heading">Edit Profile</h1>
                 <form method="POST" class="user-profile">
                     {% csrf_token %}
@@ -29,7 +34,7 @@
                     <h2>Personal Details</h2>
                     {{ p_form.as_p }}
 
-                    <div class="d-flex justify-content-center">
+                    <div class="d-flex justify-content-center mt-4">
                         <button type="submit" class="btn btn-dark">Save Changes</button>
                     </div>
                 </form>
@@ -37,4 +42,5 @@
         </div>
     </div>
 </section>
+
 {% endblock %}

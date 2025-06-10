@@ -1,0 +1,219 @@
+/* ==========================================================================
+   User Profile Styles
+   ========================================================================== */
+
+/* Base Styling */
+.user-profile-details {
+  color: #333;
+  line-height: 1.6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Headings */
+.user-profile-details h1.italiana-regular {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.user-profile-details h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Description List Layout */
+.user-profile-details dl {
+  margin-bottom: 2rem;
+}
+
+.user-profile-details dt {
+  font-weight: 600;
+  padding-bottom: 0.25rem;
+  text-align: right;
+}
+
+.user-profile-details dd {
+  margin-left: 0;
+  padding-bottom: 0.5rem;
+}
+
+/* Buttons */
+.user-profile-details .btn-dark {
+  font-size: 1.1rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.user-profile-details .btn-dark:hover {
+  background-color: #1a1a1a;
+}
+
+.user-profile-details .btn-outline-danger {
+  font-size: 1rem;
+  padding: 0.6rem 1.3rem;
+  border-radius: 50px;
+  border: 2px solid #dc3545;
+  color: #dc3545;
+  transition: all 0.3s ease-in-out;
+}
+
+.user-profile-details .btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Profile Card Spacing and Styling */
+.user-profile-details .profile-card {
+  padding: 2rem;
+  margin: 2rem 1.5rem;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+}
+
+@media (min-width: 768px) {
+  .user-profile-details .profile-card {
+    margin: 2rem 3rem;
+    padding: 3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .user-profile-details .profile-card {
+    margin: 3rem 5rem;
+    padding: 4rem;
+  }
+}
+
+/* Delete Page Form */
+.delete-account-container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.delete-account-container p {
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* Spacing Between Sections */
+.user-profile-details .user-details > h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   Responsive Typography & Layout
+   ========================================================================== */
+
+/* Typography Scaling: Tablets */
+@media (min-width: 576px) {
+  .user-profile-details h1.italiana-regular {
+    font-size: 2.5rem;
+  }
+
+  .user-profile-details h2 {
+    font-size: 1.75rem;
+  }
+
+  .user-profile-details dt,
+  .user-profile-details dd {
+    font-size: 1.1rem;
+  }
+}
+
+/* Typography Scaling: Desktops */
+@media (min-width: 992px) {
+  .user-profile-details h1.italiana-regular {
+    font-size: 3rem;
+  }
+
+  .user-profile-details h2 {
+    font-size: 2rem;
+  }
+
+  .user-profile-details dt,
+  .user-profile-details dd {
+    font-size: 1.2rem;
+  }
+}
+
+/* Responsive Layout for Description Lists */
+@media (max-width: 575.98px) {
+  .user-profile-details dl.row {
+    display: block;
+  }
+
+  .user-profile-details dt,
+  .user-profile-details dd {
+    display: block;
+    text-align: left !important;
+    width: 100% !important;
+    font-size: 1rem;
+    padding: 0.4rem 0;
+  }
+
+  .user-profile-details dt {
+    font-weight: 700;
+  }
+}
+
+@media (min-width: 576px) {
+  .user-profile-details dl.row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .user-profile-details dt {
+    width: 40%;
+    text-align: right;
+    padding-right: 1rem;
+  }
+
+  .user-profile-details dd {
+    width: 60%;
+  }
+}
+
+/* ==========================================================================
+   Edit Profile Styles
+   ========================================================================== */
+
+.user-profile {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.5;
+}
+
+.user-profile h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+}
+
+.user-profile button {
+  width: 100%;
+  max-width: 200px;
+  padding: 0.5rem 1.5rem;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 576px) {
+  .user-profile {
+    padding: 0 0.5rem;
+    font-size: 1rem;
+  }
+
+  .user-profile button {
+    font-size: 1rem;
+  }
+}

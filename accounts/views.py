@@ -25,9 +25,21 @@ def signup(request):
 
 @login_required
 def profile_view(request):
+
+    profile = request.user.profile
+
+    profile_fields = [
+        ('Full Name', f'{request.user.first_name} {request.user.last_name}'),
+        ('Phone Number', getattr(profile, 'phone_number', 'Not provided') or "Not provided"),
+        ('Address', getattr(profile, 'address', 'Not provided') or "Not provided"),
+        ('Age', getattr(profile, 'age', 'Not provided') or "Not provided"),
+        ('Hair Colour', getattr(profile, 'hair_colour', 'Not provided') or "Not provided"),
+    ]
+
     return render(request, 'accounts/profile.html', {
         'user': request.user,
-        'profile': request.user.profile,  # If applicable
+        'profile': profile,
+        'profile_fields': profile_fields,
     })
 
 @login_required
