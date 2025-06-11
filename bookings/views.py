@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect,  get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
+from django.utils import timezone
 from django.utils.dateparse import parse_date
 from .forms import BookingForm
 from bookings.models import Booking
 from .models import Appointment
 from datetime import datetime, timedelta
+
 
 @login_required
 def bookings(request):
@@ -14,6 +16,11 @@ def bookings(request):
     return render(request, 'bookings/bookings.html', context)
 
 def create_booking(request):
+
+    now = timezone.now()
+
+    available_appointments = Appointment.objects.filter(start_time__gte=now, is_booked=False).order_by('start_time')
+
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
@@ -31,7 +38,8 @@ def create_booking(request):
             return redirect('booking_confirmation', booking_id=booking.id)
     else:
         form = BookingForm()
-    return render(request, 'bookings/create_booking.html', {'form': form})
+
+    return render(request, 'bookings/create_booking.html', {'form': form, 'available_appointments': available_appointments})
 
 @login_required
 def booking_events(request):

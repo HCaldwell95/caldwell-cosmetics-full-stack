@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (calendarEl) {
         const calendar = new FullCalendar.Calendar(calendarEl, {
             initialView: 'dayGridMonth',
+            validRange: {
+                start: new Date().toISOString().split('T')[0]  // prevent selecting past dates
+            },
             events: function(fetchInfo, successCallback, failureCallback) {
                 fetch('/bookings/booking_events/')  // Absolute path here
                     .then(response => response.json())

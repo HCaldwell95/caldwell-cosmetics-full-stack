@@ -1,39 +1,51 @@
 from django.core.management.base import BaseCommand
 from bookings.models import Appointment
-from datetime import datetime, timedelta, time, date
-
+from django.utils import timezone
+from datetime import timedelta, datetime, time
 
 class Command(BaseCommand):
-    help = "Generates 1-hour appointment slots for Tuesdays and Wednesdays from 09:30 to 16:30, 4 weeks ahead."
+    help = "Create appointment slots for next 4 weeks every Tuesday and Wednesday between 09:30 and 15:30"
 
     def handle(self, *args, **kwargs):
-        slot_length = timedelta(hours=1)
-        open_days = [1, 2]  # Tuesday = 1, Wednesday = 2
-        start_time = time(hour=9, minute=30)
-        end_time = time(hour=16, minute=30)
+        # Settings
+        days_of_week = [1, 2]  # Tuesday=1, Wednesday=2 (Monday=0)
+        slot_start_time = time(9, 30)
+        slot_end_time = time(15, 30)
+        slot_duration = timedelta(hours=1)
 
-        today = date.today()
-        days_ahead = 28  # Generate for the next 4 weeks
+        # Start from tomorrow or today depending on current time
+        today = timezone.localdate()
+        start_date = today
 
-        new_slots = 0
+        # Define how many weeks ahead to generate slots
+        weeks_ahead = 8
+        end_date = start_date + timedelta(weeks=weeks_ahead)
 
-        for day_offset in range(days_ahead):
-            current_date = today + timedelta(days=day_offset)
-            if current_date.weekday() in open_days:
-                current_slot = datetime.combine(current_date, start_time)
-                slot_end_time = datetime.combine(current_date, end_time)
+        current_date = start_date
+        created_slots = 0
+        while current_date <= end_date:
+            if current_date.weekday() in days_of_week:
+                # Generate slots within the working hours
+                slot_time = datetime.combine(current_date, slot_start_time)
+                slot_time = timezone.make_aware(slot_time)
+                slot_end_of_day = datetime.combine(current_date, slot_end_time)
+                slot_end_of_day = timezone.make_aware(slot_end_of_day)
 
-                while current_slot < slot_end_time:
-                    slot_end = current_slot + slot_length
+                while slot_time + slot_duration <= slot_end_of_day:
+                    slot_finish = slot_time + slot_duration
 
-                    # Skip if already exists
-                    if not Appointment.objects.filter(start_time=current_slot).exists():
+                    # Avoid duplicating slots
+                    exists = Appointment.objects.filter(start_time=slot_time).exists()
+                    if not exists:
                         Appointment.objects.create(
-                            start_time=current_slot,
-                            end_time=slot_end
+                            title="Available Slot",
+                            start_time=slot_time,
+                            end_time=slot_finish,
+                            is_booked=False
                         )
-                        new_slots += 1
+                        created_slots += 1
 
-                    current_slot += slot_length
+                    slot_time += slot_duration
+            current_date += timedelta(days=1)
 
-        self.stdout.write(self.style.SUCCESS(f"✅ Created {new_slots} appointment slots."))
+        self.stdout.write(self.style.SUCCESS(f"Created {created_slots} appointment slots."))
