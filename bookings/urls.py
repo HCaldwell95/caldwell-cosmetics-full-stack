@@ -1,11 +1,10 @@
 from django.urls import path
-from . import views
-from .views import booking_events, events, booking_confirmation, bookings, create_booking
+from .views import bookings_and_create, booking_events, events, booking_confirmation
 
 urlpatterns = [
-    path('', bookings, name='my_bookings'),  # Handle /bookings/ URL
-    path('book-appointment/', create_booking, name='book_appointment'),
-    path('booking_events/', views.booking_events, name='booking_events'),
+    path('', bookings_and_create, name='my_bookings'),  # or use some other view
+    path('bookings/', bookings_and_create, name='bookings_and_create'),
+    path('booking_events/', booking_events, name='booking_events'),
     path('events/', events, name='events'),
     path('booking-confirmation/<int:booking_id>/', booking_confirmation, name='booking_confirmation'),
 ]

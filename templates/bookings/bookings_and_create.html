@@ -57,13 +57,32 @@
                 {% endif %}
             </div>
         </div>
+    </div>
+</section>
+<section class="booking-page">
+    <div class="container">
         <div class="row">
-            <div class="col-12 booking-link d-flex justify-content-center">
-                <a href="{% url 'book_appointment' %}" class="btn btn-primary booking-link-btn">Book an Appointment</a>
+            <h2 class="text-center my-4">Book Your Appointment</h2>
+            <div class="col-12 book-your-appointment">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Book Appointment</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-12 booking-calendar">
+                <div id="calendar"></div>
             </div>
         </div>
     </div>
 </section>
 
-
 {% endblock %}
+
+<!-- FullCalendar JS -->
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+<!-- Custom JS -->
+<script src="{% static 'js/calendar.js' %}"></script>

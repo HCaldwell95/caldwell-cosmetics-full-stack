@@ -7,18 +7,13 @@ from .forms import BookingForm
 from bookings.models import Booking
 from .models import Appointment
 from datetime import datetime, timedelta
+from django.contrib import messages
 
 
 @login_required
-def bookings(request):
-    user_bookings = Booking.objects.filter(user=request.user)  # Filter by the logged-in user
-    context = {'user_bookings': user_bookings}
-    return render(request, 'bookings/bookings.html', context)
-
-def create_booking(request):
-
+def bookings_and_create(request):
+    user_bookings = Booking.objects.filter(user=request.user)
     now = timezone.now()
-
     available_appointments = Appointment.objects.filter(start_time__gte=now, is_booked=False).order_by('start_time')
 
     if request.method == 'POST':
@@ -26,20 +21,25 @@ def create_booking(request):
         if form.is_valid():
             booking = form.save(commit=False)
             booking.user = request.user
-            booking.is_confirmed = True  # Or False depending on your flow
+            booking.is_confirmed = True
             booking.save()
 
-            # Mark appointment as booked
             appointment = booking.appointment
             appointment.is_booked = True
             appointment.save()
 
-            # Redirect to confirmation page or somewhere else
-            return redirect('booking_confirmation', booking_id=booking.id)
+            messages.success(request, 'Booking created successfully!')
+            return redirect('bookings_and_create')
     else:
         form = BookingForm()
 
-    return render(request, 'bookings/create_booking.html', {'form': form, 'available_appointments': available_appointments})
+    context = {
+        'user_bookings': user_bookings,
+        'form': form,
+        'available_appointments': available_appointments,
+    }
+    return render(request, 'bookings/bookings_and_create.html', context)
+
 
 @login_required
 def booking_events(request):
@@ -61,10 +61,12 @@ def booking_events(request):
 
     return JsonResponse(data, safe=False)
 
+
 def events(request):
     appointments = Appointment.objects.all()
     events = [{'title': appt.title, 'start': appt.start_time, 'end': appt.end_time} for appt in appointments]
     return JsonResponse(events, safe=False)
+
 
 @login_required
 def booking_confirmation(request, booking_id):
