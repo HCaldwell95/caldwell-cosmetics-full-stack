@@ -1,16 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
     const calendarEl = document.getElementById('calendar');
 
-    if (calendarEl) {  // Ensure the element exists
-        // Create a new FullCalendar instance
+    if (calendarEl) {
         const calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth', // Initial view as a monthly grid
+            initialView: 'dayGridMonth',
             events: function(fetchInfo, successCallback, failureCallback) {
-                fetch('/booking_events/')  // URL of your user bookings endpoint
+                fetch('/bookings/booking_events/')  // Absolute path here
                     .then(response => response.json())
                     .then(data => {
                         if (Array.isArray(data)) {
-                            successCallback(data);  // Pass the fetched events to FullCalendar
+                            successCallback(data);
                         } else {
                             console.error('Invalid data format:', data);
                             failureCallback('Invalid data format');
@@ -18,12 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     })
                     .catch(error => {
                         console.error('Error fetching events:', error);
-                        failureCallback(error);  // Handle errors if necessary
+                        failureCallback(error);
                     });
+            },
+            eventTimeFormat: {   // <-- Add this
+                hour: 'numeric',
+                minute: '2-digit',
+                meridiem: 'short'  // shows full 'am' or 'pm'
             }
         });
 
-        // Render the calendar
         calendar.render();
     } else {
         console.error('Calendar element not found');

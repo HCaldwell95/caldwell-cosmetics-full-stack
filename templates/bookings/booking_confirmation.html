@@ -25,7 +25,12 @@
     <h2>Booking Confirmed</h2>
     <p>Thank you for your booking, {{ booking.user.username }}!</p>
     <p>Booking ID: {{ booking.id }}</p>
-    <p>Appointment Date: {{ booking.appointment.date }}</p>
+    {% if booking.appointment %}
+      <p>Appointment Date: {{ booking.appointment.start_time|date:"Y-m-d" }}</p>
+      <p>Appointment Time: {{ booking.appointment.start_time|time:"H:i" }}</p>
+    {% else %}
+      <p>No appointment scheduled.</p>
+    {% endif %}
 </div>
 
 {% endblock %}

@@ -3,8 +3,9 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.utils.dateparse import parse_date
 from .forms import BookingForm
-from .models import Booking
+from bookings.models import Booking
 from .models import Appointment
+from datetime import datetime, timedelta
 
 @login_required
 def bookings(request):
@@ -12,30 +13,45 @@ def bookings(request):
     context = {'user_bookings': user_bookings}
     return render(request, 'bookings/bookings.html', context)
 
-@login_required
-def book_appointment(request):
+def create_booking(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
             booking = form.save(commit=False)
-            booking.user = request.user  # Link to the logged-in user
+            booking.user = request.user
+            booking.is_confirmed = True  # Or False depending on your flow
             booking.save()
+
+            # Mark appointment as booked
+            appointment = booking.appointment
+            appointment.is_booked = True
+            appointment.save()
+
+            # Redirect to confirmation page or somewhere else
             return redirect('booking_confirmation', booking_id=booking.id)
     else:
         form = BookingForm()
-    
-    return render(request, 'bookings/book_appointment.html', {'form': form})
+    return render(request, 'bookings/create_booking.html', {'form': form})
 
 @login_required
 def booking_events(request):
-    bookings = Booking.objects.filter(user=request.user)  # Adjust filter as needed
-    events = []
+    user = request.user
+    bookings = Booking.objects.select_related('appointment').filter(user=user)
+    
+    data = []
     for booking in bookings:
-        events.append({
+        appointment = booking.appointment
+        start_datetime = booking.appointment.start_time
+        end_datetime = appointment.end_time if appointment.end_time else start_datetime + timedelta(hours=1)
+
+        data.append({
             'title': str(booking.treatment),  # Display treatment name or any other relevant title
-            'start': booking.date.isoformat() + 'T' + str(booking.time_slot)  # Format the date and time
+            'start': start_datetime.isoformat(),
+            'end': end_datetime.isoformat(),
+            'color': "#28a745" if booking.is_confirmed else "#ffc107",
         })
-    return JsonResponse(events, safe=False)
+
+    return JsonResponse(data, safe=False)
 
 def events(request):
     appointments = Appointment.objects.all()

@@ -39,8 +39,8 @@
                             {% for booking in user_bookings %}
                                 <tr>
                                     <td>{{ booking.treatment }}</td>
-                                    <td>{{ booking.date }}</td>
-                                    <td>{{ booking.time_slot|date:"H:i" }}</td>
+                                    <td>{{ booking.appointment.start_time|date:"d-m-Y" }}</td>
+                                    <td>{{ booking.appointment.start_time|time:"H:i" }} - {{ booking.appointment.end_time|time:"H:i" }}</td>
                                     <td>
                                         {% if booking.is_confirmed %}
                                             Confirmed
