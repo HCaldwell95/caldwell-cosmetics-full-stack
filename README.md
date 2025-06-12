@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Caldwell Cosmetics is a full-stack web application designed to showcase and manage a cosmetic brand's products and treatments offered. The website includes features like a landing page, designed to inform the user of everything the application has to offer; a treatments page, which provides detailed information on the treatments offered, products used and any aftercare required; an admin interface for content management and a booking system which will allow users to book timeslots on a calendar for their treatments. The project is built using Django and deployed on Heroku.
+Caldwell Cosmetics is a full-stack web application designed to showcase and manage a cosmetic brand's products and treatments offered. The website includes features like a landing page, designed to inform the user of everything the application has to offer; a treatments page, which provides detailed information on the treatments offered, products used and any aftercare required; an admin interface for content management and a booking system which will allow users to book times lots on a calendar for their treatments. The project is built using Django and deployed on Heroku.
 
 [Visit the Website Here](https://caldwell-cosmetics-3f24bce38bd6.herokuapp.com/)
 
@@ -94,7 +94,7 @@ The UX aspect of the project can be broken down into 5 Planes:
 &nbsp;
 
 ## Strategy
-In order to ensure the project aligns with these planes, it is vital to keep the target audience at the forefront at all times. It is vital to ensure that the project has real world use and that its design is transferrable to other sports events which also require the user to book a ticket.
+In order to ensure the project aligns with these planes, it is vital to keep the target audience at the forefront at all times. It is vital to ensure that the project has real world use and that its design is transferrable to other organisations which also require the user to book a treatment.
 
 The target audience consists of:
 * 18 – 65 year olds.
@@ -125,7 +125,7 @@ The purpose of this website is to promote the Caldwell Cosmetics brand, providin
 | [7](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/7) | As a user, I can register or log in so that I can manage my bookings. | Must Have |
 | [8](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/8) | As a user, I can book treatments for others so that I can bring more people to the business. | Must Have |
 | [9](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/9) | As a user, I can see if I am logged in so that I can easily log out or log in. | Must Have |
-| [10](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/10) | As a user, I can obtain email confirmation of my ticket bookings so that I know I have successfully booked the treatments. | Could Have |
+| [10](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/10) | As a user, I can obtain email confirmation of my treatment bookings so that I know I have successfully booked the treatments. | Could Have |
 | [11](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/11) | As a user, I can select my preferred practitioner when booking treatments and review their remaining availability so I can book my treatments. | Must Have |
 | [12](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/12) | As a user, I can easily use the navbar to navigate the website so that I can find all relevant content. | Must Have |
 | [13](https://github.com/HCaldwell95/caldwell-cosmetics-full-stack/issues/13) | As a user, I can edit and/or delete appointments I have booked when logged in so that I can make any necessary changes. | Must Have |
@@ -169,7 +169,7 @@ Elements to add to the site in the future:
 
 ## Structure
 
-Having a well-organized project structure facilitates a logical development process and ensures that sprint tasks can be efficiently tracked. The project is divided into applications to manage different functionalities and database tables to systematically store user data.
+Having a well-organised project structure facilitates a logical development process and ensures that sprint tasks can be efficiently tracked. The project is divided into applications to manage different functionalities and database tables to systematically store user data.
 
 ### Project Applications
 
@@ -227,7 +227,7 @@ The initial skeleton provides a broad framework that is refined and expanded upo
 
 Basic wireframes are provided below. Please note that these may differ slightly from the final website design:
 
-> [Home Page](documentation/home-wireframes.png)
+> ![Home Page](documentation/home-wireframes.png)
 
 ## Surface
 
@@ -416,7 +416,7 @@ These breakpoints help maintain a consistent and user-friendly experience across
 
 * [CSS](https://www.w3.org/Style/CSS/Overview.en.html "CSS") – Applied to style the website.
 
-* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript "JavaScript") – Utilized for creating the flag animation and updating the track image when clicked.
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript "JavaScript") – Used to render a dynamic calendar to display bookings and enables modal functionality along with visual enhancements.
 
 * [Python](https://www.python.org/ "Python") – The primary language for Django, used to develop all forms, models, and views.
 
@@ -473,7 +473,7 @@ The project uses Django’s ORM to interact with the following databases:
   - **PostgreSQL**: Used for storing user data, bookings, treatments, and other dynamic content. It provides a robust and scalable solution for handling relational data.
   
 - **Cloudinary**: 
-  - **Image Storage**: Used to store and serve images efficiently. This allows for easy management of media assets with optimized delivery.
+  - **Image Storage**: Used to store and serve images efficiently. This allows for easy management of media assets with optimised delivery.
 
 ## Testing
 
@@ -518,7 +518,7 @@ This section describes the tests for the `Subscriber` model, ensuring its functi
 
 ### Test Setup
 
-Before each test runs, the `setUp` method initializes the test environment by:
+Before each test runs, the `setUp` method initialises the test environment by:
 - **Creating a Test Subscriber**: A subscriber with the email `test@example.com` is added to the database.
 
 ### Test Cases
