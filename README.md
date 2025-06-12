@@ -35,9 +35,7 @@ Visit the Project's GitHub Repository Here
      * [Future Sprints](#future-sprints "Future Sprints")
    * [Structure](#structure "Structure")
       * [Project Applications](#project-applications "Project Applications")
-     * [Project Databases](#project-databases "Project Databases")
-		* [Website User](#websiteuser "Website User")
-		* [Ticket](#ticket "Ticket")
+     * [Project Databases](#project-database "Project Databases")
    * [Surface](#surface "Surface")
     	* [Font](#font "Font")
     	* [Icons](#icons "Icons")
@@ -55,33 +53,31 @@ Visit the Project's GitHub Repository Here
 		* [Footer](#footer "Footer")              
 		* [Profile](#profile "Profile")   
         * [Treatments Page](#treatments-page "Treatments Page")
-        * [Meet The Team Page](#meet-the-team "Meet The Team Page") 
 		* [My Bookings Page](#my-bookings-page "My Bookings Page")       
 		* [New Booking Page](#new-booking-page "New Booking Page")       
-		* [Edit Booking Page](#edit-ticket-page "Edit Booking Page")       
-		* [Delete Booking Page](#delete-ticket-page "Delete Booking Page")             
+		* [Edit Booking Modal](#edit-booking-modal "Edit Booking Modal")       
+		* [Delete Booking Modal](#delete-booking-modal "Delete Booking Modal")             
 		* [Django Template Pages](#django-template-pages "Django Template Pages")       
 		* [Messages](#messages "Messages")       
 		* [Error Pages](#error-pages "Error Pages") 
 4. [Technologies Used](#technologies-used)
-   1. [Programming Language](#programming-language)
-   2. [Tools Used To Develop The Application](#tools-used-to-develop-the-application)
-   3. [Environment Variables](#environment-variables)
-   4. [Database Configuration](#database-configuration)
+   1. [Programming Language](#languages)
+   2. [Tools Used To Develop The Application](#tools)
+   3. [Styling](#styling)
+   4. [Validation and Analysis](#validation-and-analysis)
+   5. [Databases](#databases)
 5. [Testing](#testing)
-   1. [Code Validation](#code-validation)
-   2. [Manual Testing](#manual-testing)
-   3. [Automated Testing](#automated-testing)
-   4. [Resolved Bugs](#resolved-bugs)
+   1. [Automated Testing](#automated-testing)
+   2. [Manual Testing](#manual-tests)
+   3. [Code Validation](#code-validation)
+   4. [Bugs](#bugs)
 6. [Deployment](#deployment)
    1. [Preparation](#preparation)
    2. [Deploying the Application to Heroku](#deploying-the-application-to-heroku)
    3. [Forking the Github Repository](#forking-the-github-repository)
    4. [Cloning the Repository on GitHub](#cloning-the-repository-on-github)
 7. [Credits](#credits)
-   - [Code](#code)
-   - [Media](#media)
-8. [Disclaimer](#disclaimer)
+8. [Disclaimer](#educational-disclaimer)
 \
 &nbsp;
 
@@ -184,13 +180,15 @@ The project consists of four applications:
 * meet_the_team_details: Features profiles of the practitioners at Caldwell Cosmetics, highlighting their qualifications and experience to reassure users of their expertise.
 * booking_details: Oversees the booking process, including creating, editing, and deleting of bookings. Users are required to create a profile, which is associated with their treatment reservations.
 
-### Project Database
+### Project Databases
 
 The project features two distinct databases to manage different functionalities:
 
 Subscription Newsletter Database: Manages user subscriptions to the newsletter. This database stores information related to users who subscribe to receive updates and promotions via email.
 
 Booking System Database: Facilitates the calendar-based booking system, allowing users to create, manage, and track their bookings. This database includes user profiles and booking details.
+
+
 
 The schematic below illustrates the relationships between the relevant models:
 
@@ -200,21 +198,23 @@ The Subscriber model is used to manage information for users who subscribe to th
 
 * email - The email address of the subscriber, which is used to send newsletters and updates.
 
-!Subscription Database (image here)
-
 #### Booking System
 
 The BookingSystem model captures detailed information about users who book treatments. This model is used to gather comprehensive user data to enhance their booking experience. It includes:
 
 username - A unique username selected by the user during registration.
+password - Created by the user while registering.
+email - The user's email address, entered while creating an account.
+
 first_name - The user's first name.
 last_name - The user's last name.
-email - The user's email address.
+hair_colour - The user's hair colour.
 address - The user's home address.
+phone_number - The user's phone number.
 
 The BookingSystem model is linked to the booking records as a foreign key in the booking system. This design allows users to update their personal information without duplicating data entry, thereby enhancing privacy and user experience.
 
-!Booking System Database (image here)
+> ![Booking System](documentation/user-database.png)
 
 ## Skeleton
 
@@ -227,10 +227,7 @@ The initial skeleton provides a broad framework that is refined and expanded upo
 
 Basic wireframes are provided below. Please note that these may differ slightly from the final website design:
 
-* [Home Page](image.jpg "Home Page")
-* [Treatments](image.jpg "Treatments") – The Treatments Page is very similar to the Home Page as I wanted to maintain consistency throughout the website, with each page acting as a different comprehensive source of information.
-* [My Bookings](image.jpg "My Bookings") – The Bookings Page follows the trend, displaying only the information and fields required to create, edit and delete bookings.
-* [My Profile](image.jpg "My Profile") – The Profile Page follows the trend, displaying only the information and fields required to create, edit and delete profile data.
+> [Home Page](documentation/home-wireframes.png)
 
 ## Surface
 
@@ -609,14 +606,20 @@ The primary issue that arose in the first attempt was the inclusion of an anchor
 
 ### Python Syntax Checker PEP8 Validation
 #### First Attempt of Python Files
+
+Many warning and errors received in the initial run through the CI Linter. They mostly consisted of lines being too long and trailing white space and were very fast to rectify.
+
 ![CI Python Linter Results](documentation/python-linter-initial.png)
 
 #### Final Attempt of Python Files
+
+No issues following these changes.
+
 ![CI Python Linter Results](documentation/python-linter-final.png)
 
 ## Lighthouse
 ### Final Attempt for Lighthouse
-![Lighthouse Results](documentation/lighthouse-initial-scan.png)
+![Lighthouse Results](documentation/lighthouse-final.png)
 
 # Bugs
 
