@@ -742,13 +742,55 @@ Breakpoints:
 }
 
 /* Unique to mobiles as this only affects the dropdown menu */
-@media (max-width: 750px) {
+@media (max-width: 767px) {
     .custom-btn-mobile {
         font-size: 0.65rem;
         padding: 3px 8px;
         margin: 0;
     }
+
+    .custom-btn-mobile {
+        font-size: 0.65rem;
+        padding: 3px 8px;
+        margin: 0;
+    }
+
+    .responsive-booking-table table,
+    .responsive-booking-table thead,
+    .responsive-booking-table tbody,
+    .responsive-booking-table th,
+    .responsive-booking-table td,
+    .responsive-booking-table tr {
+        display: block;
+    }
+
+    .responsive-booking-table thead tr {
+        display: none; /* hide header row */
+    }
+
+    .responsive-booking-table td {
+        position: relative;
+        padding-left: 50%;
+        font-size: 0.85rem;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .responsive-booking-table td::before {
+        position: absolute;
+        left: 10px;
+        top: 6px;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+
+    .responsive-booking-table td:nth-of-type(1)::before { content: "Treatment"; }
+    .responsive-booking-table td:nth-of-type(2)::before { content: "Date"; }
+    .responsive-booking-table td:nth-of-type(3)::before { content: "Time"; }
+    .responsive-booking-table td:nth-of-type(4)::before { content: "Status"; }
+    .responsive-booking-table td:nth-of-type(5)::before { content: "Edit"; }
+    .responsive-booking-table td:nth-of-type(6)::before { content: "Delete"; }
 }
+
 
 /* ------------------------------------- Medium devices such as tablets (768px and up) ---------------------------------------*/
 @media screen and (min-width: 768px) {
