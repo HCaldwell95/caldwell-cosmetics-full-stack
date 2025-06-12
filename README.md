@@ -536,20 +536,23 @@ Before each test runs, the `setUp` method initializes the test environment by:
 
 These tests help verify that the `Subscriber` model handles data correctly, enforces unique and valid email addresses, and provides a proper string representation.
 
-
 ## Manual Tests
 
-- **User Interface Testing**: Manual testing is conducted to verify that the user interface functions correctly across different devices and screen sizes. This includes checking that forms are displayed properly and that navigation links work as intended.
+**User Interface Testing**: Manual testing is conducted to verify that the user interface functions correctly across different devices and screen sizes. This includes checking that forms are displayed properly and that navigation links work as intended.
 
-- **Feature Testing**: Ensures that key features such as booking appointments, viewing bookings, and editing profiles are functioning as expected. This involves simulating user interactions and verifying that the expected results are achieved.
+**Feature Testing**: Ensures that key features such as booking appointments, viewing bookings, and editing profiles are functioning as expected. This involves simulating user interactions and verifying that the expected results are achieved.
+
+This project was tested on a variety of browsers and devices by my family and friends to catch any possible errors. The [User Stories](#user-stories "User Stories") and page elements are manually tested and can be found in this separate markdown page:
+
+[MANUAL_TESTS](MANUAL_TESTS.md)
 
 ## Test Coverage
 
-- **Comprehensive Coverage**: Efforts are made to cover a wide range of scenarios, including edge cases and error conditions, to ensure the application performs reliably under various conditions.
+**Comprehensive Coverage**: Efforts are made to cover a wide range of scenarios, including edge cases and error conditions, to ensure the application performs reliably under various conditions.
 
 These testing practices help maintain high code quality and improve the overall user experience.
 
-- **Unit Tests**: Written to verify the correctness of individual units of code. For instance, tests are included for models such as `Subscriber` to ensure that unique constraints and email validation work as expected.
+**Unit Tests**: Written to verify the correctness of individual units of code. For instance, tests are included for models such as `Subscriber` to ensure that unique constraints and email validation work as expected.
 
 ## Code Validation
 
@@ -564,11 +567,11 @@ These testing practices help maintain high code quality and improve the overall 
 
 #### First Attempt of Home Page
 
-IMAGE SHOWING VALIDATOR ISSUES 1-7
+![Validation Issues](documentation/validation-issue-one-to-seven.png)
 
 Note: A recurring issue during the validation was the "{% static %}" tags as the HTML validator would not process these in the way that Django would. I have filtered out these error messages to ensure that the HTML itself was valid.
 
-IMAGE SHOWING VALIDATOR ISSUE 8
+![Validation Issues](documentation/validation-issue-eight.png)
 
 The primary issue that arose in the first attempt was the inclusion of an anchor tag inside a button tag. This was rectified by replacing the anchor tags with some simple JavaScript to handle the button's action, as demonstrated by the code snippet below.
 
@@ -582,48 +585,42 @@ The primary issue that arose in the first attempt was the inclusion of an anchor
 
 #### Final Attempt of Home Page
 
-![Alt text](documentation/base-html-validator-filtered-final.png)
+![HTML Validation Results](documentation/base-html-validator-filtered-final.png)
 
 #### Only Attempt of the Django Templates
 
-![Alt text](documentation/treatments-html-validation-list.png)
-![Alt text](documentation/home-html-validation-list.png)
+![HTML Validation Results](documentation/treatments-html-validation-list.png)
+![HTML Validation Results](documentation/home-html-validation-list.png)
 
 ### W3C CSS Validator
 
 #### First Attempt of CSS File
-![Alt text](documentation/css_validator_first.png)
+![CSS Validation Results](documentation/css_validator_first.png)
 #### Final Attempt of CSS File
-![Alt text](documentation/css_validator_final.png)
+![CSS Validation Results](documentation/css_validator_final.png)
 
 ### JSHint
 
 #### First Attempt of JavaScript Files
-![Alt text](documentation/scriptjs-validator.png)
+![JSHint Results](documentation/scriptjs-validator.png)
 
 #### Final Attempt of JavaScript Files
-![Alt text](documentation/scriptjs-validator-final.png)
+![JSHint Results](documentation/scriptjs-validator-final.png)
 
 ### Python Syntax Checker PEP8 Validation
 #### First Attempt of Python Files
+![CI Python Linter Results](documentation/python-linter-initial.png)
+
 #### Final Attempt of Python Files
+![CI Python Linter Results](documentation/python-linter-final.png)
 
 ## Lighthouse
 ### Final Attempt for Lighthouse
-![Alt text](documentation/lighthouse-initial-scan.png)
-
-## Responsiveness
-## Web Aim Contrast Checker
-## Browser Compatability
-## Manual Testing
-## Automated Testing
-
-### 
-
+![Lighthouse Results](documentation/lighthouse-initial-scan.png)
 
 # Bugs
-## Resolved
 
+## Resolved
 ### Bug Report(Resolved): Unresponsive Modal with Backdrop Issue
 
 #### Description
