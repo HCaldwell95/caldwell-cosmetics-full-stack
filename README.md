@@ -1,7 +1,5 @@
 # Caldwell Cosmetics - My Milestone Project
 
-![Responsive Display](documentation/responsive_screens.png)
-
 ## Introduction
 
 Caldwell Cosmetics is a full-stack web application designed to showcase and manage a cosmetic brand's products and treatments offered. The website includes features like a landing page, designed to inform the user of everything the application has to offer; a treatments page, which provides detailed information on the treatments offered, products used and any aftercare required; an admin interface for content management and a booking system which will allow users to book timeslots on a calendar for their treatments. The project is built using Django and deployed on Heroku.
@@ -12,8 +10,11 @@ Caldwell Cosmetics is a full-stack web application designed to showcase and mana
 Visit the Project's GitHub Repository Here
 </a>
 
-![Responsive Display](screenshot here)
-![Home Page](screenshot here)
+&nbsp;
+
+<img src="documentation/responsive-image.png" alt="Responsive Display" style="max-width: 800px; width: 100%;" />
+
+<img src="documentation/landing-page.png" alt="Home Page" style="max-width: 800px; width: 100%;" />
 
 
 \
@@ -199,6 +200,8 @@ The Subscriber model is used to manage information for users who subscribe to th
 
 * email - The email address of the subscriber, which is used to send newsletters and updates.
 
+!Subscription Database (image here)
+
 #### Booking System
 
 The BookingSystem model captures detailed information about users who book treatments. This model is used to gather comprehensive user data to enhance their booking experience. It includes:
@@ -210,6 +213,8 @@ email - The user's email address.
 address - The user's home address.
 
 The BookingSystem model is linked to the booking records as a foreign key in the booking system. This design allows users to update their personal information without duplicating data entry, thereby enhancing privacy and user experience.
+
+!Booking System Database (image here)
 
 ## Skeleton
 
@@ -224,8 +229,8 @@ Basic wireframes are provided below. Please note that these may differ slightly 
 
 * [Home Page](image.jpg "Home Page")
 * [Treatments](image.jpg "Treatments") – The Treatments Page is very similar to the Home Page as I wanted to maintain consistency throughout the website, with each page acting as a different comprehensive source of information.
-* [Meet The Team](image.jpg "Meet The Team") – The Meet The Team Page follows the same rulings and stylings as the Home Page and Treatments Page, showing only detailed information on the practitioners at Caldwell Cosmetics.
 * [My Bookings](image.jpg "My Bookings") – The Bookings Page follows the trend, displaying only the information and fields required to create, edit and delete bookings.
+* [My Profile](image.jpg "My Profile") – The Profile Page follows the trend, displaying only the information and fields required to create, edit and delete profile data.
 
 ## Surface
 
@@ -246,38 +251,56 @@ Font Awesome has been utilised to obtain some icons for the website. Icons were 
 
 The colour palette used in this project has been carefully chosen to create a soft, professional, and visually appealing design. Here’s an explanation of each colour and its role:
 
-* --color-background-light (rgb(255, 251, 249)): A soft off-white background that offers a clean, minimalistic base for the site's layout.
+<table>
+  <tr>
+    <td style="background-color: rgb(255, 251, 249); width: 100px; height: 40px; border: 1px solid #ccc;"></td>
+    <td><strong>--color-background-light</strong> (rgb(255, 251, 249)) — A soft off-white background that offers a clean, minimalistic base for the site's layout.</td>
+  </tr>
+  <tr>
+    <td style="background-color: rgb(253, 247, 245); width: 100px; height: 40px; border: 1px solid #ccc;"></td>
+    <td><strong>--color-background-cream</strong> (rgb(253, 247, 245)) — A warm cream tone that provides a welcoming and gentle contrast.</td>
+  </tr>
+  <tr>
+    <td style="background-color: rgba(0, 0, 0, 0.5); width: 100px; height: 40px; border: 1px solid #ccc;"></td>
+    <td><strong>--color-border</strong> (rgba(0, 0, 0, 0.5)) — A semi-transparent black used for subtle borders around elements.</td>
+  </tr>
+  <tr>
+    <td style="background-color: black; width: 100px; height: 40px; border: 1px solid #ccc;"></td>
+    <td><strong>--color-heading</strong> (black) — A bold black for headings and important text.</td>
+  </tr>
+  <tr>
+    <td style="background-color: #eed6c2; width: 100px; height: 40px; border: 1px solid #ccc;"></td>
+    <td><strong>--color-accent</strong> (#eed6c2) — A peachy accent that adds warmth and draws attention.</td>
+  </tr>
+  <tr>
+    <td style="background-color: #302121; width: 100px; height: 40px; border: 1px solid #ccc;"></td>
+    <td><strong>--color-accent-dark</strong> (#302121) — A deep, dark brown for elegant contrast and readability.</td>
+  </tr>
+  <tr>
+    <td style="background-color: rgba(95, 95, 95, 0.4); width: 100px; height: 40px; border: 1px solid #ccc;"></td>
+    <td><strong>--color-overlay</strong> (rgba(95, 95, 95, 0.4)) — A grey overlay to darken backgrounds subtly for text clarity.</td>
+  </tr>
+</table>
 
-* --color-background-cream (rgb(253, 247, 245)): A warm cream tone that provides a welcoming and gentle contrast, adding depth to the background.
-
-* --color-border (rgba(0, 0, 0, 0.5)): A semi-transparent black used for subtle borders around key elements, providing structure without overpowering the design.
-
-* --color-heading (black): A bold black colour that ensures clarity and emphasis for headings and key text elements.
-
-* --color-accent (#eed6c2): A peachy accent that brings warmth and soft contrast, drawing attention to interactive or highlighted sections of the site.
-
-* --color-accent-dark (#302121): A deep, dark brown used for text and links, creating an elegant contrast that is easy to read.
-
-* --color-overlay (rgba(95, 95, 95, 0.4)): A grey overlay used in hero sections to subtly darken background images, ensuring text and foreground elements are clear.
-
-* These colours, combined with the defined font sizes and border styling, enhance the site's readability, aesthetic appeal, and user experience.
+<br>
+These colours, combined with the defined font sizes and border styling, enhance the site's readability, aesthetic appeal, and user experience.
 
 ### Responsive Screens
 
 The following breakpoints have been chosen to ensure the design adapts seamlessly across various screen sizes, providing an optimal user experience:
 
-- **768px (Tablets)**: Targets smaller tablets and larger smartphones. The layout adjusts to portrait tablet viewing, ensuring content is readable and user interaction is comfortable without overcrowding the screen.
-  
-- **1024px (Larger Tablets)**: For larger tablets in landscape mode, the design adapts to make use of the wider screen, spacing elements more generously.
-  
-- **1280px (Laptops)**: This breakpoint targets laptops, allowing for a more desktop-like experience. The layout may include additional elements or columns that fit comfortably on the larger screen.
-  
-- **1400px (Desktops)**: For larger desktop displays, the design becomes more spacious, often expanding content areas or including more detailed design elements for full desktop users.
+| Screen Size   | Breakpoint |
+| -----------   | ---------- |
+| small/mobile  |    320px   |
+| medium/tablet |    768px   |
+| large tablet  |    1024px  |
+| laptop        |    1280px  |
+| desktop       |    1400+px |
 
+<br>
 These breakpoints help maintain a consistent and user-friendly experience across different devices, from tablets to desktops.
 
 &nbsp;
-
 
 # Features
 
@@ -287,45 +310,73 @@ These breakpoints help maintain a consistent and user-friendly experience across
 - The landing page introduces Caldwell Cosmetics and highlights key services and offerings.
 - It includes a hero image with an overlay, drawing attention to the business' core message.
 
+> ![Landing Page](documentation/landing-page.png)
+
+> ![Landing Page](documentation/landing-page-two.png)
+
 ### Navigation Bar
 - A fully responsive navigation bar with links to important pages like Home, Treatments, and My Bookings.
 - Provides easy access to different sections of the website.
+
+> ![Navbar Extended](documentation/navbar-extended-one.png)
+> ![Navbar Extended](documentation/navbar-extended-two.png)
+> ![Navbar Extended](documentation/navbar-extended-three.png)
+> ![Navbar Extended](documentation/navbar-extended-four.png)
+
+> ![Navbar Dropdown](documentation/navbar-dropdown-one.png)
+> ![Navbar Dropdown](documentation/navbar-dropdown-two.png)
 
 ### Scrolling Text Bar
 - A scrolling text bar on the homepage displaying available treatments.
 - Enhances user engagement by promoting the key services in a visually dynamic way.
 
+> ![Scrolling Text](documentation/scrolling-bar.png)
+
 ### Find Us Map
 - An embedded Google Map that shows the location of the clinic.
 - Helps users find the clinic easily and adds credibility to the business.
+
+> ![Find Us Map](documentation/find-us.png)
 
 ### How to Book Treatments Section
 - A clear, step-by-step guide on how users can book treatments.
 - Encourages easy navigation from registration to booking appointments.
 
+> ![How To Book](documentation/how-to-book.png)
+
 ### Footer
 - Contains contact details, social media links, and a subscription form.
 - Provides essential information and a call to action for visitors to stay connected.
+
+> ![Footer](documentation/footer.png)
 
 ### Profile
 - Users can create and manage their profile after registering on the website.
 - Profiles include essential details such as names, contact information, and booking history.
 
+> ![My Profile](documentation/profile-page-one.png)
+> ![My Profile](documentation/profile-page-two.png)
+
 ### My Bookings Page
 - Logged-in users can view their existing bookings on this page.
 - Displays details about confirmed and pending appointments.
-
-### New Booking Page
 - Allows users to book new treatments by selecting a treatment, date, and time.
 - Integrated with a dropdown for treatments and pickers for date and time selection.
 
-### Edit Booking Page
+> ![Bookings](documentation/bookings-page-one.png)
+> ![Bookings](documentation/bookings-page-two.png)
+
+### Edit Booking Modal
 - Users can modify their existing bookings by selecting a different date or time.
 - Ensures flexibility in managing appointments.
 
-### Delete Booking Page
+> ![Edit Booking Modal](documentation/edit-booking-modal.png)
+
+### Delete Booking Modal
 - Users have the option to delete their existing bookings if needed.
 - A confirmation prompt ensures users don’t accidentally remove bookings.
+
+> ![Delete Booking Modal](documentation/delete-booking-modal.png)
 
 ### Django Template Pages
 - The website uses Django’s templating system to manage pages dynamically.
@@ -335,9 +386,13 @@ These breakpoints help maintain a consistent and user-friendly experience across
 - Flash messages notify users of actions such as successful booking, editing, or errors.
 - Helps improve user experience by providing immediate feedback on actions.
 
+> ![Message Success](documentation/messages-success.png)
+
 ### Error Pages
 - Custom 404 and 500 error pages give users clear guidance when something goes wrong.
 - Maintains the branding of the site while handling errors gracefully.
+
+> ![Custom 500 Error Page](documentation/error-500.png)
 
 ## Planned Features
 
@@ -357,21 +412,6 @@ These breakpoints help maintain a consistent and user-friendly experience across
 &nbsp;
 
 # Technologies Used
-
-Backend
-Django: Python-based web framework for managing backend processes.
-Django-environ: Used for managing environment variables securely.
-Frontend
-HTML5: Markup language used for building the website’s structure.
-CSS3: Custom styles to enhance the visual appearance and user experience.
-Bootstrap: Front-end framework used for responsive design and layout.
-JavaScript: Adds interactivity and dynamic behavior, especially for the calendar and form validations.
-Database
-Relational database management (RDBMS) for storing user information, treatments, and bookings data.
-Django's ORM (Object-Relational Mapping) system to interact with the database.
-Appointment Booking
-Integrated FullCalendar JavaScript library for displaying appointments and booking times.
-Views to handle booking data (booking_events and events views return JSON data for appointments).
 
 ## Languages
 
@@ -497,13 +537,13 @@ Before each test runs, the `setUp` method initializes the test environment by:
 These tests help verify that the `Subscriber` model handles data correctly, enforces unique and valid email addresses, and provides a proper string representation.
 
 
-### Manual Tests
+## Manual Tests
 
 - **User Interface Testing**: Manual testing is conducted to verify that the user interface functions correctly across different devices and screen sizes. This includes checking that forms are displayed properly and that navigation links work as intended.
 
 - **Feature Testing**: Ensures that key features such as booking appointments, viewing bookings, and editing profiles are functioning as expected. This involves simulating user interactions and verifying that the expected results are achieved.
 
-### Test Coverage
+## Test Coverage
 
 - **Comprehensive Coverage**: Efforts are made to cover a wide range of scenarios, including edge cases and error conditions, to ensure the application performs reliably under various conditions.
 
@@ -625,8 +665,6 @@ The issue was resolved by removing the backdrop. This was achieved by adding the
 </div>
 ```
 
-## Unresolved
-
 # Deployment
 During the process of coding up the website, the code was deployed on GitHub to allow for continuous manual testing and code validation. The following steps were conducted to deploy the website on GitHub:
 
@@ -668,53 +706,24 @@ During the process of coding up the website, the code was deployed on GitHub to 
 15. Search for the suitable repository and then connect to it by selecting the “Connect” button.
 16. Scroll down to the bottom of the “Deploy” Page and select the type of deployment you want to conduct. If you opt to “Automatically Deploy”, it will deploy every time you push new code to your repository. Otherwise, you will have to manually deploy, by selecting the button at the bottom of the page.
 17. The application is now deployed!
-
-\
-&nbsp;
-[Back to Top](#table-of-contents)
 \
 &nbsp;
 
 # Credits
 ## For Code Help and Advice
-## Helpful Resources
-## For Content and Code
 
-
+This project was assisted by [ChatGPT](https://chat.openai.com), an AI language model developed by OpenAI.
 
 ## References
 
-https://www.youtube.com/watch?v=LL6qXu8FmVo - Subscription Newsletter Feature
+[YouTube User - Joshyvibe](https://www.youtube.com/watch?v=LL6qXu8FmVo) - Subscription Newsletter Feature
 
 ## Educational Disclaimer
 
 This project has been created as a part of my personal learning journey in Full-Stack development. It is intended for educational purposes only and should not be considered a fully functional or production-ready application. The project may contain bugs, security vulnerabilities, or incomplete features, as it is designed to demonstrate concepts and practices learned during my studies.
 
 By using this project, you acknowledge that it is a work in progress and should not be used in a live environment without further review and testing. I do not assume any responsibility for any issues, damages, or losses that may arise from its use.
+\
+&nbsp;
 
-
-## Personal Notes
-
-Subscription Newsletter Functions:
-
-    home_details Function:
-
-    Purpose: Renders the home page template.
-    Arguments: Takes an HTTP request object.
-    Returns: An HTTP response that renders the home.html template.
-    subscribe_to_newsletter Function:
-
-    Purpose: Handles the subscription process for the newsletter.
-
-    Arguments: Takes an HTTP request object.
-
-    Returns: A JSON response indicating whether the subscription was successful or if there were errors.
-
-    Steps:
-    Check Request Method: Ensures the request method is POST.
-    Form Handling: Creates a form instance with POST data and checks its validity.
-    Save Subscriber: If valid, saves the subscriber to the database.
-    Prepare Email: Constructs the email content using a template and context.
-    Send Email: Sends an email to the subscriber using Django's send_mail function.
-    Respond to AJAX: Sends a JSON response indicating success or failure.
-    Invalid Request Handling: If the request is not POST, responds with an error message.
+[Back to Top](#table-of-contents)
