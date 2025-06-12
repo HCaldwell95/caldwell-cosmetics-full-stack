@@ -6,11 +6,15 @@
 
 Caldwell Cosmetics is a full-stack web application designed to showcase and manage a cosmetic brand's products and treatments offered. The website includes features like a landing page, designed to inform the user of everything the application has to offer; a treatments page, which provides detailed information on the treatments offered, products used and any aftercare required; an admin interface for content management and a booking system which will allow users to book timeslots on a calendar for their treatments. The project is built using Django and deployed on Heroku.
 
-[Visit the Website Here](website_link)
+[Visit the Website Here](https://caldwell-cosmetics-3f24bce38bd6.herokuapp.com/)
 
 <a href="https://github.com/HCaldwell95/caldwell-cosmetics-full-stack" target="_blank">
 Visit the Project's GitHub Repository Here
 </a>
+
+![Responsive Display](screenshot here)
+![Home Page](screenshot here)
+
 
 \
 &nbsp;

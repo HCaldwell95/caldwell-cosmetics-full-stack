@@ -35,13 +35,12 @@ env.read_env(BASE_DIR / '.env')
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    'caldwell-cosmetics-full-stack-ecf887f27496.herokuapp.com', 
+    'https://caldwell-cosmetics-3f24bce38bd6.herokuapp.com', 
     'localhost',
     'http://localhost/', 
-    '*'
 ]
 
 # Application definition

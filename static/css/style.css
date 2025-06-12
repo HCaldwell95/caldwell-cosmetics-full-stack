@@ -762,6 +762,7 @@ Breakpoints:
     .responsive-booking-table td,
     .responsive-booking-table tr {
         display: block;
+        text-align: center;
     }
 
     .responsive-booking-table thead tr {
