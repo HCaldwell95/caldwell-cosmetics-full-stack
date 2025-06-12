@@ -75,3 +75,33 @@ def booking_confirmation(request, booking_id):
     except Booking.DoesNotExist:
         return redirect('error_page')  # Redirect to an error page if booking doesn't exist
     return render(request, 'bookings/booking_confirmation.html', {'booking': booking})
+
+
+@login_required
+def booking_edit(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+
+    if request.method == 'POST':
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            return redirect('my_bookings')
+    else:
+        form = BookingForm(instance=booking)
+
+        # Get all booked appointment IDs except the one this booking uses
+        booked_appointments = Booking.objects.exclude(id=booking.id).values_list('appointment_id', flat=True)
+
+        # Filter the form's appointment field to exclude them
+        form.fields['appointment'].queryset = form.fields['appointment'].queryset.exclude(id__in=booked_appointments)
+
+    return render(request, 'bookings/booking_edit.html', {'form': form})
+
+
+@login_required
+def booking_delete(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id)
+    if request.method == 'POST':
+        booking.delete()
+        return redirect('my_bookings')
+    return render(request, 'bookings/booking_confirm_delete.html', {'booking': booking})

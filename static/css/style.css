@@ -76,6 +76,17 @@ a {
     text-decoration: none;
 }
 
+/* ------------------------------- Table Styles ------------------------------- */
+
+.centered-column {
+    text-align: center;
+}
+
+.vertical-centered-column {
+    vertical-align: middle;
+}
+
+
 /* ---------------------------------------------------------------------- 
     Navigation Bar Styles 
 ------------------------------------------------------------------------- */
