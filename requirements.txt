@@ -4,12 +4,12 @@ charset-normalizer==3.4.2
 cloudinary==1.44.1
 dj-database-url==3.0.1
 Django==5.2.4
-django-heroku==0.3.1
 django-ckeditor==6.7.3
 django-cloudinary-storage==0.3.0
 django-crispy-forms==2.4
 django-environ==0.12.0
 django-js-asset==3.1.2
+Flag==0.1.1
 gunicorn==23.0.0
 idna==3.10
 packaging==25.0
