@@ -26,7 +26,9 @@ TEMPLATES_DIR = BASE_DIR / 'templates'
 # Initialise environment variables using 'environ' library
 env = environ.Env()
 # Read environment variables from a .env file
-env.read_env(BASE_DIR / '.env')
+env_file = BASE_DIR / '.env'
+if os.path.exists(env_file):
+    env.read_env(env_file)
 
 # Heroku settings
 import django_heroku
@@ -47,6 +49,17 @@ ALLOWED_HOSTS = [
     'http://localhost/', 
 ]
 
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -62,17 +75,6 @@ INSTALLED_APPS = [
     'cloudinary',
     'cloudinary_storage',
     'bookings',
-]
-
-MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'caldwell_cosmetics.urls'
