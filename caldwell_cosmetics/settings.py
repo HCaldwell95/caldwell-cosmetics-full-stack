@@ -30,10 +30,6 @@ env_file = BASE_DIR / '.env'
 if os.path.exists(env_file):
     env.read_env(env_file)
 
-# Heroku settings
-import django_heroku
-django_heroku.settings(locals())
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -166,3 +162,5 @@ CLOUDINARY_STORAGE = {
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
