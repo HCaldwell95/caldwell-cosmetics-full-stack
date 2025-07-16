@@ -40,9 +40,9 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'https://caldwell-cosmetics-3f24bce38bd6.herokuapp.com', 
+    'caldwell-cosmetics-3f24bce38bd6.herokuapp.com', 
     'localhost',
-    'http://localhost/', 
+    '127.0.0.1', 
 ]
 
 MIDDLEWARE = [
